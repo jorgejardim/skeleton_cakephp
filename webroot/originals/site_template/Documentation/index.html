@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Documentation</title>
+	
+	<link rel="stylesheet" href="css/documentation.css">
+	
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.chili-2.2.js"></script>
+	<script src="js/recipes.js"></script>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="header">
+	<div class="layout">
+		<h1 class="m-right1">Boson Template Documentation</h1>
+	</div>
+</div>
+
+<div class="content">
+<div class="layout">
+
+<!-- start section -->
+<div id="s-0" class="section">
+	<h2 class="headline m-pastel-blue">Contents</h2>
+
+	<ul class="b-contents">
+		<li><a href="#s-1">1. Welcome</a></li>
+		<li><a href="#s-2">2. HTML Structure</a></li>
+		<li><a href="#s-3">3. CSS Structure</a></li>
+		<li><a href="#s-4">4. Style Settings</a></li>
+		<li><a href="#s-5">5. Elements Settings</a></li>
+		<li><a href="#s-6">6. Javascript Settings</a></li>
+		<li><a href="#s-7">7. Photoshop Files</a></li>
+		<li><a href="#s-8">8. Scripts &amp; Credits</a></li>
+	</ul>
+</div>
+<!-- end section -->
+
+
+
+
+
+
+<!-- start section -->
+<div id="s-1" class="section">
+	<h2 class="headline m-pastel-blue"><a href="#s-0">1. Welcome</a></h2>
+
+	<p>
+		Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/Hatej">here</a>. Thanks so much!
+	</p>
+
+	<p>
+		For questions on basic HTML, JavaScript or CSS editing - please give your question a quick Google or
+		visit W3Schools as theme issues get top priority. You will need some knowledge of HTML/CSS to edit this theme. 
+	</p>
+</div>
+<!-- end section -->
+
+
+
+
+
+<!-- start section -->
+<div id="s-2" class="section">
+
+<h2 class="headline m-pastel-blue"><a href="#s-0">2. HTML Structure</a></h2>
+
+<p>This Theme has a Responsive layout with a variation of column layouts depending on the page. The general template structure is the same throughout the template. Here is the general structure.</p>
+
+<pre class="b-code">
+<code class="html">&lt;div class="main"&gt;
+	
+	&lt;!-- TOP BAR 
+	============================================= --&gt;
+	&lt;div class="b-top-bar"&gt;
+		&lt;div class="layout"&gt;
+			Content...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END TOP BAR 
+	============================================= --&gt;
+
+	&lt;!-- HEADER 
+	============================================= --&gt;
+	&lt;div class="header"&gt;
+		&lt;div class="layout clearfix"&gt;
+			Content...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END HEADER 
+	============================================= --&gt;
+
+	&lt;!-- REVOLUTION SLIDER
+	============================================= --&gt;
+	&lt;div class="fullwidthbanner-container top-shadow"&gt;
+		&lt;div class="fullwidthbanner"&gt;
+			Content...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END REVOLUTION SLIDER
+	============================================= --&gt;
+
+	&lt;!-- FEATURED CONTENT
+	============================================= --&gt;
+	&lt;div class="content-featured"&gt;
+		&lt;div class="layout"&gt;
+			Content...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END FEATURED CONTENT
+	============================================= --&gt;
+
+	&lt;!-- CONTENT 
+	============================================= --&gt;
+	&lt;div class="content"&gt;
+		&lt;div class="layout"&gt;
+			Content...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END CONTENT 
+	============================================= --&gt;
+	
+	&lt;!-- FOOTER 
+	============================================= --&gt;
+	&lt;div class="footer"&gt;
+		&lt;!-- Widget Area --&gt;
+		&lt;div class="b-widgets"&gt;
+			&lt;div class="layout"&gt;
+				Content...
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- End Widget Area --&gt;
+		&lt;!-- Copyright Area --&gt;
+		&lt;div class="b-copyright"&gt;
+			&lt;div class="layout"&gt;
+				Content...
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- END FOOTER 
+	============================================= --&gt;
+	
+&lt;/div&gt;
+&lt;!-- END MAIN 
+============================================= --&gt;</code>
+</pre>
+
+<!-- -->
+
+<h4 class="headline">2.1 Grid</h4>
+
+<pre class="b-code">
+<code class="html">&lt;div class="row"&gt;
+    Columns...
+&lt;/div&gt;</code>
+</pre>
+
+<pre class="b-code">
+<code class="html">&lt;div class="row"&gt;
+    &lt;!-- 1/2 column --&gt;
+    &lt;div class="row-item col-1_2"&gt;
+		Content...
+    &lt;/div&gt;
+
+    &lt;!-- 1/3 column --&gt;
+    &lt;div class="row-item col-1_3"&gt;
+		Content...
+    &lt;/div&gt;
+
+    &lt;!-- 1/4 column --&gt;
+    &lt;div class="row-item col-1_4"&gt;
+		Content...
+    &lt;/div&gt;
+
+    &lt;!-- 2/3 column --&gt;
+    &lt;div class="row-item col-2_3"&gt;
+		Content...
+    &lt;/div&gt;
+
+    &lt;!-- 3/4 column --&gt;
+    &lt;div class="row-item col-3_4"&gt;
+		Content...
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<!-- -->
+
+<h4 class="headline">2.2 Boxed mode</h4>
+
+<p>To change the layout mode to add the class "boxed" to the element with the class "main"</p>
+
+<pre class="b-code">
+<code class="html">&lt;div class="main boxed"&gt;&lt;/div&gt;</code>
+</pre>
+
+</div>
+<!-- end section -->
+
+
+
+
+
+
+<!-- start section -->					
+<div id="s-3" class="section">
+
+<h2 class="headline m-pastel-blue"><a href="#s-0">3. CSS Structure</a></h2>
+
+<p>I'm using two main CSS files (main.css and shortcodes.css) in this theme which you are free to modify depending on the customization you require. </p>
+
+<h4 class="headline">Main.css</h4>
+
+<p>If you would like to edit a specific section of the site, simply find the appropriate label in the file Main.css, and then scroll down until you find the appropriate style that needs to be edited.</p>
+
+<pre class="b-code">
+<code class="css">@import 'shortcodes.css'
+
+/* --------------------------------- Base ^ */
+
+/* ------------------------------- Header ^ */
+
+/* ------------------------------- Slider ^ */
+
+/* ------------------------------ Content ^ */
+
+/* ------------------------------- Footer ^ */
+
+/* ---------------------------- Portfolio ^ */
+
+/* --------------------------------- Blog ^ */
+
+</code>
+</pre>	
+
+<!-- -->
+
+<h4 class="headline">Shortcodes.css</h4>
+
+<p>If you would like to edit a shortcode element of the site, simply find the appropriate label in the file Shortcodes.css, and then scroll down until you find the appropriate style that needs to be edited.</p>
+
+<pre class="b-code">
+<code class="css">
+
+/* ------------------------- Testimonials ^ */
+
+/* -------------------------------- Icons ^ */
+
+/* -------------------------- Color icons ^ */
+
+/* ----------------------------- Icon box ^ */
+
+/* --------------------------------- Tabs ^ */
+
+/* -------------------------------- Lists ^ */
+
+/* --------------------------------- News ^ */
+
+/* ----------------------------- Messages ^ */
+
+/* -------------------------------- Promo ^ */
+
+/* -------------------------------- Table ^ */
+
+/* ------------------------------ Buttons ^ */
+
+/* -------------------------------- Intro ^ */
+
+/* ------------------------ Social button ^ */
+
+/* ------------------------------- Toggle ^ */
+
+/* ---------------------------- Accordion ^ */
+
+/* ------------------------ Progress Bars ^ */
+
+/* ----------------------------- Tooltips ^ */
+
+/* -------------------------- Element Box ^ */
+
+/* -------------------------------- Forms ^ */
+
+/* ----------------------------- Services ^ */
+
+/* ------------------------------ Top Bar ^ */
+
+/* ----------------------------- Side Nav ^ */
+
+/* ------------------------------ Clients ^ */
+
+/* --------------------------------- Team ^ */
+
+/* -------------------------------- Quote ^ */
+
+/* ---------------------------- Button Up ^ */
+
+/* ------------------------------ Gallery ^ */
+
+/* ----------------------------- Dropcaps ^ */
+
+</code>
+</pre>		
+
+
+</div>
+<!-- end section -->
+
+
+
+
+
+<!-- start section -->			
+<div id="s-4" class="section">
+
+<h2 class="headline m-pastel-blue"><a href="#s-0">4. Style Settings</a></h2>
+<h4 class="headline">4.1 Color Scheme</h4>
+
+<p>You can add or modify colors and include new color file like.</p>
+
+<pre class="b-code">
+<code class="html">&lt;link rel="stylesheet" href="css/main.css"&gt;
+&lt;link rel="stylesheet" href="css/responsive.css"&gt;
+&lt;link rel="stylesheet" href="css/color-scheme/turquoise.css"&gt; &lt;!-- color scheme --&gt;</code>
+</pre>
+
+<!-- -->
+
+<h4 class="headline">4.2 Main Background</h4>
+
+<p>To change the background pattern, you need to add a class to the Body.</p>
+
+<pre class="b-code">
+<code class="html">&lt;body class="bg-climpek"&gt;&lt;/body&gt;</code>
+</pre>
+
+<div class="bg-preview"> <div class="bg-title">bg-wood_pattern</div>  <div class="bg bg-wood_pattern"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-shattered</div>  <div class="bg bg-shattered"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-vichy</div>  <div class="bg bg-vichy"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-random-grey-variations</div>  <div class="bg bg-random-grey-variations"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-irongrip</div>  <div class="bg bg-irongrip"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-gplaypattern</div>  <div class="bg bg-gplaypattern"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-diamond_upholstery</div>  <div class="bg bg-diamond_upholstery"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-denim</div>  <div class="bg bg-denim"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-crissXcross</div>  <div class="bg bg-crissXcross"></div> </div>
+<div class="bg-preview"> <div class="bg-title">bg-climpek</div>  <div class="bg bg-climpek"></div> </div>
+
+</div>
+<!-- end section -->
+
+
+
+
+
+<!-- start section -->			
+<div id="s-5" class="section">
+
+<h2 class="headline m-pastel-blue"><a href="#s-0">5. Elements Settings</a></h2>
+<h4 class="headline">5.1 Revolution Slider</h4>
+
+<pre class="b-code">
+<code class="html">&lt;div class="fullwidthbanner-container"&gt;
+    &lt;div class="fullwidthbanner"&gt;
+		&lt;ul&gt;
+			&lt;!-- Slide --&gt;
+			&lt;li data-masterspeed="300" data-slotamount="1" data-transition="fade"&gt;
+				&lt;!-- Main Image --&gt;
+				&lt;img alt="" src="img/slider/Slider-1.jpg"&gt;
+				&lt;!-- Captions --&gt;
+				&lt;div class="tp-caption m-text-black sft" data-easing="easeOutExpo" data-speed="700" data-start="1400" data-x="40" data-y="130"&gt;
+					&lt;span&gt;Tempora Incidunt&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;
+			
+			... other slides ...
+			
+		&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<p>For detailed documentation, see the Revolution Slider Documentation.</p>
+
+
+<!-- -->
+
+<h4 class="headline">5.2 Portfolio Filtering</h4>
+
+<p>Filters</p>
+
+<pre class="b-code">
+<code class="html">
+&lt;ul class="b-filter-list"&gt;
+	&lt;li data-filter="*" class="active"&gt;All&lt;/li&gt;
+	&lt;li data-filter=".webdesign"&gt;Web Design&lt;/li&gt;
+	&lt;li data-filter=".photography"&gt;Photography&lt;/li&gt;
+	&lt;li data-filter=".identity"&gt;Identity&lt;/li&gt;
+	&lt;li data-filter=".tehnology"&gt;Tehnology&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Filter for Mobile View. --&gt;
+&lt;div class="b-filter-select"&gt;
+	&lt;div class="filter-current"&gt;
+		 All
+	&lt;/div&gt;
+	&lt;ul&gt;
+		&lt;li data-filter="*" class="active"&gt;All&lt;/li&gt;
+		&lt;li data-filter=".webdesign"&gt;Web Design&lt;/li&gt;
+		&lt;li data-filter=".photography"&gt;Photography&lt;/li&gt;
+		&lt;li data-filter=".identity"&gt;Identity&lt;/li&gt;
+		&lt;li data-filter=".tehnology"&gt;Tehnology&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<p>Thumbnails</p>
+
+<pre class="b-code">
+<code class="html">&lt;div class="row-item col-1_2 identity photography tehnology"&gt;
+	&lt;div class="work"&gt;
+		&lt;a href="#" class="work-image"&gt;
+			&lt;img src="img/port/smiling.jpg"&gt;
+			&lt;div class="link-overlay icon-chevron-right"&gt;&lt;/div&gt;
+		&lt;/a&gt;
+
+		&lt;a href="#" class="work-name"&gt;Smiling&lt;/a&gt;
+		&lt;div class="tags"&gt;Photography, Tehnology&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<!-- -->
+
+<h4 class="headline">5.3 Contact Form</h4>
+
+<p>To change email adress, open "contact.php", find and edit code below:</p>
+
+<pre class="b-code">
+<code class="js">// Configuration option.
+// Enter the $email $address that you want to emails to be sent to.
+// Example $address = "joe.doe@yourdomain.com";
+
+$address = "mail@example.com";</code>
+</pre>
+
+</div>
+<!-- end section -->
+
+
+
+
+
+<!-- start section -->					
+<div id="s-6" class="section">
+	<h2 class="headline m-pastel-blue"><a href="#s-0">6. Javascript Settings</a></h2>
+	
+	<h5 class="headline m-pastel-blue">Main.js</h5>
+	<p> 
+		Here you can modify any settings for ( Navigation Menu, Forms, Tabs, Accordion and more..)
+	</p>
+	<pre class="b-code"><code class="js">
+// MENU
+// FORMS: SEARCH, COMMENT
+// CONTACT FORM
+// TABS
+// MESSAGES
+// SPOILER 
+// PROGRESS BAR
+// TEAM 
+// PORTFOLIO
+// CAROUSEL
+	// CREATE CONTROLS
+	// CHANGE ITEM
+	// AUTO CHANGE
+// BUTTON UP
+</code></pre>
+
+	<h5 class="headline m-pastel-blue">Google Map</h5>
+	<p> 
+		Here you can modify settings for Navigation Menu, Forms, Tabs, Accordion and more.
+	</p>
+	<pre class="b-code">
+<code class="html">&lt;div class="b-google-map"&gt;
+	&lt;div id="map_canvas" style="width: 100%; height: 400px;"&gt;&lt;/div&gt;
+
+	&lt;script src="http://maps.google.com/maps/api/js?sensor=true"&gt;&lt;/script&gt;
+	&lt;script src="js/jquery.gmap.min.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		jQuery('#map_canvas').gMap({
+			maptype: 'ROADMAP',
+			scrollwheel: false,
+			zoom: 16,
+			markers: [
+				{
+					address: 'Moscow', // Your Adress Here
+					html: '',
+					popup: false,
+				}
+			],
+		});
+	&lt;/script&gt;
+&lt;/div&gt;</code>
+</pre>
+</div>
+
+<h5 class="headline m-pastel-blue">Revolution-slider-options.js</h5>
+
+<p>Here you can modify settings for Revolution Slider.</p>
+
+<pre class="b-code">
+<code class="js">$('.fullwidthbanner').each(function() {
+	$(this).revolution({    
+		delay:10000,
+		startwidth:1090,
+		startheight:440,
+		onHoverStop:"on",                    // Stop Banner Timet at Hover on Slide on/off
+		thumbWidth:100,	                  // Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+		thumbHeight:50,
+		thumbAmount:3,
+		hideThumbs:0,
+		navigationType:"bullet",			 // bullet, thumb, none
+		navigationArrows:"solo",			 // nexttobullets, solo (old name verticalcenteturquoise), none
+		navigationStyle:"round",			 // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+		navigationHAlign:"center",		   // Vertical Align top,center,bottom
+		navigationVAlign:"bottom",		   // Horizontal Align left,center,right
+		navigationHOffset:0,
+		navigationVOffset:20,
+		soloArrowLeftHalign:"left",
+		soloArrowLeftValign:"center",
+		soloArrowLeftHOffset:20,
+		soloArrowLeftVOffset:0,
+		soloArrowRightHalign:"right",
+		soloArrowRightValign:"center",
+		soloArrowRightHOffset:20,
+		soloArrowRightVOffset:0,
+		touchenabled:"on",					// Enable Swipe Function : on/off
+		stopAtSlide:-1,					   // Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+		stopAfterLoops:-1,					// Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+		hideCaptionAtLimit:0,				 // It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+		hideAllCaptionAtLilmit:0,			 // Hide all The Captions if Width of Browser is less then this value
+		hideSliderAtLimit:0,				  // Hide the whole slider, and stop also functions if Width of Browser is less than this value
+		fullWidth:"on",
+		shadow:0							  // 0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+	});
+});</code>
+</pre>
+
+For detailed documentation, see the Revolution Slider Documentation.
+
+<!-- end section -->
+
+
+
+<!-- start section -->					
+<div id="s-7" class="section">
+	<h2 class="headline m-pastel-blue"><a href="#s-0">7. Photoshop Files</a></h2>
+
+	<p> 
+		I've included two psds with this theme:
+	</p>
+	
+	<ul style="margin-bottom: 50px;">
+		<li>Homepage</li>
+		<li>Blog</li>
+	</ul> 
+</div>
+<!-- end section -->
+
+
+
+
+
+<!-- start section -->
+<div id="s-8" class="section">
+	<h2 class="headline m-pastel-blue"><a href="#s-0">8. Credits</a></h2>
+	
+	<h5 class="headline m-pastel-blue">Preview Images:</h5>
+	<p> 
+		All images used in the preview are just for demonstration purposes and not included in the Theme.
+	</p>
+	
+	 
+	<h5 class="headline m-pastel-blue">Fonts:</h5>
+	<ul style="margin-bottom: 50px;">
+		<li><a href="http://www.fontsquirrel.com/fonts/open-sans?q=open+sans">Open Sans</a></li>
+		<li><a href="http://www.fontsquirrel.com/fonts/bebas-neue?q=bebas">Bebas Neue</a></li>
+		<li><a href="http://www.fontsquirrel.com/fonts/great-vibes">Great Vibes</a></li>
+	</ul> 
+	
+	<h5 class="headline m-pastel-blue">Scripts:</h5>
+	<ul style="margin-bottom: 50px;">
+		<li><a href="http://jquery.com/">jQuery library</a></li>
+		<li><a href="http://codecanyon.net/item/slider-revolution-responsive-jquery-plugin/2580848">Slider Revolution</a></li>
+		<li><a href="http://codecanyon.net/item/ajax-contact-form/50846">AJAX Contact Form</a></li>
+		<li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">Pretty Photo</a></li>
+		<li><a href="http://isotope.metafizzy.co/">Isotope Filtering</a></li>
+		<li><a href="https://github.com/marioestrada/jQuery-gMap">Google Map</a></li>
+		<li><a href="http://tweet.seaofclouds.com/">jQuery Tweets</a></li>
+	</ul>
+	
+	<h5 class="headline m-pastel-blue">Patterns:</h5>
+	<ul style="margin-bottom: 50px;">
+		<li><a href="http://subtlepatterns.com/">Subtlepatterns.com</a></li>
+	</ul>
+	
+	<h5 class="headline m-pastel-blue">Icons:</h5>
+	<ul style="margin-bottom: 50px;">
+		<li><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
+		<li><a href="http://banzaitokyo.com/">Art Professions Icon Set</a></li>
+		<li><a href="http://jonasraskdesign.com/">DRF Icon Set</a></li>
+	</ul>
+</div>
+<!-- end section -->
+
+
+
+
+
+</div>
+<!-- end layout -->
+
+</div>
+<!-- end content -->
+
+</div>
+<!-- end main -->
+</body>
+</html>

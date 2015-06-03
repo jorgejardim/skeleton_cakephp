@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>Boson</title>
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen"/>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/yamm/yamm.css">
+	<link rel="stylesheet" href="css/color-scheme/blue.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
+	<!-- Base JS -->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/main.js"></script>
+	
+	<!-- LayerSlider -->
+	<link rel="stylesheet" href="js/layerslider/css/layerslider.css" type="text/css">
+	<script src="js/layerslider/js/jquery.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/greensock.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var lsjQuery = jQuery;
+		lsjQuery(document).ready(function() {
+			if (typeof lsjQuery.fn.layerSlider == "undefined") {
+				lsShowNotice('layerslider_10', 'jquery');
+			} else {
+				lsjQuery("#layerslider_10").layerSlider({
+					startInViewport: false,
+					pauseOnHover: false,
+					skin: 'borderlessdark3d',
+					globalBGColor: 'transparent',
+					hoverBottomNav: true,
+					lazyLoad: false,
+					yourLogoStyle: 'left: 10px; top: 10px;',
+					cbInit: function(element) {},
+					cbStart: function(data) {},
+					cbStop: function(data) {},
+					cbPause: function(data) {},
+					cbAnimStart: function(data) {},
+					cbAnimStop: function(data) {},
+					cbPrev: function(data) {},
+					cbNext: function(data) {},
+				skinsPath: 'js/layerslider/skins/'
+				})
+			}
+		});
+	</script>
+
+	<!-- Prety photo -->
+	<script src="js/jquery.prettyPhoto.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("a[rel^='prettyPhoto']").prettyPhoto();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="main">
+
+	<!-- TOP BAR 
+	============================================= -->
+	<div class="b-top-bar">
+		<div class="container layout">
+			<!-- Some text -->
+			<div class="wrap-left">
+				<span class="top-bar-text">Duis autem vel eum iriure dolor in hendrerit.</span>
+			</div>
+			<div class="wrap-right">
+				<!-- Phone -->
+				<span class="top-bar-phone"><span class="icon-phone">Call us: </span> 1.244.145.3232</span>
+				<!-- Social Icons -->
+				<div class="top-bar-social">
+					<a class="fb" href="#"><i class="icon-facebook"></i></a>
+					<a class="tw" href="#"><i class="icon-twitter"></i></a>
+					<a class="lin" href="#"><i class="icon-linkedin"></i></a>
+					<a class="gl" href="#"><i class="icon-google-plus"></i></a>
+					<a class="dr" href="#"><i class="icon-dribbble"></i></a>
+					<a class="sk" href="#"><i class="icon-skype"></i></a>
+					<a class="rss" href="#"><i class="icon-rss"></i></a>
+					<!-- 
+					<a class="yt" href="#"><i class="icon-youtube"></i></a>
+					<a class="pt" href="#"><i class="icon-pinterest"></i></a>
+					<a class="tl" href="#"><i class="icon-tumblr"></i></a>
+					<a class="is" href="#"><i class="icon-instagram"></i></a>
+					<a class="vk" href="#"><i class="icon-vk"></i></a>
+					<a class="dx" href="#"><i class="icon-dropbox"></i></a>
+					<a class="fs" href="#"><i class="icon-foursquare"></i></a>
+					<a class="gh" href="#"><i class="icon-github-alt"></i></a>
+					<a class="mx" href="#"><i class="icon-maxcdn"></i></a> 
+					-->
+				</div>
+				<!-- End Social Icons -->
+			</div>
+		</div>
+	</div>
+	<!-- END TOP BAR 
+	============================================= -->
+
+	<!-- HEADER 
+	============================================= -->
+	<div class="header">
+		<header>
+			<div class="navbar yamm navbar-default navbar-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a href="./index.html" class="navbar-brand logo"><img src="img/logo.png" alt=""></a>
+					</div>
+					<div id="navbar-collapse-1" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<!-- Classic list -->
+							<li class="dropdown yamm-fw yamm-fw5">
+								<a href="./index.html" data-toggle="dropdown" class="dropdown-toggle active">Home</a>
+								<ul class="dropdown-menu">
+									<li>
+										<div class="yamm-content">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3 m-submenu first">
+													<div class="mmenu-title">Home 1-5</div>
+													<a href="index.html">Home Version: 1</a>
+													<a href="index-2.html">Home Version: 2</a>
+													<a href="index-3.html">Home Version: 3</a>
+													<a href="index-4.html">Home Version: 4</a>
+													<a href="index-5.html">Home Version: 5</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 6-10</div>
+													<a href="index-6.html">Home Version: 6</a>
+													<a href="index-7.html">Home Version: 7</a>
+													<a href="index-8.html">Home Version: 8</a>
+													<a href="index-9.html">Home Version: 9</a>
+													<a href="index-10.html">Home Version: 10</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 11-15</div>
+													<a href="index-11.html">Home Version: 11</a>
+													<a href="index-12.html">Home Version: 12</a>
+													<a href="index-13.html">Home Version: 13</a>
+													<a href="index-14.html">Home Version: 14</a>
+													<a href="index-15.html">Home Version: 15</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 16-20</div>
+													<a href="index-16.html">Home Version: 16</a>
+													<a href="index-17.html">Home Version: 17</a>
+													<a href="index-18.html">Home Version: 18</a>
+													<a href="index-19.html">Home Version: 19</a>
+													<a href="index-20.html">Home Version: 20</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 21-25</div>
+													<a href="index-21.html">Home Version: 21</a>
+													<a href="index-22.html">Home Version: 22</a>
+													<a href="index-23.html">Home Version: 23</a>
+													<a href="index-24.html">Home Version: 24</a>
+													<a href="index-onepage.html">One Page</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Landing Pages</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="landing-1.html">Fashion - NEW</a></li>
+									<li><a href="landing-2.html">Portfolio - NEW</a></li>
+									<li><a href="landing-3.html">App</a></li>
+									<li><a href="index-onepage.html">Corporate</a></li>
+									<li><a href="landing-4.html">Creative</a></li>
+									<li><a href="landing-5.html">Hosting</a></li>
+									<li><a href="landing-6.html">Marketing</a></li>
+									<li><a href="landing-7.html">Resume</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Header</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="index.html">Header: 1</a></li>
+									<li><a href="header-2.html">Header: 2</a></li>
+									<li><a href="header-3.html">Header: 3</a></li>
+									<li><a href="header-4.html">Header: 4</a></li>
+									<li><a href="header-5.html">Header: Transparent</a></li>
+								</ul>
+							</li>
+							<li class="dropdown yamm-fw">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+								<ul class="dropdown-menu">
+									<li>
+										<div class="yamm-content">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3 m-submenu first">
+													<div class="mmenu-title">Services</div>
+													<a href="services-2.html">Services: 2</a>
+													<a href="services-3.html">Services: 3</a>
+													<a href="services-4.html">Services: 4</a>
+													<a href="services-5.html">Services: 5</a>
+													<a href="services-6.html">Services: 6</a>
+													<a href="icon-boxes-1.html">Services Elements: 1</a>
+													<a href="icon-boxes-2.html">Services Elements: 2</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Main Features</div>
+													<a href="about-us.html">About Us</a>
+													<a href="pricing.html">Pricing Tables</a>
+													<a href="testimonials.html">Testimonials</a>
+													<a href="testimonials-2.html">Testimonials: 2</a>
+													<a href="404-error-page.html">404 Error Page</a>
+													<a href="search-results.html">Search Results</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Special Features</div>
+													<a href="meet-the-team.html">Meet The Team</a>
+													<a href="faq.html">F.A.Q.</a>
+													<a href="full-width-page.html">Full Width Page</a>
+													<a href="side-navigation.html">Side Navigation</a>
+													<a href="page-with-right-sidebar.html">Page With Right Sidebar</a>
+													<a href="page-with-left-sidebar.html">Page With Left Sidebar</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Shop Pages</div>
+													<a href="./shop.html">Shop - Home</a>
+													<a href="./shop-single.html">Shop - Single</a>
+													<a href="./shop_checkout.html">Shop - Checkout</a>
+													<a href="./shop_cart.html">Shop - Cart</a>
+													<a href="no-title-bar.html">No Title Bar</a>
+													<a href="contact-us-1.html">Contact Us</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Portfolio</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="portfolio-2-columns.html">Portfolio: 2 Columns</a></li>
+									<li><a href="portfolio-3-columns.html">Portfolio: 3 Columns</a></li>
+									<li><a href="portfolio-4-columns.html">Portfolio: 4 Columns</a></li>
+									<li class="dropdown-submenu">
+										<a href="#">Single Project: Wide</a>
+										<ul class="dropdown-menu">
+											<li><a href="portfolio-single-wide-image.html">Image</a></li>
+											<li><a href="portfolio-single-wide-slider.html">Slider</a></li>
+											<li><a href="portfolio-single-wide-video.html">Video</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a href="#">Single Project: Half</a>
+										<ul class="dropdown-menu">
+											<li><a href="portfolio-single-half-image.html">Image</a></li>
+											<li><a href="portfolio-single-half-slider.html">Slider</a></li>
+											<li><a href="portfolio-single-half-video.html">Video</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="blog-large.html">Blog: Large Images</a></li>
+									<li><a href="blog-medium.html">Blog: Medium Images</a></li>
+									<li class="dropdown-submenu">
+										<a href="#">Blog: Single Post</a>
+										<ul class="dropdown-menu">
+											<li><a href="blog-single-image.html">Image</a></li>
+											<li><a href="blog-single-slider.html">Slider</a></li>
+											<li><a href="blog-single-video.html">Video</a></li>
+										</ul>
+									</li>
+									<li><a href="news.html">News</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Elements</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="icon-boxes-1.html">Icon Boxes: 1</a></li>
+									<li><a href="icon-boxes-2.html">Icon Boxes: 2</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li><a href="images.html">Images & Gallery</a></li>
+									<li><a href="lists.html">Lists</a></li>
+									<li><a href="columns.html">Grid Columns</a></li>
+									<li><a href="typography.html">Typography</a></li>
+									<li><a href="media.html">Media</a></li>
+									<li><a href="pricing-elements.html">Elements of Prices</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="./contact-us-1.html" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-envelope"></i>Contact Us</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="contact-us-2.html">Contact Us: 2</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- Search Form -->
+						<form action="/" class="b-search-form">
+							<div class="input-wrap">
+								<input type="text" placeholder="Search..">
+							</div>
+						</form>
+						<!-- End Search Form -->
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<!-- END HEADER 
+	============================================= -->
+
+	<!-- LAYER SLIDER
+	============================================= -->
+	<div class="layerslider-wrapper">
+				<div id="layerslider_10" class="ls-wp-container" style="width:1000px;height:500px;margin:0 auto;margin-bottom: 50px;">
+			<div class="ls-slide" data-ls="slidedelay:7200;transition2d:all;transition3d:15;">
+				<img src="img/slider/blank.gif" data-src="img/slider/3d/abyss-bg.jpg" class="ls-bg" alt="abyss-bg" /><img class="ls-l" style="top:186px;left:701px;white-space: nowrap;" data-ls="offsetxin:right;durationin:50;easingin:linear;fadein:false;offsetxout:left;durationout:11000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bg-fishes-far.png" alt="Fish"><img class="ls-l" style="top:251px;left:857px;white-space: nowrap;" data-ls="offsetxin:right;durationin:50;easingin:linear;fadein:false;offsetxout:left;durationout:9000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bg-fishes-far.png" alt="Fish"><img class="ls-l" style="top:131px;left:358px;white-space: nowrap;" data-ls="offsetxin:right;durationin:3000;delayin:1000;easingin:linear;fadein:false;offsetxout:left;durationout:3000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bg-fishes-mid.png" alt="Fishes"><img class="ls-l" style="top:196px;left:255px;white-space: nowrap;" data-ls="offsetxin:right;durationin:4000;delayin:1000;easingin:linear;fadein:false;offsetxout:left;durationout:3000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bg-fishes-mid.png" alt="Fishes"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;durationin:0;easingin:linear;offsetxout:0;durationout:0;easingout:linear;" src="img/slider/blank.gif" data-src="img/slider/3d/abyss-bg-mask.png" alt="Abyss">
+				<h1 class="ls-l" style="top:30%;left:50%;text-shadow: 0px 0px 20px white; font-weight: normal;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:50px;color:white;white-space: nowrap;" data-ls="offsetxin:0;durationin:2500;offsetxout:0;durationout:2500;showuntil:1;">LayerSlider</h1>
+				<h1 class="ls-l" style="top:50%;left:50%;text-shadow: 0px 0px 20px white; font-weight: normal;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:120px;color:white;white-space: nowrap;" data-ls="offsetxin:0;durationin:2500;delayin:500;offsetxout:0;durationout:2500;showuntil:1;">3D</h1>
+				<h1 class="ls-l" style="top:70%;left:50%;text-shadow: 0px 0px 20px white; font-weight: normal;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:50px;color:white;white-space: nowrap;" data-ls="offsetxin:0;durationin:2500;delayin:1200;offsetxout:0;durationout:2500;showuntil:1;">demo slider</h1>
+				<img class="ls-l" style="top:20px;left:1000px;white-space: nowrap;" data-ls="offsetxin:left;durationin:6500;easingin:linear;fadein:false;offsetxout:right;durationout:0;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/shark.png" alt="Shark"><img class="ls-l" style="top:218px;left:481px;white-space: nowrap;" data-ls="offsetxin:right;durationin:4000;delayin:2000;easingin:easeOutQuad;fadein:false;offsetxout:left;durationout:4000;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-fish-far.png" alt="Fish"><img class="ls-l" style="top:286px;left:646px;white-space: nowrap;" data-ls="offsetxin:right;durationin:4000;delayin:3000;easingin:easeOutQuad;fadein:false;offsetxout:left;durationout:3000;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-fish-far.png" alt="Fish"><img class="ls-l" style="top:315px;left:325px;white-space: nowrap;" data-ls="offsetxin:right;durationin:4000;delayin:2500;easingin:easeOutQuad;fadein:false;offsetxout:left;durationout:4000;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-fish-mid.png" alt="Fish"><img class="ls-l" style="top:143px;left:695px;white-space: nowrap;" data-ls="offsetxin:right;durationin:4000;delayin:3500;easingin:easeOutQuad;fadein:false;offsetxout:left;durationout:2500;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-fish-close.png" alt="Fish"><img class="ls-l" style="top:84px;left:458px;white-space: nowrap;" data-ls="offsetxin:right;durationin:3000;delayin:2800;easingin:linear;fadein:false;offsetxout:left;durationout:3000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-fish-mid.png" alt="Fish"><img class="ls-l" style="top:272px;left:685px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2000;delayin:3000;easingin:easeOutExpo;fadein:false;offsetxout:left;durationout:3000;showuntil:1;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/med-fish-mid.png" alt="Fish"><img class="ls-l" style="top:70px;left:244px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2000;delayin:5300;easingin:easeOutExpo;fadein:false;offsetxout:left;durationout:2000;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/med-fish-mid.png" alt="Fish"><img class="ls-l" style="top:200px;left:196px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2000;delayin:4000;easingin:easeOutExpo;fadein:false;offsetxout:left;durationout:3000;showuntil:1;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/med-fish-mid.png" alt="Fish"><img class="ls-l" style="top:246px;left:339px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2400;delayin:5500;easingin:easeOutExpo;fadein:false;offsetxout:left;durationout:2000;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/med-fish-close.png" alt="Fish"><img class="ls-l" style="top:12px;left:344px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2000;delayin:3300;easingin:easeOutCirc;fadein:false;offsetxout:left;durationout:3000;showuntil:1;easingout:easeInOutExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/big-fish-close.png" alt="Fish"><img class="ls-l" style="top:194px;left:454px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2000;delayin:6000;easingin:easeOutExpo;fadein:false;offsetxout:left;durationout:1700;easingout:easeInExpo;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/big-fish-close.png" alt="Fish">
+			</div>
+
+			<div class="ls-slide" data-ls="slidedelay:4500;transition2d:all;transition3d:36;timeshift:-1000;"><img src="img/slider/blank.gif" data-src="img/slider/3d/3d-bg.jpg" class="ls-bg" alt="3d-bg" /><img class="ls-l" style="top:20px;left:106px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;easingin:easeOutElastic;fadein:false;offsetxout:right;durationout:1500;showuntil:1;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-cube-blur.png" alt="Cube"><img class="ls-l" style="top:153px;left:342px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:50;easingin:easeOutElastic;fadein:false;offsetxout:right;durationout:1500;showuntil:700;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-cube-blur.png" alt="Cube"><img class="ls-l" style="top:276px;left:252px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:100;easingin:easeOutElastic;fadein:false;offsetxout:left;durationout:1500;showuntil:400;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-cube-blur.png" alt="Cube"><img class="ls-l" style="top:199px;left:585px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:50;easingin:easeOutElastic;fadein:false;offsetxout:left;durationout:1500;showuntil:950;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-cube-blur.png" alt="Cube"><img class="ls-l" style="top:37px;left:525px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;easingin:easeOutElastic;fadein:false;offsetxout:left;durationout:1500;showuntil:250;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/small-cube-blur.png" alt="Cube"><img class="ls-l" style="top:116px;left:86px;white-space: nowrap;" data-ls="offsetxin:0;durationin:1500;delayin:1500;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/sayhello.png" alt="Say hello"><img class="ls-l" style="top:190px;left:135px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:50;easingin:easeOutElastic;fadein:false;offsetxout:right;durationout:1500;showuntil:100;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/mid-cube-blur.png" alt="Cube"><img class="ls-l" style="top:340px;left:322px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:150;easingin:easeOutElastic;fadein:false;offsetxout:right;durationout:1500;showuntil:500;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/mid-cube-blur.png" alt="Cube"><img class="ls-l" style="top:398px;left:587px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:100;easingin:easeOutElastic;fadein:false;offsetxout:left;durationout:1500;showuntil:300;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/mid-cube-blur.png" alt="Cube"><img class="ls-l" style="top:211px;left:16px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:100;easingin:easeOutElastic;fadein:false;offsetxout:right;durationout:1500;showuntil:300;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/big-cube.png" alt="Cube"><img class="ls-l" style="top:251px;left:746px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:3000;delayin:200;easingin:easeOutElastic;fadein:false;offsetxout:left;durationout:1500;showuntil:50;easingout:easeInBack;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/big-cube.png" alt="Cube"></div>
+			
+			<div class="ls-slide" data-ls="slidedelay:5600;transition2d:all;transition3d:58,74;">
+				<img src="img/slider/blank.gif" data-src="img/slider/3d/autumn-bg.jpg" class="ls-bg" alt="autumn-bg" /><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2500;delayin:2500;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/summer-bg.jpg" alt="Spring"><img class="ls-l" style="top:9px;left:101px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;easingin:easeOutQuint;fadein:false;rotatein:360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-1.png" alt="Autumn Leaf"><img class="ls-l" style="top:210px;left:240px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:200;easingin:easeOutQuint;fadein:false;rotatein:-360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-2.png" alt="Autumn Leaf"><img class="ls-l" style="top:193px;left:480px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:400;easingin:easeOutQuint;fadein:false;rotatein:360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-3.png" alt="Autumn Leaf"><img class="ls-l" style="top:311px;left:623px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:600;easingin:easeOutQuint;fadein:false;rotatein:-360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-4.png" alt="Autumn Leaf"><img class="ls-l" style="top:407px;left:371px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:800;easingin:easeOutQuint;fadein:false;rotatein:360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-5.png" alt="Autumn Leaf"><img class="ls-l" style="top:232px;left:392px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:1000;easingin:easeOutQuint;fadein:false;rotatein:-360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-6.png" alt="Autumn Leaf"><img class="ls-l" style="top:190px;left:67px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:1200;easingin:easeOutQuint;fadein:false;rotatein:360;offsetxout:0;durationout:1000;showuntil:1000;" src="img/slider/blank.gif" data-src="img/slider/3d/a-l-7.png" alt="Autumn Leaf"><img class="ls-l" style="top:9px;left:101px;white-space: nowrap;" data-ls="offsetxin:0;delayin:2500;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-1.png" alt="Spring Leaf"><img class="ls-l" style="top:210px;left:240px;white-space: nowrap;" data-ls="offsetxin:0;delayin:2700;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-2.png" alt="Spring Leaf"><img class="ls-l" style="top:193px;left:480px;white-space: nowrap;" data-ls="offsetxin:0;delayin:2900;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-3.png" alt="Spring Leaf"><img class="ls-l" style="top:311px;left:623px;white-space: nowrap;" data-ls="offsetxin:0;delayin:3100;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-4.png" alt="Spring Leaf"><img class="ls-l" style="top:407px;left:371px;white-space: nowrap;" data-ls="offsetxin:0;delayin:3300;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-5.png" alt="Spring Leaf"><img class="ls-l" style="top:232px;left:392px;white-space: nowrap;" data-ls="offsetxin:0;delayin:3500;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-6.png" alt="Spring Leaf"><img class="ls-l" style="top:190px;left:67px;white-space: nowrap;" data-ls="offsetxin:0;delayin:3700;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/s-l-7.png" alt="Spring Leaf">
+				<p class="ls-l" style="top:83px;left:277px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:white;white-space: nowrap;" data-ls="offsetxin:left;delayin:1000;fadein:false;offsetxout:left;durationout:1500;showuntil:2000;fadeout:false;">The improve</p>
+				<p class="ls-l" style="top:62px;left:451px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:60px;color:white;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:2000;delayin:1500;easingin:easeOutElastic;fadein:false;offsetxout:0;offsetyout:top;durationout:1500;showuntil:500;fadeout:false;">is</p>
+				<p class="ls-l" style="top:83px;left:503px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:white;white-space: nowrap;" data-ls="offsetxin:right;delayin:1000;fadein:false;offsetxout:right;durationout:1500;showuntil:2000;fadeout:false;">to change.</p>
+				<p class="ls-l" style="top:137px;left:367px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:white;white-space: nowrap;" data-ls="offsetxin:left;delayin:1750;fadein:false;offsetxout:left;durationout:1500;showuntil:1500;fadeout:false;">To be perfect</p>
+				<p class="ls-l" style="top:116px;left:555px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:60px;color:white;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:1500;delayin:2250;easingin:easeOutElastic;fadein:false;offsetxout:0;offsetyout:bottom;durationout:1500;showuntil:500;fadeout:false;">is</p>
+				<p class="ls-l" style="top:137px;left:608px;text-shadow: 0px 0px 10px white;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:white;white-space: nowrap;" data-ls="offsetxin:right;delayin:1750;fadein:false;offsetxout:right;durationout:1500;showuntil:1500;fadeout:false;">to change often.</p>
+				<p class="ls-l" style="top:198px;left:722px;text-shadow: 0px 0px 10px white; font-style: italic;font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:20px;color:white;white-space: nowrap;" data-ls="offsetxin:0;delayin:2500;offsetxout:0;durationout:1500;showuntil:1000;">- Winston Churchill</p>
+			</div>
+
+			<div class="ls-slide" data-ls="slidedelay:10050;transition2d:all;transition3d:68,69,77,78;">
+				<img src="img/slider/blank.gif" data-src="img/slider/3d/cubes-bg.jpg" class="ls-bg" alt="cubes-bg" /><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;easingin:easeInOutQuad;offsetxout:0;durationout:1000;easingout:easeInOutQuad;" src="img/slider/blank.gif" data-src="img/slider/3d/cubes-blur.jpg" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:2500;delayin:500;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5700;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-1.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2500;delayin:600;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5100;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-2.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2500;delayin:700;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5200;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-3.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:left;durationin:2500;delayin:800;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5500;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-4.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:2500;delayin:900;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5500;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-5.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:right;durationin:2500;delayin:1000;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:4600;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-6.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2500;delayin:1100;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:5100;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-7.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:left;durationin:2500;delayin:1200;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:4800;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-8.png" alt="Tile"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:2500;delayin:1300;easingin:easeOutBack;fadein:false;offsetxout:left;durationout:1500;showuntil:4500;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/tile-9.png" alt="Tile">
+				<p class="ls-l" style="top:45px;left:30px;box-shadow: 0px 3px 10px -3px #002c4b; background: #02cef7; background: -moz-linear-gradient(top, #02cef7 0%, #009bba 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02cef7), color-stop(100%,#009bba)); background: -webkit-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -o-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -ms-linear-gradient(top, #02cef7 0%,#009bba 100%); background: linear-gradient(to bottom, #02cef7 0%,#009bba 100%); text-shadow: 0px -1px 1px #00819c;padding-top:10px;padding-right:15px;padding-bottom:10px;padding-left:15px;border-top:4px solid white;font-family:Helvetica, Arial, sans-serif;font-size:20px;color:white;border-radius:7px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;delayin:1500;easingin:easeOutExpo;fadein:false;rotatein:-120;offsetxout:0;durationout:1000;showuntil:2000;easingout:easeInQuart;scalexout:0.5;scaleyout:0.5;">200+ 2D &amp; 3D transitions with Transition Builder!</p>
+				<p class="ls-l" style="top:360px;left:450px;box-shadow: 0px 3px 10px -3px #002c4b; background: #02cef7; background: -moz-linear-gradient(top, #02cef7 0%, #009bba 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02cef7), color-stop(100%,#009bba)); background: -webkit-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -o-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -ms-linear-gradient(top, #02cef7 0%,#009bba 100%); background: linear-gradient(to bottom, #02cef7 0%,#009bba 100%); text-shadow: 0px -1px 1px #00819c;padding-top:10px;padding-right:15px;padding-bottom:10px;padding-left:15px;border-top:4px solid white;font-family:Helvetica, Arial, sans-serif;font-size:20px;color:white;border-radius:7px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;delayin:3000;easingin:easeOutExpo;fadein:false;rotatein:-120;offsetxout:0;durationout:1000;showuntil:2000;easingout:easeInQuart;scalexout:0.5;scaleyout:0.5;">Use with any HTML content including embedded videos!</p>
+				<p class="ls-l" style="top:100px;left:505px;box-shadow: 0px 3px 10px -3px #002c4b; background: #02cef7; background: -moz-linear-gradient(top, #02cef7 0%, #009bba 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02cef7), color-stop(100%,#009bba)); background: -webkit-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -o-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -ms-linear-gradient(top, #02cef7 0%,#009bba 100%); background: linear-gradient(to bottom, #02cef7 0%,#009bba 100%); text-shadow: 0px -1px 1px #00819c;padding-top:10px;padding-right:15px;padding-bottom:10px;padding-left:15px;border-top:4px solid white;font-family:Helvetica, Arial, sans-serif;font-size:20px;color:white;border-radius:7px;white-space: nowrap;" data-ls="offsetxin:right;delayin:4500;easingin:easeOutExpo;fadein:false;rotatein:120;offsetxout:0;durationout:1000;showuntil:2000;easingout:easeInQuart;scalexout:0.5;scaleyout:0.5;">Responsive with Smart Resize &amp; Touch-enabled!</p>
+				<p class="ls-l" style="top:400px;left:10px;box-shadow: 0px 3px 10px -3px #002c4b; background: #02cef7; background: -moz-linear-gradient(top, #02cef7 0%, #009bba 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02cef7), color-stop(100%,#009bba)); background: -webkit-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -o-linear-gradient(top, #02cef7 0%,#009bba 100%); background: -ms-linear-gradient(top, #02cef7 0%,#009bba 100%); background: linear-gradient(to bottom, #02cef7 0%,#009bba 100%); text-shadow: 0px -1px 1px #00819c;padding-top:10px;padding-right:15px;padding-bottom:10px;padding-left:15px;border-top:4px solid white;font-family:Helvetica, Arial, sans-serif;font-size:20px;color:white;border-radius:7px;white-space: nowrap;" data-ls="offsetxin:left;delayin:6000;easingin:easeOutExpo;fadein:false;rotatein:120;offsetxout:0;durationout:1000;showuntil:2000;easingout:easeInQuart;scalexout:0.5;scaleyout:0.5;">Multisite, Multi-language &amp; Localization ready!</p>
+			</div>
+			
+			<div class="ls-slide" data-ls="slidedelay:6000;transition2d:all;transition3d:45,46,47,48,49,50;">
+				<img src="img/slider/blank.gif" data-src="img/slider/3d/bbb-bg.jpg" class="ls-bg" alt="bbb-bg" /><img class="ls-l" style="top:-90px;left:500px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeInOutQuad;offsetxout:left;durationout:50000;showuntil:1;easingout:easeInQuad;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bbb-clouds-far.png" alt="Clouds"><img class="ls-l" style="top:-60px;left:1000px;white-space: nowrap;" data-ls="offsetxin:right;durationin:0;delayin:10000;easingin:linear;fadein:false;offsetxout:left;durationout:40000;showuntil:1;easingout:linear;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bbb-clouds-close.png" alt="Clouds"><img class="ls-l" style="top:0px;left:0px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:0;delayin:1000;easingin:linear;fadein:false;offsetxout:0;durationout:1500;easingout:linear;" src="img/slider/blank.gif" data-src="img/slider/3d/bbb-bg-mask.png" alt="Mask">
+				<div class="ls-l" style="top:154px;left:465px;box-shadow: 0px 5px 35px -2px black;width:510px;height:291px;background:white;border-radius:2px;white-space: nowrap;" data-ls="offsetxin:right;durationin:1500;easingin:easeOutBack;fadein:false;offsetxout:0;offsetyout:bottom;durationout:1500;fadeout:false;"></div>
+				<div class="ls-l" style="top:159px;left:470px;white-space: nowrap;" data-ls="offsetxin:right;durationin:1500;easingin:easeOutBack;fadein:false;offsetxout:0;offsetyout:bottom;durationout:1500;fadeout:false;"><iframe src="http://player.vimeo.com/video/79287693?title=0&amp;byline=0&amp;portrait=0&amp;color=e4f000" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> </div>
+				<img class="ls-l" style="top:35px;left:715px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:top;durationin:1500;delayin:1500;fadein:false;offsetxout:0;offsetyout:top;durationout:1500;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/easy.png" alt="Easy to embed"><img class="ls-l" style="top:37px;left:188px;white-space: nowrap;" data-ls="offsetxin:0;durationin:1500;delayin:5000;offsetxout:0;durationout:1500;" src="img/slider/blank.gif" data-src="img/slider/3d/vfeatures.png" alt="Features"><img class="ls-l" style="top:304px;left:159px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:bottom;durationin:2000;delayin:3000;easingin:easeOutBack;fadein:false;offsetxout:0;offsetyout:top;durationout:1500;fadeout:false;" src="img/slider/blank.gif" data-src="img/slider/3d/bi-colored-butterfly-source_ijc.gif" alt="Butterfly"><img class="ls-l" style="top:119px;left:234px;white-space: nowrap;" data-ls="offsetxin:0;delayin:16000;offsetxout:0;durationout:1000;showuntil:2000;" src="img/slider/blank.gif" data-src="img/slider/3d/acorn.png" alt="Acorn">
+			</div>
+		</div>
+	</div>
+	<!-- END LAYER SLIDER
+	============================================= -->
+
+	<!-- CONTENT 
+	============================================= -->
+	<div class="content">
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-12">
+						<h2 style="text-align: center">Boson&nbsp;makes it easy for you to build professional websites in minutes.</h2>
+						<p class="centered">Just use the builder to drag &amp; drop page elements to create your own custom layouts!</p>
+						<hr class="dashed">
+						<hr class="dashed">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-3">
+						<p class="centered"><i class="icon-suitcase " style="color: #999999; font-size: 48px;"></i></p>
+						<h3 class="vcex-icon-box-six-heading centered">EASY TO USE</h3>
+						<div class="vcex-icon-box-six-content clr">
+							<p class="centered">Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit cras vel est.</p>
+						</div>
+					</div>
+					<div class="row-item col-md-3">
+						<p class="centered"><i class="icon-rocket " style="color: #999999; font-size: 48px;"></i></p>
+						<h3 class="vcex-icon-box-six-heading centered">SUPER&nbsp;FAST</h3>
+						<div class="vcex-icon-box-six-content clr">
+							<p class="centered">Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit cras vel est.</p>
+						</div>
+					</div>
+					<div class="row-item col-md-3">
+						<p class="centered"><i class="icon-shield " style="color: #999999; font-size: 48px;"></i></p>
+						<h3 class="vcex-icon-box-six-heading centered">SAFE &amp; SECURE</h3>
+						<div class="vcex-icon-box-six-content clr">
+							<p class="centered">Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit cras vel est.</p>
+						</div>
+					</div>
+					<div class="row-item col-md-3">
+						<p class="centered"><i class="icon-cloud-upload " style="color: #999999; font-size: 48px;"></i></p>
+						<h3 class="vcex-icon-box-six-heading centered">RELIABLE</h3>
+						<div class="vcex-icon-box-six-content clr">
+							<p class="centered">Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit cras vel est.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container layout">
+			<h3 class="lined margin-30">Our Work</h3>
+			<div class="row port b-works">
+				<div class="row-item col-md-4 identity photography tehnology">
+					<div class="work">
+						<a href="http://vimeo.com/67500403" rel="prettyPhoto" class="work-image">
+							<img src="img/port/spring-flowers.jpg" alt="">
+							<div class="link-overlay icon-play"></div>
+						</a>
+						<a href="#" class="work-name">Smiling</a>
+						<div class="tags">
+							Identity, Photography, Tehnology 
+						</div>
+					</div>
+				</div>
+				<div class="row-item col-md-4 photography webdesign">
+					<div class="work">
+						<a href="img/port/surfer-big.jpg" rel="prettyPhoto" class="work-image">
+							<img src="img/port/surfer.jpg" alt="">
+							<div class="link-overlay icon-search"></div>
+						</a>
+						<a href="#" class="work-name">Surfer</a>
+						<div class="tags">
+							Photography, Webdesign
+						</div>
+					</div>
+				</div>
+				<div class="row-item col-md-4 identity">
+					<div class="work">
+						<a href="http://vimeo.com/67500403" rel="prettyPhoto" class="work-image">
+							<img src="img/port/architecture.jpg" alt="">
+							<div class="link-overlay icon-play"></div>
+						</a>
+						<a href="#" class="work-name">Architecture</a>
+						<div class="tags">
+							Identity
+						</div>
+					</div>
+				</div>
+				<div class="row-item col-md-4 tehnology">
+					<div class="work">
+						<a href="img/port/yacht-sailing-big.jpg" rel="prettyPhoto" class="work-image">
+							<img src="img/port/yacht-sailing.jpg" alt="">
+							<div class="link-overlay icon-search"></div>
+						</a>
+						<a href="#" class="work-name">Yacht Sailing</a>
+						<div class="tags">
+							Tehnology
+						</div>
+					</div>
+				</div>
+				<div class="row-item col-md-4 photography">
+					<div class="work">
+						<a href="http://vimeo.com/67500403" rel="prettyPhoto" class="work-image">
+							<img src="img/port/golf.jpg" alt="">
+							<div class="link-overlay icon-play"></div>
+						</a>
+						<a href="#" class="work-name">Golf</a>
+						<div class="tags">
+							Photography
+						</div>
+					</div>
+				</div>
+				<div class="row-item col-md-4 tehnology">
+					<div class="work">
+						<a href="img/port/spring-flowers-big.jpg" rel="prettyPhoto" class="work-image">
+							<img src="img/port/spring-flowers.jpg" alt="">
+							<div class="link-overlay icon-search"></div>
+						</a>
+						<a href="#" class="work-name">Spring Flowers</a>
+						<div class="tags">
+							Tehnology
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-6">
+						<div class="accordion">
+							<div class="b-accordion">
+								<h3 class="lined margin-20">A Little About Us</h3>
+								<div class="b-spoiler m-alt active">
+									<div class="spoiler-title active">
+										<span>Our Mission</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+								<div class="b-spoiler m-alt">
+									<div class="spoiler-title">
+										<span>Our Values</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+								<div class="b-spoiler m-alt">
+									<div class="spoiler-title">
+										<span>Our Promises</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row-item col-md-6">
+						<div class="testimonials">
+							<h3 class="lined margin-20">What People Are Saying</h3>
+							<div class="row">
+								<div class="row-item col-md-6">
+									<div class="b-quote">
+										<img class="quote-ava" src="img/team/team-7.jpg" alt="">
+										<div class="quote-text">
+											Duis sit amet orci et lectus dictum auctor a nec enim. Donec suscipit fringilla elementum. Suspendisse nec justo ut felis ornare tincidunt vitae et lectus. In iaculis mauris luctus massa pellentesque blandit. Integer et neque. Nulla vitae dictum nisi, ut ultrices tortor. Proin placerat porttitor nunc sed porttitor.
+											<div class="quote-author-name">Isabel Roth</div>
+											<div class="quote-author-position">
+												Writer <a href="" class="link"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="shortcodes parallax" data-stellar-background-ratio="0.5" style="background: rgb(247, 247, 247);">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-8">
+						<h3>Boson&nbsp;is a responsive, drag &amp; drop, flexible multipurpose WordPress theme that is perfect for any website.</h3>
+						<p class="centered">What's not to love? Get it today!</p>
+					</div>
+					<div class="row-item col-md-4">
+						<a href="http://themeforest.net/item/boson-responsive-multipurpose-html5-template/11043414" class="btn big turquoise"><i class="icon-shopping-cart"></i>Buy Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END CONTENT 
+	============================================= -->
+
+	<!-- FOOTER 
+	============================================= -->
+	<div class="footer">
+		<!-- Widget Area -->
+		<div class="b-widgets">
+			<div class="container layout">
+				<div class="row">
+					<!-- About -->
+					<div class="row-item col-md-3">
+						<img src="img/logo.png" alt="" style="margin-bottom: 10px;">
+						<p>
+							 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+						</p>
+					</div>
+					<!-- End About -->
+					<!-- Latest Tweets -->
+					<div class="row-item col-md-3">
+						<h3>Latest Tweets</h3>
+						<div class="b-twitter m-footer">
+							<ul>
+								<!-- Twitter Message 1 -->
+								<li>
+									<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem <a href="#" class="link">http://twitter.com</a></span>
+									<span class="twit-date">Jan 7, 2013</span>
+								</li>
+								<!-- Twitter Message 2 -->
+								<li>
+									<span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aliquid :) <a href="#" class="link">http://twitter.com</a></span>
+									<span class="twit-date">Jan 7, 2013</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Latest Tweets -->
+					<!-- Latest Project -->
+					<div class="row-item col-md-3">
+						<h3>Latest Projects</h3>
+						<div class="latest-project">
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-1.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-2.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-3.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-4.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-5.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-6.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<!-- End Latest Project -->
+					<!-- Contact Information -->
+					<div class="row-item col-md-3">
+						<h3>Contact Information</h3>
+						<!-- Address -->
+						<ul class="b-list b-contact m-dark" style="margin-bottom: 15px;">
+							<li class="contact-address"><i class="icon-map-marker"></i><span>103088. Ut wisi enim ad minim veniam, quis nostrud.</span></li>
+							<li class="contact-mail"><i class="icon-envelope"></i><a href="#">mail@mail.com</a></li>
+							<li class="contact-phone"><i class="icon-phone"></i><span>+1 (229) 991-22-11</span></li>
+							<li class="contact-address"><i class="icon-time"></i><span>Monday-Friday: 9:<sup>00</sup> — 18:<sup>00</sup><br>
+							Saturday: 10:<sup>00</sup> — 17:<sup>00</sup><br>
+							Sunday: closed</span>
+							</li>
+						</ul>
+						<!-- End Address -->
+					</div>
+					<!-- End Contact Information -->
+				</div>
+			</div>
+		</div>
+		<!-- End Widget Area -->
+		<!-- Copyright Area -->
+		<div class="b-copyright">
+			<div class="container layout">
+				<!-- Copyright Text -->
+				<span class="copy">Copyright © 2013 <a href="#">Boson</a>. All Right Reserved.</span>
+				<!-- Social Icons -->
+				<ul class="b-social bot">
+					<li>Follow Us:</li>
+					<li><a class="fb" href="#"><i class="icon-facebook"></i></a></li>
+					<li><a class="tw" href="#"><i class="icon-twitter"></i></a></li>
+					<li><a class="gl" href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a class="dr" href="#"><i class="icon-dribbble"></i></a></li>
+					<li><a class="sk" href="#"><i class="icon-skype"></i></a></li>
+					<li><a class="rss" href="#"><i class="icon-rss"></i></a></li>
+					<!-- 
+					<li><a class="yt" href="#"><i class="icon-youtube"></i></a></li>
+					<li><a class="tl" href="#"><i class="icon-tumblr"></i></a></li>
+					<li><a class="is" href="#"><i class="icon-instagram"></i></a></li>
+					<li><a class="pt" href="#"><i class="icon-pinterest"></i></a></li>
+					<li><a class="lin" href="#"><i class="icon-linkedin"></i></a></li>
+					<li><a class="vk" href="#"><i class="icon-vk"></i></a></li>
+					<li><a class="dx" href="#"><i class="icon-dropbox"></i></a></li>
+					<li><a class="fs" href="#"><i class="icon-foursquare"></i></a></li>
+					<li><a class="gh" href="#"><i class="icon-github-alt"></i></a></li>
+					<li><a class="mx" href="#"><i class="icon-maxcdn"></i></a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- END FOOTER 
+	============================================= -->
+	
+</div>
+<!-- END MAIN 
+============================================= -->
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+<?php $this->sidebar = 'nav-hidden'; //nav-show ?>

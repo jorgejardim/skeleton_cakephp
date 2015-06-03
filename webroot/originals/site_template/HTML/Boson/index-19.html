@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>Boson</title>
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen"/>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/yamm/yamm.css">
+	<link rel="stylesheet" href="css/color-scheme/blue.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
+	<!-- Base JS -->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/main.js"></script>
+	
+	<!-- LayerSlider -->
+	<link rel="stylesheet" href="js/layerslider/css/layerslider.css" type="text/css">
+	<script src="js/layerslider/js/jquery.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/greensock.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+	<script src="js/layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var lsjQuery = jQuery;
+		lsjQuery(document).ready(function() {
+			if (typeof lsjQuery.fn.layerSlider == "undefined") {
+				lsShowNotice('layerslider_2', 'jquery');
+			} else {
+				lsjQuery("#layerslider_2").layerSlider({
+					responsive: false,
+					responsiveUnder: 980,
+					layersContainer: 980,
+					startInViewport: false,
+					skin: 'fullwidth',
+					globalBGColor: 'transparent',
+					hoverPrevNext: false,
+					navStartStop: false,
+					navButtons: false,
+					showCircleTimer: false,
+					autoPlayVideos: false,
+					yourLogoStyle: 'left: 10px; top: 10px;',
+					cbInit: function(element) {},
+					cbStart: function(data) {},
+					cbStop: function(data) {},
+					cbPause: function(data) {},
+					cbAnimStart: function(data) {},
+					cbAnimStop: function(data) {},
+					cbPrev: function(data) {},
+					cbNext: function(data) {},
+					skinsPath: 'js/layerslider/skins/'
+				})
+			}
+		});
+	</script>
+
+	<!-- Prety photo -->
+	<script src="js/jquery.prettyPhoto.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("a[rel^='prettyPhoto']").prettyPhoto();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="main">
+
+	<!-- TOP BAR 
+	============================================= -->
+	<div class="b-top-bar">
+		<div class="container layout">
+			<!-- Some text -->
+			<div class="wrap-left">
+				<span class="top-bar-text">Duis autem vel eum iriure dolor in hendrerit.</span>
+			</div>
+			<div class="wrap-right">
+				<!-- Phone -->
+				<span class="top-bar-phone"><span class="icon-phone">Call us: </span> 1.244.145.3232</span>
+				<!-- Social Icons -->
+				<div class="top-bar-social">
+					<a class="fb" href="#"><i class="icon-facebook"></i></a>
+					<a class="tw" href="#"><i class="icon-twitter"></i></a>
+					<a class="lin" href="#"><i class="icon-linkedin"></i></a>
+					<a class="gl" href="#"><i class="icon-google-plus"></i></a>
+					<a class="dr" href="#"><i class="icon-dribbble"></i></a>
+					<a class="sk" href="#"><i class="icon-skype"></i></a>
+					<a class="rss" href="#"><i class="icon-rss"></i></a>
+					<!-- 
+					<a class="yt" href="#"><i class="icon-youtube"></i></a>
+					<a class="pt" href="#"><i class="icon-pinterest"></i></a>
+					<a class="tl" href="#"><i class="icon-tumblr"></i></a>
+					<a class="is" href="#"><i class="icon-instagram"></i></a>
+					<a class="vk" href="#"><i class="icon-vk"></i></a>
+					<a class="dx" href="#"><i class="icon-dropbox"></i></a>
+					<a class="fs" href="#"><i class="icon-foursquare"></i></a>
+					<a class="gh" href="#"><i class="icon-github-alt"></i></a>
+					<a class="mx" href="#"><i class="icon-maxcdn"></i></a> 
+					-->
+				</div>
+				<!-- End Social Icons -->
+			</div>
+		</div>
+	</div>
+	<!-- END TOP BAR 
+	============================================= -->
+
+	<!-- HEADER 
+	============================================= -->
+	<div class="header">
+		<header>
+			<div class="navbar yamm navbar-default navbar-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a href="./index.html" class="navbar-brand logo"><img src="img/logo.png" alt=""></a>
+					</div>
+					<div id="navbar-collapse-1" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<!-- Classic list -->
+							<li class="dropdown yamm-fw yamm-fw5">
+								<a href="./index.html" data-toggle="dropdown" class="dropdown-toggle active">Home</a>
+								<ul class="dropdown-menu">
+									<li>
+										<div class="yamm-content">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3 m-submenu first">
+													<div class="mmenu-title">Home 1-5</div>
+													<a href="index.html">Home Version: 1</a>
+													<a href="index-2.html">Home Version: 2</a>
+													<a href="index-3.html">Home Version: 3</a>
+													<a href="index-4.html">Home Version: 4</a>
+													<a href="index-5.html">Home Version: 5</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 6-10</div>
+													<a href="index-6.html">Home Version: 6</a>
+													<a href="index-7.html">Home Version: 7</a>
+													<a href="index-8.html">Home Version: 8</a>
+													<a href="index-9.html">Home Version: 9</a>
+													<a href="index-10.html">Home Version: 10</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 11-15</div>
+													<a href="index-11.html">Home Version: 11</a>
+													<a href="index-12.html">Home Version: 12</a>
+													<a href="index-13.html">Home Version: 13</a>
+													<a href="index-14.html">Home Version: 14</a>
+													<a href="index-15.html">Home Version: 15</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 16-20</div>
+													<a href="index-16.html">Home Version: 16</a>
+													<a href="index-17.html">Home Version: 17</a>
+													<a href="index-18.html">Home Version: 18</a>
+													<a href="index-19.html">Home Version: 19</a>
+													<a href="index-20.html">Home Version: 20</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Home 21-25</div>
+													<a href="index-21.html">Home Version: 21</a>
+													<a href="index-22.html">Home Version: 22</a>
+													<a href="index-23.html">Home Version: 23</a>
+													<a href="index-24.html">Home Version: 24</a>
+													<a href="index-onepage.html">One Page</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Landing Pages</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="landing-1.html">Fashion - NEW</a></li>
+									<li><a href="landing-2.html">Portfolio - NEW</a></li>
+									<li><a href="landing-3.html">App</a></li>
+									<li><a href="index-onepage.html">Corporate</a></li>
+									<li><a href="landing-4.html">Creative</a></li>
+									<li><a href="landing-5.html">Hosting</a></li>
+									<li><a href="landing-6.html">Marketing</a></li>
+									<li><a href="landing-7.html">Resume</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Header</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="index.html">Header: 1</a></li>
+									<li><a href="header-2.html">Header: 2</a></li>
+									<li><a href="header-3.html">Header: 3</a></li>
+									<li><a href="header-4.html">Header: 4</a></li>
+									<li><a href="header-5.html">Header: Transparent</a></li>
+								</ul>
+							</li>
+							<li class="dropdown yamm-fw">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+								<ul class="dropdown-menu">
+									<li>
+										<div class="yamm-content">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3 m-submenu first">
+													<div class="mmenu-title">Services</div>
+													<a href="services-2.html">Services: 2</a>
+													<a href="services-3.html">Services: 3</a>
+													<a href="services-4.html">Services: 4</a>
+													<a href="services-5.html">Services: 5</a>
+													<a href="services-6.html">Services: 6</a>
+													<a href="icon-boxes-1.html">Services Elements: 1</a>
+													<a href="icon-boxes-2.html">Services Elements: 2</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Main Features</div>
+													<a href="about-us.html">About Us</a>
+													<a href="pricing.html">Pricing Tables</a>
+													<a href="testimonials.html">Testimonials</a>
+													<a href="testimonials-2.html">Testimonials: 2</a>
+													<a href="404-error-page.html">404 Error Page</a>
+													<a href="search-results.html">Search Results</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Special Features</div>
+													<a href="meet-the-team.html">Meet The Team</a>
+													<a href="faq.html">F.A.Q.</a>
+													<a href="full-width-page.html">Full Width Page</a>
+													<a href="side-navigation.html">Side Navigation</a>
+													<a href="page-with-right-sidebar.html">Page With Right Sidebar</a>
+													<a href="page-with-left-sidebar.html">Page With Left Sidebar</a>
+												</div>
+												<div class="col-xs-12 col-sm-3 m-submenu">
+													<div class="mmenu-title">Shop Pages</div>
+													<a href="./shop.html">Shop - Home</a>
+													<a href="./shop-single.html">Shop - Single</a>
+													<a href="./shop_checkout.html">Shop - Checkout</a>
+													<a href="./shop_cart.html">Shop - Cart</a>
+													<a href="no-title-bar.html">No Title Bar</a>
+													<a href="contact-us-1.html">Contact Us</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Portfolio</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="portfolio-2-columns.html">Portfolio: 2 Columns</a></li>
+									<li><a href="portfolio-3-columns.html">Portfolio: 3 Columns</a></li>
+									<li><a href="portfolio-4-columns.html">Portfolio: 4 Columns</a></li>
+									<li class="dropdown-submenu">
+										<a href="#">Single Project: Wide</a>
+										<ul class="dropdown-menu">
+											<li><a href="portfolio-single-wide-image.html">Image</a></li>
+											<li><a href="portfolio-single-wide-slider.html">Slider</a></li>
+											<li><a href="portfolio-single-wide-video.html">Video</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a href="#">Single Project: Half</a>
+										<ul class="dropdown-menu">
+											<li><a href="portfolio-single-half-image.html">Image</a></li>
+											<li><a href="portfolio-single-half-slider.html">Slider</a></li>
+											<li><a href="portfolio-single-half-video.html">Video</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="blog-large.html">Blog: Large Images</a></li>
+									<li><a href="blog-medium.html">Blog: Medium Images</a></li>
+									<li class="dropdown-submenu">
+										<a href="#">Blog: Single Post</a>
+										<ul class="dropdown-menu">
+											<li><a href="blog-single-image.html">Image</a></li>
+											<li><a href="blog-single-slider.html">Slider</a></li>
+											<li><a href="blog-single-video.html">Video</a></li>
+										</ul>
+									</li>
+									<li><a href="news.html">News</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Elements</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="icon-boxes-1.html">Icon Boxes: 1</a></li>
+									<li><a href="icon-boxes-2.html">Icon Boxes: 2</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li><a href="images.html">Images & Gallery</a></li>
+									<li><a href="lists.html">Lists</a></li>
+									<li><a href="columns.html">Grid Columns</a></li>
+									<li><a href="typography.html">Typography</a></li>
+									<li><a href="media.html">Media</a></li>
+									<li><a href="pricing-elements.html">Elements of Prices</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="./contact-us-1.html" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-envelope"></i>Contact Us</a>
+								<ul class="dropdown-menu yamm-sm">
+									<li><a href="contact-us-2.html">Contact Us: 2</a></li>
+								</ul>
+							</li>
+						</ul>
+						<!-- Search Form -->
+						<form action="/" class="b-search-form">
+							<div class="input-wrap">
+								<input type="text" placeholder="Search..">
+							</div>
+						</form>
+						<!-- End Search Form -->
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<!-- END HEADER 
+	============================================= -->
+
+	<!-- LAYER SLIDER
+	============================================= -->
+	<div class="layerslider-wrapper">
+		<div class="ls-wp-fullwidth-container" style="height:500px;">
+			<div class="ls-wp-fullwidth-helper">
+				<div id="layerslider_2" class="ls-wp-container" style="width:100%;height:500px;margin:0 auto;margin-bottom: 0px;">
+					<div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
+						<img class="ls-l" style="top:277px;left:-579px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:300;delayin:500;offsetxout:0;offsetyout:-50;durationout:1000;showuntil:300;easingout:easeInOutQuart;scalexout:1.1;scaleyout:1.1;transformoriginout:50% top 0;" src="img/slider/blank.gif" data-src="img/slider/chairs.png" alt=""><img class="ls-l" style="top:243px;left:-748px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:30;delayin:1720;scalexin:0.9;scaleyin:0.9;offsetxout:0;offsetyout:300;durationout:1000;scalexout:0.5;scaleyout:0.5;transformoriginout:50% bottom 0;" src="img/slider/blank.gif" data-src="img/slider/chairs-blur.png" alt=""><img class="ls-l" style="top:145px;left:194px;white-space: nowrap;" data-ls="offsetxin:0;offsetyin:250;durationin:950;delayin:500;offsetxout:0;offsetyout:-8;durationout:1000;showuntil:360;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;" src="img/slider/blank.gif" data-src="img/slider/businessman-blurry.png" alt=""><img class="ls-l" style="top:92px;left:161px;white-space: nowrap;" data-ls="offsetxin:0;delayin:1720;easingin:easeInOutCubic;scalexin:0.8;scaleyin:0.8;transformoriginin:50% 60% 0;offsetxout:-800;durationout:1000;" src="img/slider/blank.gif" data-src="img/slider/businessman1.png" alt="">
+						<p class="ls-l" style="top:50px;left:5px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-family:Lato, 'Open Sans', sans-serif;font-size:30px;line-height:37px;color:#ffffff;background:#2eafbb;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;">FRESH FEATURES</p>
+						<p class="ls-l" style="top:90px;left:10px;font-weight: 300;font-family:Open Sans;font-size:30px;color:#2eafbb;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-400;">for your business</p>
+					</div>
+					
+					<div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
+						<img class="ls-l" style="top:29px;left:87px;white-space: nowrap;" data-ls="offsetxin:300;durationin:2000;offsetxout:-300;parallaxlevel:-1;" src="img/slider/blank.gif" data-src="img/slider/tablet_boson.png" alt=""><img class="ls-l" style="top:113px;left:411px;white-space: nowrap;" data-ls="offsetxin:600;durationin:2000;offsetxout:-600;parallaxlevel:1;" src="img/slider/blank.gif" data-src="img/responsive.png" alt="">
+						<p class="ls-l" style="top:170px;left:5px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-family:Lato, 'Open Sans', sans-serif;font-size:30px;line-height:37px;color:#ffffff;background:#2eafbb;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:10;">SUPER PARALLAX EFFECT</p>
+					</div>
+					
+					<div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
+						<img class="ls-l" style="top:128px;left:230px;white-space: nowrap;" data-ls="offsetxin:400;durationin:2000;offsetxout:400;" src="img/slider/blank.gif" data-src="img/slider/ipad-field-blur.png" alt=""><img class="ls-l" style="top:69px;left:14px;white-space: nowrap;" data-ls="offsetxin:-200;durationin:2000;offsetxout:-200;" src="img/slider/blank.gif" data-src="img/slider/tablet_boson.png" alt="">
+						<p class="ls-l" style="top:330px;left:665px;font-weight: 300;height:40px;padding-right:10px;padding-left:10px;font-family:Lato, 'Open Sans', sans-serif;font-size:30px;line-height:37px;color:#ffffff;background:#666;border-radius:3px;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-400;durationout:1000;">GREAT TRANSITIONS</p>
+						<p class="ls-l" style="top:370px;left:670px;font-weight: 300;font-family:Open Sans;font-size:30px;color:#666;white-space: nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-600;">for better slides</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END LAYER SLIDER
+	============================================= -->
+
+	<!-- CONTENT 
+	============================================= -->
+	<div class="content">
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-12">
+						<div class="call-action">
+							<div class="b-promo margin-30">
+								<a href="http://themeforest.net/item/boson-responsive-multipurpose-html5-template/11043414" class="btn big colored">View More Features</a>
+								<h3>Total makes it easy to build professional websites in minutes.</h3>
+								Just use the builder to drag &amp; drop page elements to create your own custom layouts!
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-12">
+						<div class="row">
+							<div class="row-item col-md-4">
+								<div class="icon-box">
+									<i class="icon-html5 light "></i>
+									<h4><a href="#" class="dark-link">Page Builder</a></h4>
+									<p>
+										Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit. Cras vel est varius, consectetur lectus et, hendrerit libero. Praesent sit amet nisl iaculis, tincidunt enim id, imperdiet lacus.
+									</p>
+								</div>
+							</div>
+							<div class="row-item col-md-4">
+								<div class="icon-box">
+									<i class="icon-css3 light"></i>
+									<h4><a href="#" class="dark-link">Theme Options</a></h4>
+									<p>
+										Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit. Cras vel est varius, consectetur lectus et, hendrerit libero. Praesent sit amet nisl iaculis, tincidunt enim id, imperdiet lacus.
+									</p>
+								</div>
+							</div>
+							<div class="row-item col-md-4">
+								<div class="icon-box ">
+									<i class="icon-magic light "></i>
+									<h4><a href="#" class="dark-link">Free Support</a></h4>
+									<p>
+										Pellentesque tristique ut urna a porta. Aliquam placerat vehicula erat ac blandit. Cras vel est varius, consectetur lectus et, hendrerit libero. Praesent sit amet nisl iaculis, tincidunt enim id, imperdiet lacus.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="dashed">
+			</div>
+		</div>
+		
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-6">
+						<p><a href="img/responsive.png"><img class="aligncenter size-full" src="img/responsive.png" alt="responsive" height="275" width="450"></a></p>
+					</div>
+					<div class="row-item col-md-6">
+						<div class="accordion">
+							<div class="b-accordion">
+								<div class="b-spoiler m-alt active">
+									<div class="spoiler-title active">
+										<span>Our Mission</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+								<div class="b-spoiler m-alt">
+									<div class="spoiler-title">
+										<span>Our Values</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+								<div class="b-spoiler m-alt">
+									<div class="spoiler-title">
+										<span>Our Promises</span>
+									</div>
+									<div class="spoiler-content">
+										<p>Mauris placerat velit ante, a sollicitudin diam sagittis id. Aenean in gravida dui. Ut varius pellentesque porttitor. Phasellus nisi massa, consectetur sit amet lectus id, condimentum tincidunt velit. In sit amet dui in mi accumsan mollis. Morbi sodales hendrerit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="shortcodes">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-12">
+						<h3 class="lined margin-20">Our Work</h3>
+						<div class="row port">
+							<div class="row-item col-md-4 identity photography tehnology">
+								<div class="work">
+									<a href="http://vimeo.com/67500403" rel="prettyPhoto" class="work-image">
+										<img src="img/port/spring-flowers.jpg" alt="">
+										<div class="link-overlay icon-play"></div>
+									</a>
+									<a href="#" class="work-name">Smiling</a>
+									<div class="tags">
+										Identity, Photography, Tehnology 
+									</div>
+								</div>
+							</div>
+							<div class="row-item col-md-4 photography webdesign">
+								<div class="work">
+									<a href="img/port/surfer-big.jpg" rel="prettyPhoto" class="work-image">
+										<img src="img/port/surfer.jpg" alt="">
+										<div class="link-overlay icon-search"></div>
+									</a>
+									<a href="#" class="work-name">Surfer</a>
+									<div class="tags">
+										Photography, Webdesign
+									</div>
+								</div>
+							</div>
+							<div class="row-item col-md-4 identity">
+								<div class="work">
+									<a href="http://vimeo.com/67500403" rel="prettyPhoto" class="work-image">
+										<img src="img/port/architecture.jpg" alt="">
+										<div class="link-overlay icon-play"></div>
+									</a>
+									<a href="#" class="work-name">Architecture</a>
+									<div class="tags">
+										Identity
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="shortcodes parallax" data-stellar-background-ratio="0.5" style="background: rgb(247, 247, 247);">
+			<div class="container layout">
+				<div class="row">
+					<div class="row-item col-md-8">
+						<h3>Total is a responsive, drag &amp; drop, flexible multipurpose WordPress theme that is perfect for any website.</h3>
+						<p class="centered">What's not to love? Get it today!</p>
+					</div>
+					<div class="row-item col-md-4">
+						<a href="http://themeforest.net/item/boson-responsive-multipurpose-html5-template/11043414" class="btn big turquoise"><i class="icon-hand-right"></i>Buy Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END CONTENT 
+	============================================= -->
+
+	<!-- FOOTER 
+	============================================= -->
+	<div class="footer">
+		<!-- Widget Area -->
+		<div class="b-widgets">
+			<div class="container layout">
+				<div class="row">
+					<!-- About -->
+					<div class="row-item col-md-3">
+						<img src="img/logo.png" alt="" style="margin-bottom: 10px;">
+						<p>
+							 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+						</p>
+					</div>
+					<!-- End About -->
+					<!-- Latest Tweets -->
+					<div class="row-item col-md-3">
+						<h3>Latest Tweets</h3>
+						<div class="b-twitter m-footer">
+							<ul>
+								<!-- Twitter Message 1 -->
+								<li>
+									<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem <a href="#" class="link">http://twitter.com</a></span>
+									<span class="twit-date">Jan 7, 2013</span>
+								</li>
+								<!-- Twitter Message 2 -->
+								<li>
+									<span>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aliquid :) <a href="#" class="link">http://twitter.com</a></span>
+									<span class="twit-date">Jan 7, 2013</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Latest Tweets -->
+					<!-- Latest Project -->
+					<div class="row-item col-md-3">
+						<h3>Latest Projects</h3>
+						<div class="latest-project">
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-1.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-2.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-3.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-4.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-5.jpg" alt=""></a>
+							</div>
+							<div class="latest-project-item">
+								<a href="#"><img src="img/elements/rp-6.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<!-- End Latest Project -->
+					<!-- Contact Information -->
+					<div class="row-item col-md-3">
+						<h3>Contact Information</h3>
+						<!-- Address -->
+						<ul class="b-list b-contact m-dark" style="margin-bottom: 15px;">
+							<li class="contact-address"><i class="icon-map-marker"></i><span>103088. Ut wisi enim ad minim veniam, quis nostrud.</span></li>
+							<li class="contact-mail"><i class="icon-envelope"></i><a href="#">mail@mail.com</a></li>
+							<li class="contact-phone"><i class="icon-phone"></i><span>+1 (229) 991-22-11</span></li>
+							<li class="contact-address"><i class="icon-time"></i><span>Monday-Friday: 9:<sup>00</sup> — 18:<sup>00</sup><br>
+							Saturday: 10:<sup>00</sup> — 17:<sup>00</sup><br>
+							Sunday: closed</span>
+							</li>
+						</ul>
+						<!-- End Address -->
+					</div>
+					<!-- End Contact Information -->
+				</div>
+			</div>
+		</div>
+		<!-- End Widget Area -->
+		<!-- Copyright Area -->
+		<div class="b-copyright">
+			<div class="container layout">
+				<!-- Copyright Text -->
+				<span class="copy">Copyright © 2013 <a href="#">Boson</a>. All Right Reserved.</span>
+				<!-- Social Icons -->
+				<ul class="b-social bot">
+					<li>Follow Us:</li>
+					<li><a class="fb" href="#"><i class="icon-facebook"></i></a></li>
+					<li><a class="tw" href="#"><i class="icon-twitter"></i></a></li>
+					<li><a class="gl" href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a class="dr" href="#"><i class="icon-dribbble"></i></a></li>
+					<li><a class="sk" href="#"><i class="icon-skype"></i></a></li>
+					<li><a class="rss" href="#"><i class="icon-rss"></i></a></li>
+					<!-- 
+					<li><a class="yt" href="#"><i class="icon-youtube"></i></a></li>
+					<li><a class="tl" href="#"><i class="icon-tumblr"></i></a></li>
+					<li><a class="is" href="#"><i class="icon-instagram"></i></a></li>
+					<li><a class="pt" href="#"><i class="icon-pinterest"></i></a></li>
+					<li><a class="lin" href="#"><i class="icon-linkedin"></i></a></li>
+					<li><a class="vk" href="#"><i class="icon-vk"></i></a></li>
+					<li><a class="dx" href="#"><i class="icon-dropbox"></i></a></li>
+					<li><a class="fs" href="#"><i class="icon-foursquare"></i></a></li>
+					<li><a class="gh" href="#"><i class="icon-github-alt"></i></a></li>
+					<li><a class="mx" href="#"><i class="icon-maxcdn"></i></a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- END FOOTER 
+	============================================= -->
+	
+</div>
+<!-- END MAIN 
+============================================= -->
+
+
+</body>
+</html>
