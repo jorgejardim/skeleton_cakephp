@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6a870961531f3739ff90766ea78dd83f",
+    "hash": "cbc0101b45a2b09d2e841e8522e9a6ad",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -203,16 +203,16 @@
         },
         {
             "name": "cakephp/migrations",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/migrations.git",
-                "reference": "2529bd128479b5d746ff0acbf6fca2c84becd31e"
+                "reference": "5221b4c66d98c6d506ad0324967f9f346e16b19c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/migrations/zipball/2529bd128479b5d746ff0acbf6fca2c84becd31e",
-                "reference": "2529bd128479b5d746ff0acbf6fca2c84becd31e",
+                "url": "https://api.github.com/repos/cakephp/migrations/zipball/5221b4c66d98c6d506ad0324967f9f346e16b19c",
+                "reference": "5221b4c66d98c6d506ad0324967f9f346e16b19c",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
                 "robmorgan/phinx": ">=0.4.2 <1.0"
             },
             "require-dev": {
-                "cakephp/bake": "dev-master",
+                "cakephp/bake": "@stable",
                 "phpunit/phpunit": "*"
             },
             "suggest": {
@@ -249,7 +249,7 @@
                 "cakephp",
                 "migrations"
             ],
-            "time": "2015-04-18 09:36:44"
+            "time": "2015-06-08 20:09:08"
         },
         {
             "name": "cakephp/plugin-installer",
@@ -342,16 +342,16 @@
         },
         {
             "name": "friendsofcake/bootstrap-ui",
-            "version": "v0.3.0",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/bootstrap-ui.git",
-                "reference": "8403fee32cdf6616ce3448fdb7edd44eac4fb4c2"
+                "reference": "116f8e441f05a8941fc8a8cdce3e0e7933425cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/bootstrap-ui/zipball/8403fee32cdf6616ce3448fdb7edd44eac4fb4c2",
-                "reference": "8403fee32cdf6616ce3448fdb7edd44eac4fb4c2",
+                "url": "https://api.github.com/repos/FriendsOfCake/bootstrap-ui/zipball/116f8e441f05a8941fc8a8cdce3e0e7933425cc6",
+                "reference": "116f8e441f05a8941fc8a8cdce3e0e7933425cc6",
                 "shasum": ""
             },
             "require-dev": {
@@ -387,7 +387,7 @@
                 "cakephp",
                 "twitter"
             ],
-            "time": "2015-04-06 20:30:24"
+            "time": "2015-06-05 14:07:08"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -430,6 +430,37 @@
                 "password"
             ],
             "time": "2014-11-20 16:49:30"
+        },
+        {
+            "name": "itbz/fpdf",
+            "version": "1.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hanneskod/fpdf.git",
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hanneskod/fpdf/zipball/06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "fpdf": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "no usage restriction"
+            ],
+            "description": "Unofficial PSR-0 compliant version of the FPDF library",
+            "homepage": "http://www.fpdf.org/",
+            "time": "2013-12-27 14:18:15"
         },
         {
             "name": "jorge/cakephp-facebook",
@@ -483,6 +514,52 @@
                 "facebook"
             ],
             "time": "2015-06-02 22:42:02"
+        },
+        {
+            "name": "jorge/custom-cakephp3",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jorgejardim/custom_cakephp3.git",
+                "reference": "4d9397de29eeef1aec08c3821d8f1c71f355b00c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jorgejardim/custom_cakephp3/zipball/4d9397de29eeef1aec08c3821d8f1c71f355b00c",
+                "reference": "4d9397de29eeef1aec08c3821d8f1c71f355b00c",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0",
+                "php": ">=5.4.16"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "JCustomCakephp3\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jorge Jardim",
+                    "email": "jorge@jorgejardim.com.br",
+                    "homepage": "http://www.jorgejardim.com.br/"
+                }
+            ],
+            "description": "CakePHP 3 Custom",
+            "keywords": [
+                "cakephp",
+                "cakephp3",
+                "facebook"
+            ],
+            "time": "2015-06-08 21:43:50"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -942,16 +1019,16 @@
         },
         {
             "name": "cakephp/debug_kit",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "e16052f7da172c38e03f410be5f38c85e988992c"
+                "reference": "d638baa2c6883692737a6e53ccbe38978e3bec1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/e16052f7da172c38e03f410be5f38c85e988992c",
-                "reference": "e16052f7da172c38e03f410be5f38c85e988992c",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/d638baa2c6883692737a6e53ccbe38978e3bec1e",
+                "reference": "d638baa2c6883692737a6e53ccbe38978e3bec1e",
                 "shasum": ""
             },
             "require": {
@@ -998,7 +1075,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2015-05-29 20:52:25"
+            "time": "2015-06-07 15:17:16"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1240,6 +1317,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "jorge/cakephp-facebook": 20,
+        "jorge/custom-cakephp3": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

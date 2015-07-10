@@ -56,6 +56,14 @@ return [
     ],
 
     /**
+     * Facebook
+     */
+    'Facebook' => [
+        'app_id' => '1590476011239825',
+        'app_secret' => '7d0c462a27f8a813e5aeb8c9ad728b46',
+    ],
+
+    /**
      * Security and encryption configuration
      *
      * - salt - A random string used in security hashing methods.

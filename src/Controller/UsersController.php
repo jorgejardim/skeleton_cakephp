@@ -22,17 +22,6 @@ class UsersController extends AppController
         $this->Auth->allow(['login', 'logout', 'register', 'reminder', 'activation']);
     }
 
-    public function isAuthorized($user)
-    {
-        if ($user['role'] === 'admin' && in_array($this->request->action, ['me', 'index', 'add', 'edit', 'delete', 'view'])) {
-            return true;
-        }
-        if ($user['role'] === 'user' && in_array($this->request->action, ['me'])) {
-            return true;
-        }
-        return parent::isAuthorized($user);
-    }
-
     public function login()
     {
         if ($this->request->is('post')) {

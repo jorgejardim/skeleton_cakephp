@@ -83,3 +83,12 @@ define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'cakephp' . DS . 'c
  */
 define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 define('CAKE', CORE_PATH . 'src' . DS);
+
+/**
+ * ASSETS
+ */
+define('ASSETS', '/');
+define('ASSETS_IMG', ASSETS.'img/');
+define('ASSETS_CSS', ASSETS.'css/');
+define('ASSETS_JS', ASSETS.'js/');
+define('ASSETS_UPLOADS', ASSETS.'uploads');

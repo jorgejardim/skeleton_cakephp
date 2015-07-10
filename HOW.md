@@ -20,3 +20,8 @@ $this->request->session()->check('Auth.User.id');
 $this->request->session()->read('Auth.User.id');
 $this->request->session()->write('Auth.User.id', '1');
 $this->request->session()->delete('Auth.User.id');
+
+#Json
+Add extensão na URL
+Ex: http://localhost/app/posts.json
+

@@ -18,6 +18,7 @@ use Cake\Controller\Controller;
 use Cake\Routing\Router;
 use Cake\Network\Email\Email;
 use Cake\Event\Event;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -51,11 +52,12 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Cookie');
         $this->loadComponent('Flash');
         $this->loadComponent('Bootstrap.Flash');
         $this->loadComponent('Auth', [
-            'authorize' => ['Controller'],
+            'authorize' => ['Access'],
             'authenticate' => [
                 'Form' => [
                     'fields' => ['username' => 'username', 'password' => 'password'],
@@ -69,8 +71,8 @@ class AppController extends Controller
             'unauthorizedRedirect' => '/login'
         ]);
         $this->loadComponent('AkkaFacebook.Graph', [
-            'app_id' => '1590476011239825',
-            'app_secret' => '7d0c462a27f8a813e5aeb8c9ad728b46',
+            'app_id' => Configure::read('Facebook.app_id'),
+            'app_secret' => Configure::read('Facebook.app_secret'),
             'app_scope' => 'email',
             'enable_create' => false,
             'redirect_url' => Router::url(['controller' => 'Users', 'action' => 'login2'], TRUE),
@@ -86,40 +88,12 @@ class AppController extends Controller
         parent::beforeFilter($event);
         if (!$this->Auth->user() && $this->Cookie->read('Auth.token') && $this->request->action != 'login') {
             $this->loadModel('Users');
-            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->toArray();
+            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first()->toArray();
             if ($user) {
                 $this->Auth->setUser($user);
             }
         }
     }
-
-    public function isAuthorized($user)
-    {
-        if ($user['role'] === 'master' || $user['role'] === 'root') {
-            return true;
-        }
-
-        if (in_array($this->request->action, ['login', 'logout', 'register', 'reminder', 'activation']) &&
-            $this->request->controller == 'Users') {
-            return true;
-        }
-
-        if (in_array($this->request->action, ['display']) &&
-            $this->request->controller == 'Pages') {
-            return true;
-        }
-
-        return false;
-    }
-
-    // protected function _requireFile($file)
-    // {
-    //     if (file_exists($file)) {
-    //         require $file;
-    //         return true;
-    //     }
-    //     return false;
-    // }
 
     private function _defaults() {
 

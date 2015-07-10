@@ -53,6 +53,7 @@ use Cake\Network\Request;
 use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\I18n\Time;
 
 /**
  * Read configuration file and inject configuration into various
@@ -186,6 +187,7 @@ Plugin::load('Migrations');
 Plugin::load('BashSite');
 Plugin::load('BashDashboard');
 Plugin::load('BootstrapUI');
+Plugin::load("JCustomCakephp3");
 Plugin::load('TemplateModern');
 
 Plugin::load('AkkaFacebook', ['bootstrap' => false, 'routes' => true]);
@@ -207,4 +209,20 @@ DispatcherFactory::add('ControllerFactory');
  * Enable default locale format parsing.
  * This is needed for matching the auto-localized string output of Time() class when parsing dates.
  */
-Type::build('datetime')->useLocaleParser();
+Type::build('date')
+     ->useLocaleParser()
+     ->setLocaleFormat('dd/MM/yyyy');
+Type::build('datetime')
+     ->useLocaleParser()
+     ->setLocaleFormat('dd/MM/yyyy HH:mm:ss');
+Type::build('timestamp')
+     ->useLocaleParser()
+     ->setLocaleFormat('dd/MM/yyyy HH:mm:ss');
+
+// Habilita o parseamento de decimal localizaddos
+Type::build('decimal')
+    ->useLocaleParser();
+Type::build('float')
+    ->useLocaleParser();
+
+Time::setToStringFormat('dd/MM/YYYY');
