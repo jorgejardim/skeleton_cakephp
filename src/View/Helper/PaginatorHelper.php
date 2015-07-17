@@ -15,16 +15,18 @@ class PaginatorHelper extends \Cake\View\Helper\PaginatorHelper
      */
     public function __construct(View $View, array $config = [])
     {
-        $this->_defaultConfig['templates']['nextActive']   = '<a rel="next" href="{{url}}">{{text}}</a>';
-        $this->_defaultConfig['templates']['nextDisabled'] = '<a class="disabled" href="" onclick="return false;">{{text}}</a>';
-        $this->_defaultConfig['templates']['prevActive']   = '<a rel="prev" href="{{url}}">{{text}}</a>';
-        $this->_defaultConfig['templates']['prevDisabled'] = '<a class="disabled" href="" onclick="return false;">{{text}}</a>';
-        $this->_defaultConfig['templates']['current']      = '<a href="">{{text}}</a>';
+        $this->_defaultConfig['templates']['nextActive']   = '<li class="ib arrow"><a rel="next" href="{{url}}">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['nextDisabled'] = '<li class="ib arrow"><a class="disabled" href="" onclick="return false;">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['prevActive']   = '<li class="ib arrow"><a rel="prev" href="{{url}}">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['prevDisabled'] = '<li class="ib arrow"><a class="disabled" href="" onclick="return false;">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['current']      = '<li class="ib current"><a href="javascript:;">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['number']       = '<li class="ib"><a href="{{url}}">{{text}}</a></li>';
+        $this->_defaultConfig['templates']['counterPages'] = __('page').' {{page}} '.__('of').' {{pages}} '.__('of').' {{count}} '.__('records');
 
         parent::__construct($View, $config + [
             'labels' => [
-                'prev' => '&laquo;',
-                'next' => '&raquo;',
+                'prev' => '<i class="fa fa-angle-left"></i>',
+                'next' => '<i class="fa fa-angle-right"></i>',
             ],
         ]);
     }
@@ -65,10 +67,12 @@ class PaginatorHelper extends \Cake\View\Helper\PaginatorHelper
             $options = ['size' => $options];
         }
 
-        $class = 'pagination';
+        if (!isset($options['class'])) {
+            $options['class'] = 'pagination';
+        }
 
         $options += [
-            'class' => $class,
+            'class' => $options['class'],
             'after' => '</ul>',
             'size' => null,
         ];

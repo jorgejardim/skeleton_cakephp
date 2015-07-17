@@ -28,21 +28,12 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                $this->Cookie->write('Default.locale', $this->Auth->user('locale'));
-                $user = $this->Users->get($this->Auth->user('id'));
-                if (!empty($this->request->data['remember'])) {
-                    $token = \Cake\Utility\Text::uuid();
-                    $user = $this->Users->patchEntity($user, ['auth_token' => $token]);
-                    $this->Cookie->write('Auth.token', $token);
-                } else {
-                    $user = $this->Users->patchEntity($user, ['auth_token' => null]);
-                }
-                $this->Users->save($user);
+                $this->_authExtras();
                 return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Flash->error(__('Invalid username or password, try again.'), ['key' => 'auth']);
             }
-            $this->Flash->error(__('Invalid username or password, try again'), ['key' => 'auth']);
         }
-        $this->render($this->layout.'_login');
     }
 
     public function logout()
@@ -73,7 +64,6 @@ class UsersController extends AppController
                 $this->set('check_mail', true);
             }
         }
-        $this->render($this->layout.'_register');
     }
 
     public function reminder()
@@ -96,7 +86,6 @@ class UsersController extends AppController
                 $this->Flash->error(__('E-mail does not exist.'), ['key' => 'auth']);
             }
         }
-        $this->render($this->layout.'_reminder');
     }
 
     public function activation($activation)
@@ -119,7 +108,6 @@ class UsersController extends AppController
     {
         $this->no_redirect = true;
         $this->edit($this->Auth->user('id'));
-        $this->render($this->layout.'_me');
     }
 
     /**
@@ -132,7 +120,6 @@ class UsersController extends AppController
         $this->Auth->allow();
         $this->set('users', $this->paginate($this->Users));
         $this->set('_serialize', ['users']);
-        $this->render($this->layout.'_index');
     }
 
     /**
@@ -149,7 +136,6 @@ class UsersController extends AppController
         ]);
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
-        $this->render($this->layout.'_view');
     }
 
     /**
@@ -181,7 +167,6 @@ class UsersController extends AppController
         if($this->no_redirect) return;
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
-        $this->render($this->layout.'_add');
     }
 
     /**
@@ -208,7 +193,6 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
         if($this->no_redirect) return;
-        $this->render($this->layout.'_edit');
     }
 
     /**

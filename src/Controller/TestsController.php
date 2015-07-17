@@ -19,6 +19,19 @@ class TestsController extends AppController
     }
 
     /**
+     * Blank Page
+     */
+    public function blank() {}
+
+    /**
+     * PDF
+     */
+    public function pdf() {
+        $this->set('pdf', new \fpdf\FPDF('P','mm','A4'));
+        $this->render('pdf', 'pdf');
+    }
+
+    /**
      * Index method
      *
      * @return void
@@ -27,7 +40,6 @@ class TestsController extends AppController
     {
         $this->set('tests', $this->paginate($this->Tests));
         $this->set('_serialize', ['tests']);
-        $this->render($this->layout.'_index');
     }
 
     /**
@@ -44,7 +56,6 @@ class TestsController extends AppController
         ]);
         $this->set('test', $test);
         $this->set('_serialize', ['test']);
-        $this->render($this->layout.'_view');
     }
 
     /**
@@ -61,17 +72,11 @@ class TestsController extends AppController
                 $this->Flash->success(__('The {0} has been saved.', [__('Test')]));
                 return $this->redirect(['action' => 'index']);
             } else {
-
-                echo implode('<br />', array_map(function ($entry) {
-                    return '- '.__($entry['valid']);
-                }, $test->errors()));
-
                 $this->Flash->error(__('The {0} could not be saved. Please, try again.', [__('Test')]));
             }
         }
         $this->set(compact('test'));
         $this->set('_serialize', ['test']);
-        $this->render($this->layout.'_add');
     }
 
     /**
@@ -97,7 +102,6 @@ class TestsController extends AppController
         }
         $this->set(compact('test'));
         $this->set('_serialize', ['test']);
-        $this->render($this->layout.'_edit');
     }
 
     /**

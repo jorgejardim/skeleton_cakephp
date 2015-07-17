@@ -87,8 +87,8 @@ define('CAKE', CORE_PATH . 'src' . DS);
 /**
  * ASSETS
  */
-define('ASSETS', '/');
+define('ASSETS', isset($_SERVER['DEVELOPER_JORGE'])?'/skeleton_cakephp/':'/');
 define('ASSETS_IMG', ASSETS.'img/');
 define('ASSETS_CSS', ASSETS.'css/');
 define('ASSETS_JS', ASSETS.'js/');
-define('ASSETS_UPLOADS', ASSETS.'uploads');
+define('ASSETS_UPLOADS', ASSETS.'uploads/');

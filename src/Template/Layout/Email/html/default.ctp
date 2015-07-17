@@ -15,10 +15,15 @@
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-<head>
-    <title><?= $this->fetch('title') ?></title>
-</head>
-<body>
-    <?= $this->fetch('content') ?>
-</body>
+    <head>
+        <title><?= $this->fetch('title') ?></title>
+    </head>
+    <body>
+        <div style="margin:30px;font-family:Helvetica, Arial, sans-serif;font-size:14px">
+            <div style="border-bottom:1px solid #ccc;margin-bottom:25px;padding-bottom:17px">
+                <img border="0" src="<?= ASSETS_IMG ?>modern/logo@2x.png">
+            </div>
+            <?= $this->fetch('content') ?>
+        </div>
+    </body>
 </html>

@@ -37,6 +37,7 @@ return [
      */
     'App' => [
         'name' => 'JDIG',
+        'name_reference' => 'jdig',
         'namespace' => 'App',
         'encoding' => 'UTF-8',
         'base' => false,

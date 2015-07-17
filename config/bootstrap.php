@@ -184,12 +184,9 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::load('Migrations');
-Plugin::load('BashSite');
-Plugin::load('BashDashboard');
 Plugin::load('BootstrapUI');
 Plugin::load("JCustomCakephp3");
 Plugin::load('TemplateModern');
-
 Plugin::load('AkkaFacebook', ['bootstrap' => false, 'routes' => true]);
 
 // Only try to load DebugKit in development mode
@@ -214,10 +211,10 @@ Type::build('date')
      ->setLocaleFormat('dd/MM/yyyy');
 Type::build('datetime')
      ->useLocaleParser()
-     ->setLocaleFormat('dd/MM/yyyy HH:mm:ss');
+     ->setLocaleFormat('dd/MM/yyyy HH:mm');
 Type::build('timestamp')
      ->useLocaleParser()
-     ->setLocaleFormat('dd/MM/yyyy HH:mm:ss');
+     ->setLocaleFormat('dd/MM/yyyy HH:mm');
 
 // Habilita o parseamento de decimal localizaddos
 Type::build('decimal')

@@ -40,8 +40,6 @@ class AppController extends Controller
 
     public $scripts_for_layout;
 
-    //public $theme = 'TemplateModern';
-
     /**
      * Initialization hook method.
      *
@@ -52,6 +50,7 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
+        $this->loadComponent('Common');
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Cookie');
         $this->loadComponent('Flash');
@@ -88,25 +87,30 @@ class AppController extends Controller
         parent::beforeFilter($event);
         if (!$this->Auth->user() && $this->Cookie->read('Auth.token') && $this->request->action != 'login') {
             $this->loadModel('Users');
-            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first()->toArray();
+            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first();
             if ($user) {
-                $this->Auth->setUser($user);
+                $this->Auth->setUser($user->toArray());
+                $this->_authExtras();
             }
         }
     }
 
     private function _defaults() {
 
-        $this->layout = 'dashboard';
-
         $this->Cookie->configKey('Default', [
             'expires' => '+365 days',
             //'path' => '/',
-            //'encryption' => false
+            'encryption' => false
+        ]);
+        $this->Cookie->configKey('Filter', [
+            'expires' => '+365 days',
+            //'path' => '/',
+            'encryption' => false
         ]);
         $this->Cookie->configKey('Auth', [
             'expires' => '+14 days',
             //'path' => '/',
+            'encryption' => false,
             'httpOnly' => 'true'
         ]);
 
@@ -114,5 +118,26 @@ class AppController extends Controller
         if($this->Cookie->read('Default.locale')) {
             \Locale::setDefault($this->Cookie->read('Default.locale'));
         }
+    }
+
+    protected function _authExtras() {
+        $this->loadModel('Users');
+        $user = $this->Auth->user();
+        if(is_array(@getimagesize(ASSETS_UPLOADS.'avatars/'.Configure::read('App.name_reference').'_'.$this->Auth->user('id').'.jpg'))) {
+            $this->request->session()->write('Auth.User.avatar', Configure::read('App.name_reference').'_'.$this->Auth->user('id').'.jpg');
+        }
+        if($this->Auth->user('role')=='root' || $this->Auth->user('role')=='master') {
+            $this->request->session()->write('Auth.User.internal', true);
+        }
+        $this->Cookie->write('Default.locale', $this->Auth->user('locale'));
+        $user = $this->Users->get($this->Auth->user('id'));
+        if (!empty($this->request->data['remember']) || $this->Auth->user('role')=='root') {
+            $token = \Cake\Utility\Text::uuid();
+            $user = $this->Users->patchEntity($user, ['auth_token' => $token]);
+            $this->Cookie->write('Auth.token', $token);
+        } else {
+            $user = $this->Users->patchEntity($user, ['auth_token' => null]);
+        }
+        $this->Users->save($user);
     }
 }

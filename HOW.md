@@ -1,14 +1,8 @@
 #CAKE BAKE
 
-Obs: Gerar as views e renomealas com o prefixo site_ e dashboard_
-
-bin/cake bake model Users --theme BashSite
-bin/cake bake controller Users --theme BashSite
-bin/cake bake template Users --theme BashSite
-
-bin/cake bake model Users --theme BashDashboard
-bin/cake bake controller Users --theme BashDashboard
-bin/cake bake template Users --theme BashDashboard
+bin/cake bake model ModelNames --theme TemplateModern
+bin/cake bake controller ModelNames --theme TemplateModern
+bin/cake bake template ModelNames --theme TemplateModern
 
 #Internationalization
 

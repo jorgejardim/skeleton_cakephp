@@ -6,6 +6,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+
 /**
  * Tests Model
  *
@@ -24,8 +25,7 @@ class TestsTable extends Table
         $this->table('tests');
         $this->displayField('name');
         $this->primaryKey('id');
-        //$this->addBehavior('Timestamp');
-        $this->addBehavior("JCustomCakephp3.ConvertDate");
+        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -44,27 +44,25 @@ class TestsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
-        // $validator
-        //     ->requirePresence('slug', 'create')
-        //     ->notEmpty('slug');
+        $validator
+            ->requirePresence('slug', 'create')
+            ->notEmpty('slug');
 
         $validator
             ->requirePresence('text', 'create')
             ->notEmpty('text');
 
-        // $validator
-        //     ->requirePresence('locale', 'create')
-        //     ->notEmpty('locale');
+        $validator
+            ->requirePresence('locale', 'create')
+            ->notEmpty('locale');
 
         $validator
-            ->provider('custom', new \JCustomCakephp3\Validation\CustomProvider)
-            ->add('date', 'valid', ['rule' => 'dateBR', 'provider' => 'custom'])
+            ->add('date', 'valid', ['rule' => ['date', 'dmy']])
             ->requirePresence('date', 'create')
             ->notEmpty('date');
 
         $validator
-            ->provider('custom', new \JCustomCakephp3\Validation\CustomProvider)
-            ->add('calendar', 'valid', ['rule' => 'datetimeBR', 'provider' => 'custom'])
+            ->add('calendar', 'valid', ['rule' => ['datetime', 'dmy']])
             ->requirePresence('calendar', 'create')
             ->notEmpty('calendar');
 
@@ -72,6 +70,16 @@ class TestsTable extends Table
             ->add('hour', 'valid', ['rule' => 'time'])
             ->requirePresence('hour', 'create')
             ->notEmpty('hour');
+
+        $validator
+            ->add('currency', 'valid', ['rule' => 'decimal'])
+            ->requirePresence('currency', 'create')
+            ->notEmpty('currency');
+
+        $validator
+            ->add('numeral', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('numeral', 'create')
+            ->notEmpty('numeral');
 
         $validator
             ->add('status', 'valid', ['rule' => 'boolean'])
