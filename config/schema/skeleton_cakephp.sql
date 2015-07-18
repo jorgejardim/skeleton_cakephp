@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 18/07/2015 às 12:56
+-- Tempo de geração: 18/07/2015 às 16:53
 -- Versão do servidor: 5.5.43-0ubuntu0.14.04.1-log
 -- Versão do PHP: 5.5.9-1ubuntu4.11
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `oauth_provider`, `oauth_uid`, `locale`, `role`, `activation`, `auth_token`, `status`, `created`, `modified`) VALUES
-(1, 'Jorge', 'jorge@jorgejardim.com.br', 'jorge@jorgejardim.com.br', 'Hs@|dDRyNXpqag==', 'oauth-provider', 'oauth-uid', 'pt_BR', 'root', NULL, NULL, 1, '2015-05-30 07:16:18', '2015-07-17 03:10:21');
+(1, 'Jorge', '', 'email@email.com.br', 'Hs@|MTIzNDU2', '', '', 'pt_BR', 'root', NULL, 'bbdf83bd-004d-4fdf-800f-170a24daad54', 1, '2015-05-30 07:16:18', '2015-07-18 16:53:07');
 
 --
 -- Índices de tabelas apagadas
