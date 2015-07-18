@@ -63,12 +63,38 @@ use Cake\I18n\Time;
  * idea to create multiple configuration files, and separate the configuration
  * that changes from configuration that does not. This makes deployment simpler.
  */
-$file_config_app = (isset($_SERVER['DEVELOPER_JORGE']) || !isset($_SERVER['HTTP_HOST']) || $_SERVER['REMOTE_ADDR']=='179.110.31.247' || $_SERVER['HTTP_X_FORWARDED_FOR']=='179.110.31.247')?'app_local':'app';
 try {
     Configure::config('default', new PhpConfig());
-    Configure::load($file_config_app, 'default', false);
+    Configure::load('app', 'default', false);
 } catch (\Exception $e) {
     die($e->getMessage() . "\n");
+}
+
+/**
+ * Read configuration file by domains
+ */
+$file_config_app = 'localhost';
+if(isset($_SERVER['HTTP_HOST'])) {
+    $file_config_app = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+}
+try {
+    Configure::load('domains/'.$file_config_app, 'default', false);
+} catch (\Exception $e) {
+    die($e->getMessage() . " (Arquivo de configuracao do dominio.)\n");
+}
+
+/**
+ * Read configuration file by apps
+ */
+if (Configure::read('Client.apps')) {
+    $apps = Configure::read('Client.apps');
+    foreach ($apps as $file_config_app) {
+        try {
+            Configure::load('apps/'.$file_config_app, 'default', false);
+        } catch (\Exception $e) {
+            die($e->getMessage() . " (Arquivo de configuracao do aplicativo ".$file_config_app.".)\n");
+        }
+    }
 }
 
 // Load an environment local configuration file.
@@ -187,7 +213,7 @@ Plugin::load('Migrations');
 Plugin::load('BootstrapUI');
 Plugin::load("JCustomCakephp3");
 Plugin::load('TemplateModern');
-Plugin::load('AkkaFacebook', ['bootstrap' => false, 'routes' => true]);
+//Plugin::load('JorgeFacebook');
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system

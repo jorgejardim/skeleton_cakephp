@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cbc0101b45a2b09d2e841e8522e9a6ad",
+    "hash": "1e5bd7d87c9abd8ae1639eadc17dfe09",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -127,16 +127,16 @@
         },
         {
             "name": "cakephp/cakephp",
-            "version": "3.0.8",
+            "version": "3.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "29ca3d120c25d554ad5143adffdab0f76bc6c9b9"
+                "reference": "c215331d9576942304b927e6f7fd849a86a956da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/29ca3d120c25d554ad5143adffdab0f76bc6c9b9",
-                "reference": "29ca3d120c25d554ad5143adffdab0f76bc6c9b9",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/c215331d9576942304b927e6f7fd849a86a956da",
+                "reference": "c215331d9576942304b927e6f7fd849a86a956da",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +198,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-06-28 17:00:48"
+            "time": "2015-07-17 01:56:43"
         },
         {
             "name": "cakephp/migrations",
@@ -292,30 +292,36 @@
         },
         {
             "name": "facebook/php-sdk-v4",
-            "version": "4.0.23",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e"
+                "reference": "b5d7e5c8b85419f9031b08a161e9030dca35f5a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/c82611e05596622c9bd7abfa1cea1512d885c95e",
-                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/b5d7e5c8b85419f9031b08a161e9030dca35f5a1",
+                "reference": "b5d7e5c8b85419f9031b08a161e9030dca35f5a1",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "~4.0",
-                "mockery/mockery": "dev-master",
-                "phpunit/phpunit": "3.7.*"
+                "guzzlehttp/guzzle": "~5.0",
+                "mockery/mockery": "~0.8",
+                "phpunit/phpunit": "~4.0"
             },
             "suggest": {
                 "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Facebook\\": "src/Facebook/"
@@ -337,7 +343,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2015-04-03 20:31:47"
+            "time": "2015-07-08 19:08:57"
         },
         {
             "name": "friendsofcake/bootstrap-ui",
@@ -463,33 +469,29 @@
         },
         {
             "name": "jorge/cakephp-facebook",
-            "version": "dev-master",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jorgejardim/facebook-cakephp3.git",
-                "reference": "59fe900853ac20742035ecd401478bd32dc5318d"
+                "reference": "97efb11a1d2c12a931d2c4e40094f04508a61400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgejardim/facebook-cakephp3/zipball/59fe900853ac20742035ecd401478bd32dc5318d",
-                "reference": "59fe900853ac20742035ecd401478bd32dc5318d",
+                "url": "https://api.github.com/repos/jorgejardim/facebook-cakephp3/zipball/97efb11a1d2c12a931d2c4e40094f04508a61400",
+                "reference": "97efb11a1d2c12a931d2c4e40094f04508a61400",
                 "shasum": ""
             },
             "require": {
-                "cakephp/cakephp": "~3.0",
-                "facebook/php-sdk-v4": "4.0.*",
+                "facebook/php-sdk-v4": "~5.0",
                 "php": ">=5.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "*"
             },
             "type": "cakephp-plugin",
-            "extra": {
-                "installer-name": "AkkaFacebook"
-            },
             "autoload": {
                 "psr-4": {
-                    "AkkaFacebook\\": "src"
+                    "JorgeFacebook\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -497,10 +499,6 @@
                 "MIT"
             ],
             "authors": [
-                {
-                    "name": "Andre Santiago",
-                    "email": "admin@akkaweb.com"
-                },
                 {
                     "name": "Jorge Jardim",
                     "email": "jorge@jorgejardim.com.br"
@@ -512,11 +510,11 @@
                 "cakephp3",
                 "facebook"
             ],
-            "time": "2015-06-02 22:42:02"
+            "time": "2015-07-17 07:51:25"
         },
         {
             "name": "jorge/custom-cakephp3",
-            "version": "dev-master",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jorgejardim/custom_cakephp3.git",
@@ -559,6 +557,48 @@
                 "facebook"
             ],
             "time": "2015-06-08 21:43:50"
+        },
+        {
+            "name": "jorge/upload",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jorgejardim/upload.git",
+                "reference": "6a8af7ac2908f120e42cb90e55cb9fa268f81c3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jorgejardim/upload/zipball/6a8af7ac2908f120e42cb90e55cb9fa268f81c3a",
+                "reference": "6a8af7ac2908f120e42cb90e55cb9fa268f81c3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Upload": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jorge Jardim",
+                    "email": "jorge@jorgejardim.com.br",
+                    "homepage": "http://www.jorgejardim.com.br/"
+                }
+            ],
+            "description": "Upload Local e AWS S3",
+            "keywords": [
+                "aws",
+                "s3",
+                "upload"
+            ],
+            "time": "2015-06-20 20:20:05"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -1240,16 +1280,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.5.1",
+            "version": "v0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "e5a46a767928e85f1f47dda654beda8c680ddd94"
+                "reference": "aaf8772ade08b5f0f6830774a5d5c2f800415975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e5a46a767928e85f1f47dda654beda8c680ddd94",
-                "reference": "e5a46a767928e85f1f47dda654beda8c680ddd94",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/aaf8772ade08b5f0f6830774a5d5c2f800415975",
+                "reference": "aaf8772ade08b5f0f6830774a5d5c2f800415975",
                 "shasum": ""
             },
             "require": {
@@ -1308,7 +1348,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-07-03 16:48:00"
+            "time": "2015-07-16 15:26:57"
         },
         {
             "name": "symfony/var-dumper",
@@ -1373,8 +1413,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "jorge/cakephp-facebook": 20,
-        "jorge/custom-cakephp3": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,

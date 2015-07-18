@@ -36,6 +36,8 @@ return [
      *   paths for plugins, view templates and locale files respectively.
      */
     'App' => [
+        'name' => 'JDIG',
+        'name_reference' => 'jdig',
         'namespace' => 'App',
         'encoding' => 'UTF-8',
         'base' => false,
@@ -55,6 +57,14 @@ return [
     ],
 
     /**
+     * Facebook
+     */
+    'Facebook' => [
+        'app_id' => '',
+        'app_secret' => '',
+    ],
+
+    /**
      * Security and encryption configuration
      *
      * - salt - A random string used in security hashing methods.
@@ -62,7 +72,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => '__SALT__',
+        'salt' => 'a8122864971fd3700f68097537c3433ad73832be26591da3c12ac5b9ef7b0a9a',
     ],
 
     /**
@@ -180,13 +190,12 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => 'Mail',
-            // The following keys are used in SMTP transports
-            'host' => 'localhost',
-            'port' => 25,
+            'className' => 'Smtp',
+            'host' => 'smtp.mandrillapp.com',
+            'port' => 587,
             'timeout' => 30,
-            'username' => 'user',
-            'password' => 'secret',
+            'username' => 'jorge@conteudodinamico.com.br',
+            'password' => 'Fq0fCsXEFE_YJmafonBFPA',
             'client' => null,
             'tls' => null,
         ],
@@ -195,7 +204,8 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'you@localhost',
+            'from' => ['contato@jorgejardim.com.br' => 'Jorge Jardim'],
+            'emailFormat' => 'both',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
         ],
@@ -219,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'nonstandard_port_number',
-            'username' => 'my_app',
+            'username' => 'root',
             'password' => 'secret',
-            'database' => 'my_app',
+            'database' => 'myapp',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
@@ -322,5 +332,6 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+        'cookie' => 'JDIG',
     ],
 ];

@@ -19,6 +19,14 @@ class TestsController extends AppController
     }
 
     /**
+     * Mult Tests
+     * Sempre pode apagar e fazer novos testes
+     */
+    public function tests() {
+
+    }
+
+    /**
      * Blank Page
      */
     public function blank() {}

@@ -19,7 +19,7 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['login', 'logout', 'register', 'reminder', 'activation']);
+        $this->Auth->allow(['login', 'logout', 'register', 'reminder', 'activation', 'login_facebook']);
     }
 
     public function login()

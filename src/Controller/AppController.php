@@ -34,6 +34,7 @@ class AppController extends Controller
     public $helpers = [
         'BootstrapUI.Form',
         'BootstrapUI.Html',
+        'JorgeFacebook.Facebook',
         'Paginator',
         'Commons'
     ];
@@ -69,15 +70,15 @@ class AppController extends Controller
             'logoutRedirect' => '/login',
             'unauthorizedRedirect' => '/login'
         ]);
-        $this->loadComponent('AkkaFacebook.Graph', [
-            'app_id' => Configure::read('Facebook.app_id'),
-            'app_secret' => Configure::read('Facebook.app_secret'),
-            'app_scope' => 'email',
-            'enable_create' => false,
-            'redirect_url' => Router::url(['controller' => 'Users', 'action' => 'login2'], TRUE),
-            'post_login_redirect' => Router::url(['controller' => 'Users', 'action' => 'account'], TRUE),
-            'user_columns' => ['long_name' => 'name', 'extra_columns' => ['active' => 1, 'locale' => 'pt_BR']] //not required
-        ]);
+        // $this->loadComponent('AkkaFacebook.Graph', [
+        //     'app_id' => Configure::read('Facebook.app_id'),
+        //     'app_secret' => Configure::read('Facebook.app_secret'),
+        //     'app_scope' => 'email',
+        //     'enable_create' => false,
+        //     'redirect_url' => Router::url(['controller' => 'Users', 'action' => 'login2'], TRUE),
+        //     'post_login_redirect' => Router::url(['controller' => 'Users', 'action' => 'account'], TRUE),
+        //     'user_columns' => ['long_name' => 'name', 'extra_columns' => ['active' => 1, 'locale' => 'pt_BR']] //not required
+        // ]);
 
         $this->_defaults();
     }

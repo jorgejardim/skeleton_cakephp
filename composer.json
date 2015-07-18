@@ -11,9 +11,10 @@
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
         "friendsofcake/bootstrap-ui": "~0.3",
-        "jorge/cakephp-facebook": "dev-master",
         "itbz/fpdf": "1.7.*",
-        "jorge/custom-cakephp3": "dev-master"
+        "jorge/cakephp-facebook": "1.*",
+        "jorge/upload": "1.*",
+        "jorge/custom-cakephp3": "1.*"
     },
     "require-dev": {
         "psy/psysh": "@stable",

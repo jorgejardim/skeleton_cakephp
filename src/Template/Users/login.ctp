@@ -1,4 +1,3 @@
-<?php echo $this->Facebook->initJsSDK(); ?>
 <section class="login-page fadeInDown-animation">
     <div class="container">
         <div class="row">
@@ -43,9 +42,8 @@
                 </div>
                 <div class="login-options">
                     <div class="row">
-                        <?php echo $this->Facebook->loginLink(); ?>
                         <div class="col-md-6 col-sm-6">
-                            <a href="#" class="login-op-btn grad-btn ln-tr fb"><?= __('Login with Facebook Account') ?></a>
+                            <a href="<?echo // $this->Facebook->getLoginUrl(); ?>" class="login-op-btn grad-btn ln-tr fb"><?= __('Login with Facebook Account') ?></a>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <a href="#" class="login-op-btn grad-btn ln-tr gp"><?= __('Login with Google Account') ?></a>
