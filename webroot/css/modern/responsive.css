@@ -910,3 +910,22 @@
 		font-size: 16px;
 	}
 }
+/*Top Navigation Menu*/
+@media (max-width: 767px) {
+	.navbar-top-menu .navbar-nav .open .dropdown-menu > li > a {
+	  	color: #fff;
+	}
+	.navbar-top-menu .navbar-nav .open .dropdown-menu > li > a:hover {
+	  	color: #FFC600;
+	}
+	.navbar-top-menu .navbar-nav > .open > a, .navbar-top-menu .navbar-nav > .open > a:focus, .navbar-top-menu .navbar-nav > .open > a:hover {
+		background-color: #111;
+		color: #FFC600;
+	}
+	.navbar-top-menu .navbar-collapse, .navbar-default .navbar-form {
+		border-color: #444;
+	}
+	.navbar-top-menu .dropdown li {
+		border-bottom: 1px solid #444;
+	}
+}

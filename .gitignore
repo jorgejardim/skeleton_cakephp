@@ -5,3 +5,4 @@
 !/config/domains/default.php
 /tmp/*
 /logs/*
+composer.lock

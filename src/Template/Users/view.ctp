@@ -1,34 +1,25 @@
-<div class="b-titlebar">
-    <div class="container layout">
-        <ul class="crumbs">
-            <li><?= __('You are here:') ?></li>
-            <li><a href="<?= $this->Url->build('/') ?>"><?= __('Home') ?></a></li>
-            <li><?= $this->Html->link(__('View {0}', [__('User')]), ['action' => 'view']); ?></li>
-        </ul>
-        <h1><?= __('List {0}', [__('Users')]) ?></h1>
-    </div>
-</div>
-<div class="content shortcodes">
-    <div class="container layout">
-        <div>
-            <div class="row-item col-md-2 sidebar">
-                <h3 style="margin-bottom: 20px;"><?= __('Actions'); ?></h3>
-                <div>
-                    <ul class="pl15">
-                        <li><?= $this->Html->link(__('Edit {0}', [__('User')]), ['action' => 'edit', $user->id]) ?> </li>
-                        <li><?= $this->Form->postLink(__('Delete {0}', [__('User')]), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-                        <li><?= $this->Html->link(__('List {0}', [__('Users')]), ['action' => 'index']) ?> </li>
-                        <li><?= $this->Html->link(__('New {0}', [__('User')]), ['action' => 'add']) ?> </li>
-                        </ul>
-                </div>
+<section class="main-page">
+    <div class="container">
+        <div class="page-title pull-md-left">
+            <h3><?= __('View {0}', [__('User')]) ?></h3>
+        </div>
+        <div class="page-actions pull-md-right">
+            <div class="page-actions-dropdown">
+                <select class="dropdown dropdown-actions">
+                    <option value="" class="label"><?= __('Actions'); ?></option>
+                    <option value="<?= $this->Url->build(['action' => 'edit', $user->id]) ?>"><?= __('Edit'); ?></option>
+                    <option value="<?= $this->Url->build(['action' => 'delete', $user->id]) ?>" confirm="<?= __('Are you sure you want to delete?'); ?>"><?= __('Delete'); ?></option>
+                    <option value="<?= $this->Url->build(['action' => 'index']) ?>"><?= __('List'); ?></option>
+                    <option value="<?= $this->Url->build(['action' => 'add']) ?>"><?= __('New'); ?></option>
+                </select>
             </div>
-            <div class="row-item col-md-10">
-                <?= $this->Flash->render() ?>
-                <div class="box">
-                    <div class="box-content">
+        </div>
+        <div class="visible-xs-block visible-sm-block"><br /></div>
+        <div class="clearfix"></div>
+        <div class="entry">
                         <?= $this->Flash->render() ?>
                         <h2><?= h($user->name) ?></h2>
-                        <div>
+                        <div class="row">
                             <div class="col-lg-5">
                   <div class="panel panel-default">
                       <div class="panel-body">
@@ -76,11 +67,8 @@
                             <p><?= $user->status ? __('Yes') : __('No'); ?></p>
                                                 </div>
                     </div>
-              </div>
+              </div><div class="clearfix"></div>
                             </div>
-                                                                    </div>
-                </div>
-            </div>
-        </div>
+                                                                                    </div>
     </div>
-</div>
+</section>

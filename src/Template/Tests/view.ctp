@@ -68,6 +68,7 @@
                                                 </div>
                     </div>
               </div>
+                            <div class="clearfix"></div>
                             </div>
                                                                             <div class="row texts">
                                     <div class="col-lg-9">

@@ -376,6 +376,39 @@ header.static-header, .sidebar .sidebar-widget .post-item .read-more {
 header.static-header {
 	position: static;
 }
+/* Top Navigation Menu */
+.navbar-top-menu {
+    background-color: #000;
+    border: 0 none;
+    border-radius: 0;
+    margin: 0;
+    min-height: auto;
+}
+.navbar-top-menu .navbar-collapse {
+
+}
+.navbar-top-menu .dropdown {
+    border: 0 none;
+    height: auto;
+    width: auto;
+}
+.navbar-top-menu .navbar-nav > li > a {
+    color: #fff;
+    height: auto;
+    line-height: inherit;
+    padding: 8px 10px;
+}
+.navbar-top-menu .navbar-nav > li > a:hover {
+    color: #FFC600;
+}
+.navbar-top-menu .dropdown.open {
+    z-index: 999;
+}
+.navbar-top-menu .dropdown ul {
+    height: auto;
+    top: 100%;
+    width: auto;
+}
 /* Top Bar */
 .top-bar {
 	height: 40px;
@@ -536,6 +569,10 @@ header .main-navigation li.parent-item ul.submenu ul {
 header.alt .main-navigation li.parent-item ul.submenu {
 	left: 0;
 	top: 100%;
+}
+header.alt .main-navigation li.parent-item ul.submenu.right {
+	left: auto;
+	right: 0;
 }
 header .main-navigation li.parent-item ul.submenu ul {
 	left: 100%;

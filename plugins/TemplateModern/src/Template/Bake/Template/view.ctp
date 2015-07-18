@@ -116,6 +116,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
               </div>
                 <% endif; %>
             </div>
+            <div class="clearfix"></div>
                         <% if ($groupedFields['text']) : %>
                             <% foreach ($groupedFields['text'] as $field) : %>
                         <div class="row texts">
@@ -123,6 +124,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                                         <h6><?= __('<%= Inflector::humanize($field) %>') ?></h6>
                                         <?= $this->Text->autoParagraph(h($<%= $singularVar %>-><%= $field %>)); ?>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             <% endforeach; %>
                         <% endif; %>
@@ -163,6 +165,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                                 </table>
                                 <?php endif; ?>
                             </div>
+                            <div class="clearfix"></div>
                         </div>
                         <% endforeach; %>
         </div>

@@ -29,6 +29,7 @@
     <body class="<?= strtolower($this->request->params['controller']).' '.$this->request->params['action'] ?>">
         <div id="entire">
             <div class="loader"></div>
+            <?php echo $this->element('Menu/top_menu'); ?>
             <div class="top-bar clearfix">
                 <div class="container">
                     <div class="fl top-social-icons">
@@ -87,7 +88,15 @@
                                 <a href="<?= $this->Url->build('/tests') ?>" class="ln-tr">Testes</a>
                             </li>
                             <li class="parent-item login">
-                                <a href="<?= $this->Url->build('/login') ?>" class="ln-tr"><span class="grad-btn">Login</span></a>
+                                <?php if($this->request->session()->check('Auth.User.id')) { ?>
+                                    <a href="#" class="ln-tr"><span class="grad-btn"><i class="fa fa-user m-r-5"></i> <?= $this->request->session()->read('Auth.User.name'); ?></a>
+                                    <ul class="submenu right">
+                                        <li class="sub-item"><a href="<?= $this->Url->build('/me') ?>" class="ln-tr"><?= __('Profile') ?></a></li>
+                                        <li class="sub-item"><a href="<?= $this->Url->build('/logout') ?>" class="ln-tr"><?= __('Logout') ?></a></li>
+                                    </ul>
+                                <?php } else { ?>
+                                    <a href="<?= $this->Url->build('/login') ?>" class="ln-tr"><span class="grad-btn">Login</span></a>
+                                <?php } ?>
                             </li>
                         </ul>
                     </nav><!-- End NAV Container -->
