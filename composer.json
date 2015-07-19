@@ -39,7 +39,6 @@
         "post-install-cmd": "App\\Console\\Installer::postInstall",
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
     },
-    "config": {
-        "preferred-install": "dist"
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
