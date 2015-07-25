@@ -86,6 +86,18 @@ class AppController extends Controller
     public function beforeFilter(Event $event) {
 
         parent::beforeFilter($event);
+
+        if(Configure::read('App.fullBaseUrl')!=$this->request->session()->read('Domain.fullDomain')) {
+            $this->loadModel('Domains');
+            $domain = $this->Domains->findByDomain(str_replace(['http://', 'http://', 'www.'], '', Configure::read('App.fullBaseUrl')))->first();
+            if ($domain) {
+                $domain['fullDomain'] = Configure::read('App.fullBaseUrl');
+                $this->request->session()->write('Domain', $domain);
+            } else {
+                die("Dominio nao instalado.");
+            }
+        }
+
         if (!$this->Auth->user() && $this->Cookie->read('Auth.token') && $this->request->action != 'login') {
             $this->loadModel('Users');
             $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first();

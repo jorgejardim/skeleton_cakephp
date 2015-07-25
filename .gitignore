@@ -1,5 +1,4 @@
 /vendor/*
-/config/app.php
 /config/domains/*
 !/config/domains/
 !/config/domains/default.php

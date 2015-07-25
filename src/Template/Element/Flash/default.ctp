@@ -6,5 +6,5 @@ if (!empty($params['class'])) {
 ?>
 <div class="alert alert-<?= h($class) ?> alert-dismissable">
     <button data-dismiss="alert" class="close" type="button">×</button>
-    <?= h($message) ?>
+    <?= $message ?>
 </div>

@@ -16,7 +16,7 @@ $compact = ["'" . $singularName . "'"];
                 $this->Flash->success(__('The {0} has been saved.', [__('<%= $singularHumanName %>')]));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The {0} could not be saved. Please, try again.', [__('<%= $singularHumanName %>')]));
+                $this->Flash->error(__('The {0} could not be saved. Please, try again.', [__('<%= $singularHumanName %>')]).$this->Common->getEntityErrors($<%= $singularName %>));
             }
         }
 <%
