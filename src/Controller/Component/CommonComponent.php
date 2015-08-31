@@ -15,6 +15,8 @@ class CommonComponent extends Component
                     return '- '.$entry['_required'];
                 } elseif(isset($entry['_isUnique'])) {
                     return '- '.$entry['_isUnique'];
+                } elseif(isset($entry['_existsIn'])) {
+                    return '- '.$entry['_existsIn'];
                 } elseif(isset($entry['_empty'])) {
                     return '- '.$entry['_empty'];
                 } elseif(isset($entry['inList'])) {
