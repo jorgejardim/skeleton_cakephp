@@ -72,6 +72,11 @@ define('LOGS', ROOT . DS . 'logs' . DS);
 define('CACHE', TMP . 'cache' . DS);
 
 /**
+ * Path to the vendors files
+ */
+define('VENDORS', ROOT . DS . 'vendor' . DS);
+
+/**
  * The absolute path to the "cake" directory, WITHOUT a trailing DS.
  *
  * CakePHP should always be installed with composer, so look there.
@@ -85,10 +90,16 @@ define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 define('CAKE', CORE_PATH . 'src' . DS);
 
 /**
- * ASSETS
+ * Path to the assets files directory.
  */
-define('ASSETS', isset($_SERVER['DEVELOPER_JORGE'])?'/skeleton_cakephp/':'/');
+define('USE_AWS_S3', false);
+define('ASSETS', 'http://'.$_SERVER['HTTP_HOST'].'/' );
 define('ASSETS_IMG', ASSETS.'img/');
 define('ASSETS_CSS', ASSETS.'css/');
 define('ASSETS_JS', ASSETS.'js/');
-define('ASSETS_UPLOADS', ASSETS.'uploads/');
+define('ASSETS_UPLOADS', ASSETS.'uploads/' );
+
+/**
+ * Path to the uploads files directory.
+ */
+define('UPLOADS', WWW_ROOT.'uploads/');

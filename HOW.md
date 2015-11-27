@@ -1,21 +1,15 @@
-#CAKE BAKE
+#CONFIGURARIONS
 
-bin/cake bake model ModelNames --theme TemplateModern
-bin/cake bake controller ModelNames --theme TemplateModern
-bin/cake bake template ModelNames --theme TemplateModern
+- Change the default template in: src/Template/Layout/default.ctp
 
-#Internationalization
+#CAKE BAKE ADMIN
 
-Locale::getDefault();
-Locale::setDefault('fr');
+bin/cake bake model ModelNames --theme TemplateAdmin
+bin/cake bake controller ModelNames --theme TemplateAdmin
+bin/cake bake template ModelNames --theme TemplateAdmin
 
-#Sessions
-$this->request->session()->check('Auth.User.id');
-$this->request->session()->read('Auth.User.id');
-$this->request->session()->write('Auth.User.id', '1');
-$this->request->session()->delete('Auth.User.id');
+#CAKE BAKE SITE
 
-#Json
-Add extensão na URL
-Ex: http://localhost/app/posts.json
-
+bin/cake bake model ModelNames --theme TemplateSite
+bin/cake bake controller ModelNames --theme TemplateSite
+bin/cake bake template ModelNames --theme TemplateSite

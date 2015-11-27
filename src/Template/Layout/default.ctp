@@ -1,2 +1,3 @@
 <?php
-require 'modern.ctp';
+// require 'Templates/Site/default.ctp';
+require 'Templates/Admin/default.ctp';

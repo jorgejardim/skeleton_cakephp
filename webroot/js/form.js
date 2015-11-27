@@ -124,7 +124,7 @@
     }, "Informe uma data e uma hora válida");
 
     jQuery.validator.addMethod("time", function (value, element) {
-        if (!value.replace("__:__", "").replace("_", "").replace(":", "").length == 0) return true;
+        if (value.replace("__:__", "").replace("_", "").replace(":", "").length == 0) return true;
         if (value.length != 5) return false;
           var data = value;
               var hor = data.substr(0, 2);
@@ -152,7 +152,7 @@
         var a = [];
         var b = new Number;
         var c = 11;
-        for (i = 0; i < 11; i++) {
+        for (var i = 0; i < 11; i++) {
             a[i] = cpf.charAt(i);
             if (i < 9) b += (a[i] * --c);
         }
@@ -289,98 +289,6 @@
     /*
     * Mask
     */
-    function init_masks() {
-        jQuery(".date, .dateBR").mask("99/99/9999", {autoclear: 0});
-        jQuery(".hour").mask("99:99");
-        jQuery(".cep").mask("99999-999", {autoclear: 0});
-        jQuery(".cpf").mask("999.999.999-99");
-        jQuery(".cnpj").mask("99.999.999/9999-99");
-        jQuery(".alphanumeric1").mask("*",{placeholder:''});
-        jQuery(".alphanumeric2").mask("*?*",{placeholder:''});
-        jQuery(".alphanumeric3").mask("*?**",{placeholder:''});
-        jQuery(".phone").mask("(99) 9999-9999",{placeholder:''});
-        jQuery('.currency').autoNumeric('init', {aSep: '.', aDec: ',', mDec: '2', aSign: '', aPad: true });
-        jQuery('.decimal').autoNumeric('init', {aSep: '.', aDec: ',', mDec: '2', aSign: '', aPad: true });
-        jQuery('.mobile').focusout(function(){
-            var phone, element;
-            element = jQuery(this);
-            element.unmask();
-            phone = element.val().replace(/\D/g, '');
-            if(phone.length > 10) {
-                element.mask("(99) 99999-999?9",{placeholder:''});
-            } else {
-                element.mask("(99) 9999-9999?9",{placeholder:''});
-            }
-        });
-        $('.mobile').blur();
-        jQuery('.thousand').keyup(function(){
-            var value, element;
-            element = jQuery(this);
-            value = element.val().replace(/\D/g, '');
-            value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-            element.val(value);
-        });
-        jQuery('.numeric').keyup(function(){
-            var value, element;
-            element = jQuery(this);
-            value = element.val().replace(/\D/g, '');
-            element.val(value);
-        });
-        jQuery('.numeric-dot').keyup(function(){
-            var value, element;
-            element = jQuery(this);
-            value = element.val().replace(',', '.');
-            value = value.replace(/[^0-9\.]/g, '');
-            element.val(value);
-        });
-        $('.address-number').keyup(function(){
-            var value, element;
-            element = $(this);
-            value = element.val();
-            if(value.charAt(0)=='s' || value.charAt(0)=='S') {
-                element.val('s/n');
-            } else {
-                value = value.replace(/\D/g, '');
-                value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-                element.val(value);
-            }
-        });
-        $('.currency').focusout(function(){
-            var value, element;
-            element = $(this);
-            value = element.val();
-            if((value.indexOf(',') == -1) && value) {
-                element.val(value+',00');
-            } else if(value) {
-                var dec = value.split(',');
-                if(dec.length>1) {
-                    var dec = dec[1].length;
-                    if(dec==1) {
-                        element.val(value+'0');
-                    }
-                }
-            }
-        });
-        $('.currency').blur();
-        $('.decimal').focusout(function(){
-            var value, element;
-            element = $(this);
-            value = element.val();
-            if(value) {
-                var dec = value.split(',');
-                if(dec.length>1) {
-                    var dec = dec[1].length;
-                    if(dec==1) {
-                        element.val(value+'0');
-                    }
-                }
-            }
-        });
-        $('.decimal').blur();
-        if(jQuery().capitalize) {
-            $('.capitalize').capitalize();
-        }
-    }
     jQuery(document).ready(function() {
         init_masks();
     })
@@ -388,11 +296,11 @@
     /*
     * CEP
     */
-    jQuery(".cep").keyup(function(e) {
+    jQuery(".cep, .zip").keyup(function(e) {
         var v = jQuery(this).val().replace('_','').replace('_','');
         if(v.length >= 8) {
             jQuery('.loading-cep').show();
-            $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+jQuery(".cep").val(), function(){
+            $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+jQuery(".cep, .zip").val(), function(){
                 if(resultadoCEP["tipo_logradouro"]){
                     jQuery(".endereco, .address").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
                     jQuery(".bairro, .neighborhood").val(unescape(resultadoCEP["bairro"]));
@@ -416,67 +324,106 @@
     /*
     * ToolTip
     */
-    jQuery('[data-toggle="tooltip"]').tooltip();
+    jQuery('[data-toggle="tooltip"]').tooltip({container: 'body'});
+    if(jQuery().qtip) {
+        $('[data-toggle="qtip"]').qtip({
+            content: {
+                attr: 'data-original-title'
+            },
+            style: {
+                classes: 'qtip-dark qtip-shadow'
+            },
+            position: {
+                my: 'bottom left',
+                at: 'top right',
+                target: 'mouse'
+            }
+        });
+    }
 
     /*
      * Contadores TextAreas
      */
     if(jQuery().maxlength) {
-        $('.maxlength100').maxlength({
+        $('.maxlength').maxlength({
             alwaysShow: true,
-            threshold: 100,
             warningClass: "label label-info",
             limitReachedClass: "label label-warning",
             placement: 'bottom',
             message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
         });
-        $('.maxlength200').maxlength({
-            alwaysShow: true,
-            threshold: 200,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
+    }
+
+    /*
+     * Date Range Picker
+     */
+    if(jQuery().daterangepicker) {
+        $('.daterangepick').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY',
+                daysOfWeek: [
+                    'Dom',
+                    'Seg',
+                    'Ter',
+                    'Qua',
+                    'Qui',
+                    'Sex',
+                    'Sab'
+                ],
+                monthNames: [
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Augosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                ],
+            },
+            autoApply: true,
         });
-        $('.maxlength255').maxlength({
-            alwaysShow: true,
-            threshold: 255,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
+    }
+
+    /*
+     * iCheck
+     */
+    if ($(".icheck-me").length > 0) {
+        $(".icheck-me").each(function () {
+            var $el = $(this);
+            var skin = ($el.attr('data-skin') !== undefined) ? "_" + $el.attr('data-skin') : "",
+                color = ($el.attr('data-color') !== undefined) ? "-" + $el.attr('data-color') : "";
+
+            var opt = {
+                checkboxClass: 'icheckbox' + skin + color,
+                radioClass   : 'iradio' + skin + color,
+                increaseArea : "10%"
+            }
+
+            $el.iCheck(opt);
         });
-        $('.maxlength400').maxlength({
-            alwaysShow: true,
-            threshold: 400,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
+    }
+
+    /*
+     * Sliders Numbers
+     */
+    if(jQuery().slider) {
+        $('.slider-number, .slider-pixel').slider({
+            formatter: function(value) {
+                return value;
+            }
         });
-        $('.maxlength800').maxlength({
-            alwaysShow: true,
-            threshold: 800,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
+        $('.slider-number').on("slide", function(slideEvt) {
+            var rel = $(this).attr('rel');
+            $("#"+rel).text(slideEvt.value);
         });
-        $('.maxlength1200').maxlength({
-            alwaysShow: true,
-            threshold: 1200,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
-        });
-        $('.maxlength1600').maxlength({
-            alwaysShow: true,
-            threshold: 1600,
-            warningClass: "label label-info",
-            limitReachedClass: "label label-warning",
-            placement: 'bottom',
-            message: 'Quantidade Restante de Caracteres: %charsTyped% de %charsTotal%.'
+        $('.slider-pixel').on("slide", function(slideEvt) {
+            var rel = $(this).attr('rel');
+            $("#"+rel).text(slideEvt.value+'px');
         });
     }
 
@@ -490,15 +437,17 @@
             height: "500px",
             lang: 'pt-BR',
             toolbar: [
+                ['place', ['placeholders']],
                 ['style', ['style']],
                 ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontsize', ['fontsize']],
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
                 ['insert', ['link', 'picture', 'hr']],
+                ['icons', ['fontawesomes']],
                 ['view', ['fullscreen']],
-                ['code', ['codeview']],
-                ['place', ['placeholders']]
+                ['code', ['codeview']]
             ],
             colors: [
                 ['#FF5E00', '#003A65', '#76ACD5', '#FEFEED', '#f5f5e4', '#F8F8F8', '#202020', '#666666'],
@@ -530,3 +479,99 @@
     }
 
 })(jQuery);
+
+/*
+* Mask
+*/
+function init_masks() {
+    jQuery(".date, .dateBR").mask("99/99/9999", {autoclear: 0});
+    jQuery(".hour, .time").mask("99:99");
+    jQuery(".cep, .zip").mask("99999-999", {autoclear: 0});
+    jQuery(".cpf").mask("999.999.999-99");
+    jQuery(".cnpj").mask("99.999.999/9999-99");
+    jQuery(".alphanumeric1").mask("*",{placeholder:''});
+    jQuery(".alphanumeric2").mask("*?*",{placeholder:''});
+    jQuery(".alphanumeric3").mask("*?**",{placeholder:''});
+    jQuery(".phone").mask("(99) 9999-9999",{placeholder:''});
+    jQuery('.currency').autoNumeric('init', {aSep: '.', aDec: ',', mDec: '2', aSign: '', aPad: true });
+    jQuery('.decimal').autoNumeric('init', {aSep: '.', aDec: ',', mDec: '2', aSign: '', aPad: true });
+    jQuery('.mobile').focusout(function(){
+        var phone, element;
+        element = jQuery(this);
+        element.unmask();
+        phone = element.val().replace(/\D/g, '');
+        if(phone.length > 10) {
+            element.mask("(99) 99999-999?9",{placeholder:''});
+        } else {
+            element.mask("(99) 9999-9999?9",{placeholder:''});
+        }
+    });
+    jQuery('.mobile').blur();
+    jQuery('.thousand').keyup(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val().replace(/\D/g, '');
+        value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+        element.val(value);
+    });
+    jQuery('.numeric').keyup(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val().replace(/\D/g, '');
+        element.val(value);
+    });
+    jQuery('.numeric-dot').keyup(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val().replace(',', '.');
+        value = value.replace(/[^0-9\.]/g, '');
+        element.val(value);
+    });
+    jQuery('.address-number').keyup(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val();
+        if(value.charAt(0)=='s' || value.charAt(0)=='S') {
+            element.val('s/n');
+        } else {
+            value = value.replace(/\D/g, '');
+            value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+            element.val(value);
+        }
+    });
+    jQuery('.currency').focusout(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val();
+        if((value.indexOf(',') == -1) && value) {
+            element.val(value+',00');
+        } else if(value) {
+            var dec = value.split(',');
+            if(dec.length>1) {
+                var dec = dec[1].length;
+                if(dec==1) {
+                    element.val(value+'0');
+                }
+            }
+        }
+    });
+    jQuery('.currency').blur();
+    jQuery('.decimal').focusout(function(){
+        var value, element;
+        element = jQuery(this);
+        value = element.val();
+        if(value) {
+            var dec = value.split(',');
+            if(dec.length>1) {
+                var dec = dec[1].length;
+                if(dec==1) {
+                    element.val(value+'0');
+                }
+            }
+        }
+    });
+    jQuery('.decimal').blur();
+    if(jQuery().capitalize) {
+        jQuery('.capitalize').capitalize();
+    }
+}

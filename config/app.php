@@ -91,6 +91,42 @@ return [
      * Configure the cache adapters.
      */
     'Cache' => [
+
+        'hour' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+1 hours',
+        ],
+
+        'day' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+1 days',
+        ],
+
+        'week' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+7 days',
+        ],
+
+        'month' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+30 days',
+        ],
+
+        'year' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+365 days',
+        ],
+
         'default' => [
             'className' => 'File',
             'path' => CACHE,

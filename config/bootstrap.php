@@ -70,37 +70,12 @@ try {
     die($e->getMessage() . "\n");
 }
 
-/**
- * Read configuration file by domains
- */
-$file_config_app = 'localhost';
-if(isset($_SERVER['HTTP_HOST'])) {
-    $file_config_app = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-}
-try {
-    Configure::load('domains/'.$file_config_app, 'default', false);
-} catch (\Exception $e) {
-    die($e->getMessage() . " (Arquivo de configuracao do dominio.)\n");
-}
-
-/**
- * Read configuration file by apps
- */
-if (Configure::read('Client.apps')) {
-    $apps = Configure::read('Client.apps');
-    foreach ($apps as $file_config_app) {
-        try {
-            Configure::load('apps/'.$file_config_app, 'default', false);
-        } catch (\Exception $e) {
-            die($e->getMessage() . " (Arquivo de configuracao do aplicativo ".$file_config_app.".)\n");
-        }
-    }
-}
-
 // Load an environment local configuration file.
 // You can use a file like app_local.php to provide local overrides to your
 // shared configuration.
-//Configure::load('app_local', 'default');
+if (isset($_SERVER['DEVELOPER_JORGE']) || !isset($_SERVER['HTTP_HOST']) || strpos($_SERVER['HTTP_HOST'], 'debug') !== false) {
+    Configure::load('app_local', 'default');
+}
 
 // When debug = false the metadata cache should last
 // for a very very long time, as we don't want
@@ -212,8 +187,10 @@ Request::addDetector('tablet', function ($request) {
 Plugin::load('Migrations');
 Plugin::load('BootstrapUI');
 Plugin::load("JCustomCakephp3");
-Plugin::load('TemplateModern');
+Plugin::load('TemplateAdmin');
+Plugin::load('TemplateSite');
 //Plugin::load('JorgeFacebook');
+//Plugin::load('Siezi/SimpleCaptcha');
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
@@ -241,6 +218,9 @@ Type::build('datetime')
 Type::build('timestamp')
      ->useLocaleParser()
      ->setLocaleFormat('dd/MM/yyyy HH:mm');
+Type::build('time')
+     ->useLocaleParser()
+     ->setLocaleFormat('HH:mm');
 
 // Habilita o parseamento de decimal localizaddos
 Type::build('decimal')

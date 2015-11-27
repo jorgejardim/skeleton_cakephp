@@ -43,7 +43,7 @@ Router::defaultRouteClass('Route');
 
 Router::scope('/', function ($routes) {
 
-    $routes->extensions(['json']);
+    $routes->extensions(['json', 'xml', 'pdf']);
     //$routes->resources('Users');
 
     /**
