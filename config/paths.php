@@ -26,6 +26,11 @@ if (!defined('DS')) {
  */
 
 /**
+ * The default template (default: admin or site)
+ */
+define('TEMPLATE', 'admin');
+
+/**
  * The full path to the directory which holds "src", WITHOUT a trailing DS.
  */
 define('ROOT', dirname(__DIR__));
@@ -97,9 +102,10 @@ define('ASSETS', 'http://'.$_SERVER['HTTP_HOST'].'/' );
 define('ASSETS_IMG', ASSETS.'img/');
 define('ASSETS_CSS', ASSETS.'css/');
 define('ASSETS_JS', ASSETS.'js/');
-define('ASSETS_UPLOADS', ASSETS.'uploads/' );
+define('ASSETS_FONTS', ASSETS.'fonts/');
+define('ASSETS_UPLOAD', ASSETS.'upload/' );
 
 /**
- * Path to the uploads files directory.
+ * Path to the uploadS files directory.
  */
-define('UPLOADS', WWW_ROOT.'uploads/');
+define('UPLOAD', WWW_ROOT.'upload/');

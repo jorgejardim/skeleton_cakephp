@@ -108,7 +108,7 @@ $fields = collection($fields)
                                     <tbody>
                                         <tr>
                                             <td class="text-center nopadding">
-                                                <div class="alert alert-warning m0"><?= __('No results found') ?></div>
+                                                <div class="alert alert-warning m-b-0"><?= __('No results found') ?></div>
                                             </td>
                                         </tr>
                                     </tbody>

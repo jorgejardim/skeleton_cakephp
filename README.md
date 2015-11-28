@@ -15,10 +15,10 @@ If Composer is installed globally, run
 composer create-project --prefer-dist --stability=dev jorge/cakephp-skeleton [app_name]
 ```
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
+You should now be able to visit the path to where you installed the app and see the setup traffic lights.
 
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+3. Change the default TEMPLATE in: config/paths.php
+4. Create database
+5. Read and edit `config/app.php` and `config/app_local.php` and setup the 'Datasources' and any other configuration relevant for your application.
+6. Execute Shell: bin/cake migrations migrate
+7. Ok!

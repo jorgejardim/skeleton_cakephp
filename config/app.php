@@ -65,6 +65,15 @@ return [
     ],
 
     /**
+     * AWS S3
+     */
+    'S3' => [
+        'awsAccessKey' => '',
+        'awsSecretKey' => '',
+        'bucket' => '',
+    ],
+
+    /**
      * Security and encryption configuration
      *
      * - salt - A random string used in security hashing methods.

@@ -34,6 +34,11 @@ class PagesController extends AppController
         $this->Auth->allow();
     }
 
+    public function home()
+    {
+
+    }
+
     /**
      * Displays a view
      *

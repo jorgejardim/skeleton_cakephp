@@ -1,0 +1,236 @@
+.panel-widget .panel.satblue {
+  border: 2px solid #2c5e7b;
+}
+.panel-widget .panel.satblue:hover {
+  border-color: #1f4155 !important;
+}
+.panel-widget .panel.satblue .panel-heading {
+  background: #2c5e7b !important;
+}
+.panel-widget .panel.satblue .panel-heading .panel-title > a {
+  color: #fff;
+}
+.panel-widget .panel.satblue .panel-heading:hover {
+  background: #1f4155 !important;
+}
+
+.font-satblue {
+  color: #2c5e7b;
+}
+
+ul > li.satblue, .label-satblue {
+  background: #2c5e7b;
+}
+
+.progress .bar.bar-satblue {
+  background: #2c5e7b;
+}
+
+.pricing-tables .pricing.satblue > li.head {
+  background: #2c5e7b;
+}
+.pricing-tables .pricing.satblue > li.head .info {
+  background: #336c8e;
+}
+.pricing-tables .pricing.satblue > li.head .name {
+  background: #1f4155;
+}
+
+.btn.btn-satblue {
+  background: #2c5e7b;
+  color: #fff !important;
+}
+.btn.btn-satblue:hover {
+  background: #1f4155;
+}
+
+.box.box-color.satblue .box-title {
+  background: #2c5e7b !important;
+}
+.box.box-color.satblue .box-title .actions > a:hover {
+  color: #2c5e7b;
+}
+.box.box-color.satblue .form-wizard .wizard-steps li.active .single-step .title {
+  background: #2c5e7b;
+}
+.box.box-color.satblue .btn.btn-primary {
+  background: #2c5e7b;
+}
+.box.box-bordered.box-color.satblue .box-title {
+  border-color: #2c5e7b !important;
+}
+.box.box-bordered.box-color.satblue .box-content {
+  border-color: #2c5e7b !important;
+}
+.box.box-bordered.box-color.satblue .slimScrollDiv {
+  border-bottom: 2px solid #2c5e7b;
+}
+
+.timeline > li .timeline-content .left .icon.satblue {
+  background: #2c5e7b;
+}
+
+.daterangepicker .active {
+  background: #2c5e7b;
+}
+.mobile-sidebar-toggle {
+  color: #fff;
+}
+#navigation .dropdown-menu {
+  border-color: #2c5e7b;
+}
+#navigation .dropdown-menu > li.dropdown-submenu .dropdown-menu {
+  border-top: 2px solid #2c5e7b;
+}
+#navigation .dropdown-menu > li.dropdown-submenu:hover > a, #navigation .dropdown-menu > li.dropdown-submenu:focus > a {
+  background: #2c5e7b;
+}
+#navigation .dropdown-menu > li > a:hover {
+  background: #2c5e7b;
+}
+.datepicker.datepicker-dropdown .datepicker-days .active, .datepicker.datepicker-dropdown .datepicker-years .active, .datepicker.datepicker-dropdown .datepicker-months .active {
+  background: #2c5e7b;
+}
+.datepicker.datepicker-dropdown .datepicker-days .active:hover, .datepicker.datepicker-dropdown .datepicker-years .active:hover, .datepicker.datepicker-dropdown .datepicker-months .active:hover {
+  background: #1f4155;
+}
+.form-wizard .wizard-steps li.active .single-step .title {
+  background: #2c5e7b;
+}
+.btn.btn-primary {
+  background: #2c5e7b;
+}
+.login {
+  background: #2c5e7b;
+}
+a {
+  color: #2c5e7b;
+}
+.btn {
+  color: #333;
+}
+.btn.btn-primary {
+  background: #2c5e7b;
+  color: #fff;
+}
+.btn.btn-inverse, .btn.btn-success, .btn.btn-danger {
+  color: #fff;
+}
+.locked {
+  background: #2c5e7b !important;
+}
+.locked .pull-left a {
+  background: #183343;
+}
+.locked .pull-left a:hover {
+  background: #0a161d;
+}
+#navigation {
+  background: #032B38;
+}
+#navigation .toggle-mobile {
+  background: #183343;
+}
+#navigation .mobile-nav.open {
+  background: #2c5e7b;
+}
+#navigation .mobile-nav.open > li.active > a {
+  background: #0a161d;
+}
+#navigation .mobile-nav.open > li.active > ul {
+  background: #0a161d;
+}
+#navigation .mobile-nav.open > li > a {
+  background: #183343;
+}
+#navigation .mobile-nav.open > li > ul {
+  background: #183343;
+}
+#navigation .main-nav > li.active > a:hover {
+  background: #fff;
+}
+#navigation .main-nav > li.active.open > a {
+  background: #fff;
+}
+#navigation .main-nav > li.open > a {
+  background: #183343;
+}
+#navigation .main-nav > li > a:hover {
+  background: #183343;
+}
+#navigation .user .icon-nav > li > a:hover {
+  background: #183343;
+}
+#navigation .user .dropdown.open {
+  background: #183343;
+}
+#navigation .user .dropdown > a:hover {
+  background: #183343;
+}
+#navigation .dropdown-menu {
+  border-color: #2c5e7b;
+}
+#navigation .dropdown-menu > li > a:hover {
+  background: #2c5e7b;
+}
+.search-form .search-pane button[type="submit"] {
+  background: #2c5e7b;
+}
+.messages > li.insert .submit button {
+  background: #2c5e7b;
+}
+.messages > li.right .name {
+  color: black;
+}
+.messages > li.right .message {
+  background: #99c2da;
+}
+.messages > li.right .message p {
+  color: #04080a;
+}
+.messages > li.right .message .time {
+  color: #04080a;
+}
+.messages > li.right .message .caret {
+  border-left: 7px solid #99c2da;
+}
+.letterbox .letter > li.active {
+  background: #2c5e7b;
+}
+.calendar .fc-content .fc-event .fc-event-inner {
+  background: #2c5e7b;
+}
+.calendar .fc-button.fc-state-active {
+  background: #2c5e7b;
+}
+.calendar .fc-button.fc-state-active:hover {
+  background: #2c5e7b;
+}
+.table.table-user tr.alpha td.alpha-val span {
+  background: #2c5e7b;
+}
+.tagsinput#textfield_tagsinput .tag, .ms-container .multi-custom-header, .slider .ui-slider-handle, .form-wizard .wizard-steps li.active .single-step .title, .user-list h4, .nav.nav-pills > li.active > a, .nav.nav-list > li.active > a, .table.table-colored-header thead th, .table.table-colored-header thead td, .dataTables_wrapper .dataTables_paginate > span > a.paginate_active, .elfinder-navbar .ui-state-active, .pagination.pagination-custom li.active a:hover, .pagination.pagination-custom li.active a {
+  background: #2c5e7b;
+}
+.elfinder-navbar .ui-state-active {
+  border-color: #2c5e7b;
+}
+#main .box .box-title .tabs > li.active > a {
+  background: #2c5e7b;
+}
+#main .box.box-color .box-title {
+  background: #2c5e7b;
+}
+#main .box.box-color .box-title .tabs > li.active > a {
+  background: #fff;
+  color: #2c5e7b;
+}
+#main .box.box-color .box-title .tabs > li > a:hover {
+  color: #2c5e7b;
+}
+#main .box.box-bordered.box-color .box-title {
+  border-color: #2c5e7b;
+}
+#main .box.box-bordered.box-color .box-content {
+  border-color: #2c5e7b;
+}

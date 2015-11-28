@@ -15,10 +15,10 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
-use Cake\Routing\Router;
-use Cake\Network\Email\Email;
+// use Cake\Routing\Router;
 use Cake\Event\Event;
-use Cake\Core\Configure;
+use Cake\Cache\Cache;
+// use App\Pdf\Tcpdf;
 
 /**
  * Application Controller
@@ -30,16 +30,12 @@ use Cake\Core\Configure;
  */
 class AppController extends Controller
 {
-
     public $helpers = [
         'BootstrapUI.Form',
         'BootstrapUI.Html',
-        'JorgeFacebook.Facebook',
         'Paginator',
-        'Commons'
+        'Commons',
     ];
-
-    public $scripts_for_layout;
 
     /**
      * Initialization hook method.
@@ -52,15 +48,19 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Common');
-        $this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler', [
+            // 'viewClassMap' => [
+            //     'pdf' => 'Tcpdf'
+            // ]
+        ]);
         $this->loadComponent('Cookie');
         $this->loadComponent('Flash');
         $this->loadComponent('Bootstrap.Flash');
         $this->loadComponent('Auth', [
-            'authorize' => ['Access'],
+            'authorize' => ['Controller'],
             'authenticate' => [
                 'Form' => [
-                    'fields' => ['username' => 'username', 'password' => 'password'],
+                    'fields' => ['username' => 'email', 'password' => 'password'],
                     'scope' => ['Users.status' => '1'],
                     'passwordHasher' => ['className' => 'Legacy']
                 ]
@@ -68,48 +68,41 @@ class AppController extends Controller
             'authError' => 'Você não está autorizado a acessar esse local',
             'loginRedirect' => '/',
             'logoutRedirect' => '/login',
-            'unauthorizedRedirect' => '/login'
+            'unauthorizedRedirect' => '/'
         ]);
-        // $this->loadComponent('AkkaFacebook.Graph', [
-        //     'app_id' => Configure::read('Facebook.app_id'),
-        //     'app_secret' => Configure::read('Facebook.app_secret'),
-        //     'app_scope' => 'email',
-        //     'enable_create' => false,
-        //     'redirect_url' => Router::url(['controller' => 'Users', 'action' => 'login2'], TRUE),
-        //     'post_login_redirect' => Router::url(['controller' => 'Users', 'action' => 'account'], TRUE),
-        //     'user_columns' => ['long_name' => 'name', 'extra_columns' => ['active' => 1, 'locale' => 'pt_BR']] //not required
-        // ]);
 
         $this->_defaults();
     }
 
+    /**
+     * Before Filter
+     *
+     * @return void
+     */
     public function beforeFilter(Event $event) {
 
         parent::beforeFilter($event);
 
-        if(Configure::read('App.fullBaseUrl')!=$this->request->session()->read('Domain.fullDomain')) {
-            $this->loadModel('Domains');
-            $domain = $this->Domains->findByDomain(str_replace(['http://', 'http://', 'www.'], '', Configure::read('App.fullBaseUrl')))->first();
-            if ($domain) {
-                $domain['fullDomain'] = Configure::read('App.fullBaseUrl');
-                $this->request->session()->write('Domain', $domain);
-            } else {
-                die("Dominio nao instalado.");
-            }
-        }
-
-        if (!$this->Auth->user() && $this->Cookie->read('Auth.token') && $this->request->action != 'login') {
-            $this->loadModel('Users');
-            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first();
-            if ($user) {
-                $this->Auth->setUser($user->toArray());
-                $this->_authExtras();
-            }
-        }
+        $this->_authRemember();
     }
 
-    private function _defaults() {
+    /**
+     * After Filter
+     *
+     * @return void
+     */
+    public function afterFilter(Event $event) {
 
+        parent::afterFilter($event);
+    }
+
+    /**
+     * Defaults Values
+     *
+     * @return void
+     */
+    private function _defaults()
+    {
         $this->Cookie->configKey('Default', [
             'expires' => '+365 days',
             //'path' => '/',
@@ -126,6 +119,12 @@ class AppController extends Controller
             'encryption' => false,
             'httpOnly' => 'true'
         ]);
+        $this->Cookie->configKey('Session', [
+            'expires' => 0,
+            //'path' => '/',
+            'encryption' => false,
+            'httpOnly' => 'true'
+        ]);
 
         // Default Locate
         if($this->Cookie->read('Default.locale')) {
@@ -133,18 +132,26 @@ class AppController extends Controller
         }
     }
 
-    protected function _authExtras() {
+    /**
+     * Auth Extras
+     *
+     * @return void
+     */
+    protected function _authExtras()
+    {
         $this->loadModel('Users');
         $user = $this->Auth->user();
-        if(is_array(@getimagesize(ASSETS_UPLOADS.'avatars/'.Configure::read('App.name_reference').'_'.$this->Auth->user('id').'.jpg'))) {
-            $this->request->session()->write('Auth.User.avatar', Configure::read('App.name_reference').'_'.$this->Auth->user('id').'.jpg');
+        if($this->Auth->user('avatar')) {
+            $this->request->session()->write('Auth.User.avatar', $this->Auth->user('id').'.jpg');
         }
-        if($this->Auth->user('role')=='root' || $this->Auth->user('role')=='master') {
-            $this->request->session()->write('Auth.User.internal', true);
-        }
+        $this->request->session()->write('Auth.User.first_name', substr($this->Auth->user('name'), 0, strpos($this->Auth->user('name'), ' ')));
         $this->Cookie->write('Default.locale', $this->Auth->user('locale'));
+        $role = $this->Users->Roles->get($this->Auth->user('role_id'))->toArray();
+        $role['permissions'] = json_decode($role['permissions']);
+        array_push($role['permissions'], 'Users/me', 'Pages/home', 'Pages/display');
+        $this->request->session()->write('Auth.User.Role', $role);
         $user = $this->Users->get($this->Auth->user('id'));
-        if (!empty($this->request->data['remember']) || $this->Auth->user('role')=='root') {
+        if (!empty($this->request->data['remember'])) {
             $token = \Cake\Utility\Text::uuid();
             $user = $this->Users->patchEntity($user, ['auth_token' => $token]);
             $this->Cookie->write('Auth.token', $token);
@@ -152,5 +159,50 @@ class AppController extends Controller
             $user = $this->Users->patchEntity($user, ['auth_token' => null]);
         }
         $this->Users->save($user);
+    }
+
+    /**
+     * Auth Remember
+     *
+     * @return void
+     */
+    private function _authRemember()
+    {
+        if (!$this->Auth->user() && $this->Cookie->read('Auth.token') && $this->request->action !== 'login') {
+            $this->loadModel('Users');
+            $user = $this->Users->findByAuthToken($this->Cookie->read('Auth.token'))->first();
+            if ($user) {
+                $this->Auth->setUser($user->toArray());
+                $this->_authExtras();
+            }
+        }
+    }
+
+    /**
+     * Authorized
+     *
+     * @return boolean
+     */
+    public function isAuthorized($user)
+    {
+        if(@in_array($this->request->params['controller'].'/'.$this->request->params['action'], $user['Role']['permissions'])) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Is Created By Me ?
+     *
+     * @return boolean
+     */
+    public function isCreatedByMe($result)
+    {
+        if ($result->created_user_id == $this->Auth->user('id') || $this->Auth->user('Role.role') === 'administrador' || $this->Auth->user('Role.role') === 'master' || $this->Auth->user('Role.role') === 'root') {
+            return true;
+        }
+        $name = empty($result->created_user->name) ? '' : $result->created_user->name;
+        $this->Flash->error(__('You are not allowed. This action can only be performed by the creator of the record {0} or your system administrator.', [$name]));
+        return false;
     }
 }

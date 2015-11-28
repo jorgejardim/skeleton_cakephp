@@ -1,3 +1,2 @@
 <?php
-// require 'Templates/Site/logon.ctp';
-require 'Templates/Admin/logon.ctp';
+require 'Templates/'.TEMPLATE.'/logon.ctp';

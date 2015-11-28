@@ -11,6 +11,9 @@ use Cake\Event\Event;
  */
 class TestsController extends AppController
 {
+    public $helpers = [
+        'Siezi/SimpleCaptcha.SimpleCaptcha',
+    ];
 
     public function beforeFilter(Event $event)
     {
@@ -22,7 +25,8 @@ class TestsController extends AppController
      * Mult Tests
      * Sempre pode apagar e fazer novos testes
      */
-    public function tests() {
+    public function tests()
+    {
 
     }
 
@@ -33,10 +37,39 @@ class TestsController extends AppController
 
     /**
      * PDF
+     * Na URL incluir a extensão .pdf
+     * ex: http://www.dominio.com/tests/pdf.pdf
      */
-    public function pdf() {
-        $this->set('pdf', new \fpdf\FPDF('P','mm','A4'));
-        $this->render('pdf', 'pdf');
+    public function pdf() {}
+
+    /**
+     * Test Captcha
+     */
+    public function captcha($id = 1)
+    {
+        $test = $this->Tests->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+
+            $validator = new \Siezi\SimpleCaptcha\Model\Validation\SimpleCaptchaValidator();
+            $errors = $validator->errors($this->request->data);
+            if($errors) {
+                $this->Flash->error(__('Error').': '.$errors['captcha']['captcha']);
+            } else {
+
+                $test = $this->Tests->patchEntity($test, $this->request->data);
+                if ($this->Tests->save($test)) {
+                    $this->Flash->success(__('Saved successfully'));
+                    return $this->redirect(['action' => 'index', '?' => @$this->request->query]);
+                } else {
+                    $this->Flash->error(__('Error: It not saved. Please, try again.').$this->Common->getEntityErrors($test));
+                }
+
+            }
+        }
+        $this->set(compact('test'));
+        $this->set('_serialize', ['test']);
     }
 
     /**
@@ -46,6 +79,10 @@ class TestsController extends AppController
      */
     public function index()
     {
+        if(!empty($this->request->query['search'])) {
+            $this->paginate['conditions'] = ['Tests.'.$this->Tests->displayField().' LIKE' => '%'.$this->request->query['search'].'%'];
+        }
+        $this->paginate['order'] = ['Tests.'.$this->Tests->displayField() => 'ASC'];
         $this->set('tests', $this->paginate($this->Tests));
         $this->set('_serialize', ['tests']);
     }
@@ -77,10 +114,10 @@ class TestsController extends AppController
         if ($this->request->is('post')) {
             $test = $this->Tests->patchEntity($test, $this->request->data);
             if ($this->Tests->save($test)) {
-                $this->Flash->success(__('The {0} has been saved.', [__('Test')]));
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('Saved successfully'));
+                return $this->redirect(['action' => 'index', '?' => @$this->request->query]);
             } else {
-                $this->Flash->error(__('The {0} could not be saved. Please, try again.', [__('Test')]));
+                $this->Flash->error(__('Error: It not saved. Please, try again.').$this->Common->getEntityErrors($test));
             }
         }
         $this->set(compact('test'));
@@ -102,10 +139,10 @@ class TestsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $test = $this->Tests->patchEntity($test, $this->request->data);
             if ($this->Tests->save($test)) {
-                $this->Flash->success(__('The {0} has been saved.', [__('Test')]));
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('Saved successfully'));
+                return $this->redirect(['action' => 'index', '?' => @$this->request->query]);
             } else {
-                $this->Flash->error(__('The {0} could not be saved. Please, try again.', [__('Test')]));
+                $this->Flash->error(__('Error: It not saved. Please, try again.').$this->Common->getEntityErrors($test));
             }
         }
         $this->set(compact('test'));
@@ -124,10 +161,10 @@ class TestsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $test = $this->Tests->get($id);
         if ($this->Tests->delete($test)) {
-            $this->Flash->success(__('The {0} has been deleted.', [__('Test')]));
+            $this->Flash->success(__('Deleted successfully'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', [__('Test')]));
+            $this->Flash->error(__('Error: It not deleted. Please, try again.'));
         }
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['action' => 'index', '?' => @$this->request->query]);
     }
 }

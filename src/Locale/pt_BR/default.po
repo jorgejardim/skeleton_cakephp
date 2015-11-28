@@ -1,3 +1,5 @@
+# Translations for framework ####################################################################################################
+
 msgid "Error: Class %s could not be loaded."
 msgstr "%s não pode ser carregado"
 
@@ -408,7 +410,9 @@ msgid "%s updated."
 msgstr "%s atualizado."
 
 msgid "Error: %s"
-msgstr "Erro:"
+msgstr "Erro: %s"
+msgid "Errors: %s"
+msgstr "Erros: %s"
 
 msgid "Creating file %s"
 msgstr "Criando arquivo %s"
@@ -420,13 +424,13 @@ msgid "Quitting."
 msgstr "Saindo."
 
 msgid "Skip `%s`"
-msgstr "Pular"
+msgstr "Pular `%s`"
 
 msgid "Wrote `%s`"
-msgstr "Escreveu"
+msgstr "Escreveu `%s`"
 
 msgid "Could not write to `%s`."
-msgstr "Erro! Não pôde escrever em"
+msgstr "Erro! Não pôde escrever em `%s`."
 
 msgid "CakePHP Test Shell"
 msgstr "CakePHP Trac"
@@ -541,6 +545,8 @@ msgid ""
 msgstr "Entre com um número da lista acima, digite o nome de outro controller, ou 'q' para sair"
 
 msgid "Exit"
+msgstr "Sair"
+msgid "Logout"
 msgstr "Sair"
 
 msgid ""
@@ -1541,6 +1547,27 @@ msgstr "Novembro"
 msgid "December"
 msgstr "Dezembro"
 
+msgid "Monday"
+msgstr "Segunda"
+
+msgid "Tuesday"
+msgstr "Terça"
+
+msgid "Wednesday"
+msgstr "Quarta"
+
+msgid "Thursday"
+msgstr "Quinta"
+
+msgid "Friday"
+msgstr "Sexta"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
 msgid "JsHelper:: Missing Method %s is undefined"
 msgstr ""
 
@@ -1815,6 +1842,8 @@ msgstr "Livros recomendados"
 msgid "CakePHP gear"
 msgstr "CakePHP gear"
 
+msgid "Action"
+msgstr "Ação"
 msgid "Actions"
 msgstr "Ações"
 
@@ -1833,8 +1862,25 @@ msgstr "Listar %s"
 msgid "View"
 msgstr "Visualizar"
 
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "New"
+msgstr "Incluir"
+
 msgid "Edit"
 msgstr "Editar"
+
+msgid "index"
+msgstr "listar"
+msgid "view"
+msgstr "visualizar"
+msgid "add"
+msgstr "incluir"
+msgid "edit"
+msgstr "editar"
+msgid "delete"
+msgstr "excluir"
 
 msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
 msgstr ""
@@ -2031,6 +2077,39 @@ msgid_plural "You deleted %d messages (domain)."
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "Invalid username or password, try again."
+msgstr "Nome de usuário ou senha inválido, tente novamente."
+
+msgid "Account Activation"
+msgstr "Ativação de Conta"
+
+msgid "We sent an email to you. Open your inbox to activate your account."
+msgstr "Enviamos um e-mail para você. Abra sua caixa de entrada para ativar sua conta."
+
+msgid "We sent an email to you. Open your inbox to check your password."
+msgstr "Enviamos um e-mail para você. Abra sua caixa de entrada para verificar sua senha."
+
+msgid "Basic information"
+msgstr "Informações básicas"
+
+msgid "E-mail does not exist."
+msgstr "E-mail não existe."
+
+msgid "Enabled access. Please login."
+msgstr "Acesso habilitado. Por favor, faça o login."
+
+msgid "The access has not been activated. Please, try again."
+msgstr "O acesso não foi habilitado. Por favor, tente novamente."
+
+msgid "Link invalid activation."
+msgstr "Link de ativação inválido."
+
+msgid "Password Recovery"
+msgstr "Recuperação de Senha"
+
+msgid "Search"
+msgstr "Procurar"
+
 msgid "List {0}"
 msgstr "Listar {0}"
 
@@ -2051,15 +2130,35 @@ msgstr "Excluir {0}"
 
 msgid "User"
 msgstr "Usuário"
-
 msgid "Users"
 msgstr "Usuários"
 
+msgid "Role"
+msgstr "Perfil"
+msgid "Roles"
+msgstr "Perfis"
+msgid "Role Id"
+msgstr "Perfil"
+
+msgid "Permission"
+msgstr "Permissão"
+msgid "Permissions"
+msgstr "Permissões"
+
+msgid "Test"
+msgstr "Teste"
+msgid "Tests"
+msgstr "Testes"
+
 msgid "Name"
 msgstr "Nome"
+msgid "Names"
+msgstr "Nomes"
 
 msgid "Email"
 msgstr "E-mail"
+msgid "Emails"
+msgstr "E-mails"
 
 msgid "Username"
 msgstr "Login"
@@ -2085,6 +2184,32 @@ msgstr "Não"
 msgid "Id"
 msgstr "ID"
 
+msgid "Birth"
+msgstr "Nascimento"
+
+msgid "Active"
+msgstr "Ativo"
+
+msgid "Date"
+msgstr "Data"
+msgid "Dates"
+msgstr "Datas"
+
+msgid "Blocked"
+msgstr "Bloqueado"
+
+msgid "Status"
+msgstr "Situação"
+
+msgid "New password"
+msgstr "Nova senha"
+
+msgid "Repeat new password"
+msgstr "Repita a nova senha"
+
+msgid "Repeat password"
+msgstr "Repetir senha"
+
 msgid "The {0} has been saved."
 msgstr "O {0} foi salvo."
 
@@ -2102,3 +2227,59 @@ msgstr "Tem certeza de que deseja excluir # {0}?"
 
 msgid "of"
 msgstr "de"
+
+msgid "Error: It can not be deleted, as there are registered users with this profile."
+msgstr "Erro: Não pode ser excluído, pois existem usuários registrados com este perfil."
+
+msgid "To change the password, enter the new password; otherwise leave this blank."
+msgstr "Para alterar a senha, digite a nova senha; caso contrário, deixe este espaço em branco."
+
+msgid "Enter the new password again."
+msgstr "Digite a nova senha novamente."
+
+msgid "Enter the password again."
+msgstr "Digite a senha novamente."
+
+msgid "Captcha result incorrect"
+msgstr "Resultado do Captcha incorreto"
+
+msgid "Captcha result too late"
+msgstr "Resultado do Captcha tarde demais"
+
+msgid "Captcha result too fast"
+msgstr "Resultado do Captcha muito rápido"
+
+msgid "You are not allowed. This action can only be performed by the creator of the record {0} or your system administrator."
+msgstr "Você não está autorizado. Esta ação somente pode ser realizada pelo criador do registro {0} ou o administrador do sistema."
+
+msgid "The provided value for the {0} field is invalid. Must match the field {1}."
+msgstr "O valor fornecido para o campo {0} é inválido. Deve corresponder ao campo {1}."
+
+msgid "The provided value for the {0} field is already in use"
+msgstr "O valor fornecido para o campo {0} já está em uso"
+
+msgid "The provided value for the {0} field is invalid"
+msgstr "O valor fornecido para o campo {0} é inválido"
+
+msgid "This field {0} is required"
+msgstr "O campo {0} é obrigatório"
+
+msgid "Error: It not saved. Please, try again."
+msgstr "Erro: Não pode ser salvo. Por favor, tente novamente."
+
+msgid "Saved successfully"
+msgstr "Salvo com sucesso"
+
+msgid "Deleted successfully"
+msgstr "Excluído com sucesso"
+
+##################################################################################################################################
+##################################################################################################################################
+##################################################################################################################################
+# Translations for new applications ##############################################################################################
+
+msgid "Hello World!"
+msgstr "Olá Mundo!"
+
+msgid ""
+msgstr ""

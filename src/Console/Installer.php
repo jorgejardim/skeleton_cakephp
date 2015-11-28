@@ -103,7 +103,8 @@ class Installer
             'tmp/cache/persistent',
             'tmp/cache/views',
             'tmp/sessions',
-            'tmp/tests'
+            'tmp/tests',
+            'webroot/upload',
         ];
 
         foreach ($paths as $path) {
@@ -111,6 +112,11 @@ class Installer
             if (!file_exists($path)) {
                 mkdir($path);
                 $io->write('Created `' . $path . '` directory');
+                if ($path === $dir . '/webroot/upload') {
+                    $fp = fopen($path . '/empty', 'a+');
+                    fclose($fp);
+                    $io->write('Created empty file on `' . $path . '` directory');
+                }
             }
         }
     }
@@ -160,6 +166,7 @@ class Installer
         $walker($dir . '/tmp', $worldWritable, $io);
         $changePerms($dir . '/tmp', $worldWritable, $io);
         $changePerms($dir . '/logs', $worldWritable, $io);
+        $changePerms($dir . '/webroot/upload', $worldWritable, $io);
     }
 
     /**

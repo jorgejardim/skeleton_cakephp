@@ -72,7 +72,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => 'a8122864971fd3700f68097537c3433ad73832be26591da3c12ac5b9ef7b0a9a',
+        'salt' => 'a8122864971fd94k39v02kx7k7c3433ad73832be26591da3c12ac5b9ef7b0a9a',
     ],
 
     /**
@@ -91,6 +91,42 @@ return [
      * Configure the cache adapters.
      */
     'Cache' => [
+
+        'hour' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+1 hours',
+        ],
+
+        'day' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+1 days',
+        ],
+
+        'week' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+7 days',
+        ],
+
+        'month' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+30 days',
+        ],
+
+        'year' => [
+            'className' => 'File',
+            'prefix' => 'nc_',
+            'path' => CACHE,
+            'duration' => '+365 days',
+        ],
+
         'default' => [
             'className' => 'File',
             'path' => CACHE,
@@ -194,8 +230,8 @@ return [
             'host' => 'smtp.mandrillapp.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => 'jorge@conteudodinamico.com.br',
-            'password' => 'Fq0fCsXEFE_YJmafonBFPA',
+            'username' => '',
+            'password' => '',
             'client' => null,
             'tls' => null,
         ],
@@ -204,7 +240,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => ['contato@jorgejardim.com.br' => 'Jorge Jardim'],
+            'from' => ['email@email.com.br' => 'Jorge Jardim'],
             'emailFormat' => 'both',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',

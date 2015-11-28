@@ -28,9 +28,9 @@
         ];
 <% endif; %>
         if(!empty($this->request->query['search'])) {
-            $this->paginate['conditions'] = [$this-><%= $currentModelName %>->displayField().' LIKE' => '%'.$this->request->query['search'].'%'];
+            $this->paginate['conditions'] = ['<%= $currentModelName %>.'.$this-><%= $currentModelName %>->displayField().' LIKE' => '%'.$this->request->query['search'].'%'];
         }
-        $this->paginate['order'] = [$this-><%= $currentModelName %>->displayField() => 'ASC'];
+        $this->paginate['order'] = ['<%= $currentModelName %>.'.$this-><%= $currentModelName %>->displayField() => 'ASC'];
         $this->set('<%= $pluralName %>', $this->paginate($this-><%= $currentModelName %>));
         $this->set('_serialize', ['<%= $pluralName %>']);
     }

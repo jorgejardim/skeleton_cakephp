@@ -26,7 +26,7 @@ class TestsFixture extends TestFixture
         'calendar' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'hour' => ['type' => 'time', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'currency' => ['type' => 'decimal', 'length' => 10, 'precision' => 2, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
-        'numeric' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'numeral' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'status' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
@@ -52,14 +52,14 @@ class TestsFixture extends TestFixture
             'slug' => 'Lorem ipsum dolor sit amet',
             'text' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
             'locale' => 'Lore',
-            'date' => '2015-07-16',
-            'calendar' => '2015-07-16 21:51:36',
-            'hour' => '21:51:36',
+            'date' => '2015-11-28',
+            'calendar' => '2015-11-28 15:20:39',
+            'hour' => '15:20:39',
             'currency' => '',
-            'numeric' => 1,
+            'numeral' => 1,
             'status' => 1,
-            'created' => '2015-07-16 21:51:36',
-            'modified' => '2015-07-16 21:51:36'
+            'created' => '2015-11-28 15:20:39',
+            'modified' => '2015-11-28 15:20:39'
         ],
     ];
 }

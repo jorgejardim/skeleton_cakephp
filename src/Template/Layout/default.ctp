@@ -1,3 +1,2 @@
 <?php
-// require 'Templates/Site/default.ctp';
-require 'Templates/Admin/default.ctp';
+require 'Templates/'.TEMPLATE.'/default.ctp';

@@ -286,6 +286,9 @@
         $(this).val( $.trim($(this).val()) );
     });
 
+    //auto trim
+    setTimeout('$(".password[autocomplete=off]").val("");', 1000);
+
     /*
     * Mask
     */

@@ -1,0 +1,236 @@
+.panel-widget .panel.grey {
+  border: 2px solid #333333;
+}
+.panel-widget .panel.grey:hover {
+  border-color: #1a1a1a !important;
+}
+.panel-widget .panel.grey .panel-heading {
+  background: #333333 !important;
+}
+.panel-widget .panel.grey .panel-heading .panel-title > a {
+  color: #fff;
+}
+.panel-widget .panel.grey .panel-heading:hover {
+  background: #1a1a1a !important;
+}
+
+.font-grey {
+  color: #333333;
+}
+
+ul > li.grey, .label-grey {
+  background: #333333;
+}
+
+.progress .bar.bar-grey {
+  background: #333333;
+}
+
+.pricing-tables .pricing.grey > li.head {
+  background: #333333;
+}
+.pricing-tables .pricing.grey > li.head .info {
+  background: #404040;
+}
+.pricing-tables .pricing.grey > li.head .name {
+  background: #1a1a1a;
+}
+
+.btn.btn-grey {
+  background: #333333;
+  color: #fff !important;
+}
+.btn.btn-grey:hover {
+  background: #1a1a1a;
+}
+
+.box.box-color.grey .box-title {
+  background: #333333 !important;
+}
+.box.box-color.grey .box-title .actions > a:hover {
+  color: #333333;
+}
+.box.box-color.grey .form-wizard .wizard-steps li.active .single-step .title {
+  background: #333333;
+}
+.box.box-color.grey .btn.btn-primary {
+  background: #333333;
+}
+.box.box-bordered.box-color.grey .box-title {
+  border-color: #333333 !important;
+}
+.box.box-bordered.box-color.grey .box-content {
+  border-color: #333333 !important;
+}
+.box.box-bordered.box-color.grey .slimScrollDiv {
+  border-bottom: 2px solid #333333;
+}
+
+.timeline > li .timeline-content .left .icon.grey {
+  background: #333333;
+}
+
+.daterangepicker .active {
+  background: #333333;
+}
+.mobile-sidebar-toggle {
+  color: #fff;
+}
+#navigation .dropdown-menu {
+  border-color: #333333;
+}
+#navigation .dropdown-menu > li.dropdown-submenu .dropdown-menu {
+  border-top: 2px solid #333333;
+}
+#navigation .dropdown-menu > li.dropdown-submenu:hover > a, #navigation .dropdown-menu > li.dropdown-submenu:focus > a {
+  background: #333333;
+}
+#navigation .dropdown-menu > li > a:hover {
+  background: #333333;
+}
+.datepicker.datepicker-dropdown .datepicker-days .active, .datepicker.datepicker-dropdown .datepicker-years .active, .datepicker.datepicker-dropdown .datepicker-months .active {
+  background: #333333;
+}
+.datepicker.datepicker-dropdown .datepicker-days .active:hover, .datepicker.datepicker-dropdown .datepicker-years .active:hover, .datepicker.datepicker-dropdown .datepicker-months .active:hover {
+  background: #1a1a1a;
+}
+.form-wizard .wizard-steps li.active .single-step .title {
+  background: #333333;
+}
+.btn.btn-primary {
+  background: #333333;
+}
+.login {
+  background: #333333;
+}
+a {
+  color: #333333;
+}
+.btn {
+  color: #333;
+}
+.btn.btn-primary {
+  background: #333333;
+  color: #fff;
+}
+.btn.btn-inverse, .btn.btn-success, .btn.btn-danger {
+  color: #fff;
+}
+.locked {
+  background: #333333 !important;
+}
+.locked .pull-left a {
+  background: #0d0d0d;
+}
+.locked .pull-left a:hover {
+  background: black;
+}
+#navigation {
+  background: #333333;
+}
+#navigation .toggle-mobile {
+  background: #0d0d0d;
+}
+#navigation .mobile-nav.open {
+  background: #333333;
+}
+#navigation .mobile-nav.open > li.active > a {
+  background: black;
+}
+#navigation .mobile-nav.open > li.active > ul {
+  background: black;
+}
+#navigation .mobile-nav.open > li > a {
+  background: #0d0d0d;
+}
+#navigation .mobile-nav.open > li > ul {
+  background: #0d0d0d;
+}
+#navigation .main-nav > li.active > a:hover {
+  background: #fff;
+}
+#navigation .main-nav > li.active.open > a {
+  background: #fff;
+}
+#navigation .main-nav > li.open > a {
+  background: #0d0d0d;
+}
+#navigation .main-nav > li > a:hover {
+  background: #0d0d0d;
+}
+#navigation .user .icon-nav > li > a:hover {
+  background: #0d0d0d;
+}
+#navigation .user .dropdown.open {
+  background: #0d0d0d;
+}
+#navigation .user .dropdown > a:hover {
+  background: #0d0d0d;
+}
+#navigation .dropdown-menu {
+  border-color: #333333;
+}
+#navigation .dropdown-menu > li > a:hover {
+  background: #333333;
+}
+.search-form .search-pane button[type="submit"] {
+  background: #333333;
+}
+.messages > li.insert .submit button {
+  background: #333333;
+}
+.messages > li.right .name {
+  color: black;
+}
+.messages > li.right .message {
+  background: #999999;
+}
+.messages > li.right .message p {
+  color: black;
+}
+.messages > li.right .message .time {
+  color: black;
+}
+.messages > li.right .message .caret {
+  border-left: 7px solid #999999;
+}
+.letterbox .letter > li.active {
+  background: #333333;
+}
+.calendar .fc-content .fc-event .fc-event-inner {
+  background: #333333;
+}
+.calendar .fc-button.fc-state-active {
+  background: #333333;
+}
+.calendar .fc-button.fc-state-active:hover {
+  background: #333333;
+}
+.table.table-user tr.alpha td.alpha-val span {
+  background: #333333;
+}
+.tagsinput#textfield_tagsinput .tag, .ms-container .multi-custom-header, .slider .ui-slider-handle, .form-wizard .wizard-steps li.active .single-step .title, .user-list h4, .nav.nav-pills > li.active > a, .nav.nav-list > li.active > a, .table.table-colored-header thead th, .table.table-colored-header thead td, .dataTables_wrapper .dataTables_paginate > span > a.paginate_active, .elfinder-navbar .ui-state-active, .pagination.pagination-custom li.active a:hover, .pagination.pagination-custom li.active a {
+  background: #333333;
+}
+.elfinder-navbar .ui-state-active {
+  border-color: #333333;
+}
+#main .box .box-title .tabs > li.active > a {
+  background: #333333;
+}
+#main .box.box-color .box-title {
+  background: #333333;
+}
+#main .box.box-color .box-title .tabs > li.active > a {
+  background: #fff;
+  color: #333333;
+}
+#main .box.box-color .box-title .tabs > li > a:hover {
+  color: #333333;
+}
+#main .box.box-bordered.box-color .box-title {
+  border-color: #333333;
+}
+#main .box.box-bordered.box-color .box-content {
+  border-color: #333333;
+}

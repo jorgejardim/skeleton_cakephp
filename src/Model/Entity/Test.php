@@ -6,27 +6,42 @@ use Cake\Utility\Inflector;
 
 /**
  * Test Entity.
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property string $text
+ * @property string $locale
+ * @property \Cake\I18n\Time $date
+ * @property \Cake\I18n\Time $calendar
+ * @property \Cake\I18n\Time $hour
+ * @property float $currency
+ * @property int $numeral
+ * @property bool $status
+ * @property \Cake\I18n\Time $created
+ * @property \Cake\I18n\Time $modified
  */
 class Test extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
+     *
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
      *
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'slug' => true,
-        'text' => true,
-        'locale' => true,
-        'date' => true,
-        'calendar' => true,
-        'hour' => true,
-        'currency' => true,
-        'numeral' => true,
-        'status' => true,
+        '*' => true,
+        'id' => false,
     ];
+
+    protected $_virtual = ['virtual_field'];
+
+    protected function _getVirtualField() {
+        return $this->_properties['id'].' - ' .$this->_properties['slug'];
+    }
 
     protected function _setSlug($slug)
     {

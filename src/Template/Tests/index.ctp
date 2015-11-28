@@ -1,67 +1,115 @@
-<section class="main-page">
-    <div class="container">
-        <div class="page-title pull-md-left">
-            <h3><?= __('List {0}', [__('Tests')]) ?></h3>
+        <div class="page-header">
+            <div class="pull-sm-left">
+                <h1><?= __('Tests') ?></h1>
+            </div>
+            <div class="page-actions pull-sm-right">
+                <nav role="navigation" class="navbar navbar-default navbar-page-actions">
+                    <div class="navbar-header">
+                        <button type="button" data-target="#navbarCollapseActionsPage" data-toggle="collapse" class="navbar-toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbarCollapseActionsPage" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="<?= $this->Url->build(['action' => 'add', '?' => @$this->request->query]) ?>" class="btn-page-action"><i class="fa fa-plus-circle"></i> <?= __('Add {0}', [__('Test')]); ?></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="visible-xs-block visible-sm-block"><br /></div>
+            <div class="clearfix"></div>
         </div>
-        <div class="page-actions pull-md-right">
-            <div class="page-actions-dropdown">
-                <select class="dropdown dropdown-actions">
-                    <option value="" class="label"><?= __('Actions'); ?></option>
-                    <option value="<?= $this->Url->build(['action' => 'add']) ?>"><?= __('New'); ?></option>
-                </select>
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="<?= $this->Url->build('/') ?>"><?= __('Home') ?></a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <?= $this->Html->link(__('List {0}', [__('Tests')]), ['action' => 'index']); ?>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-content">
+                        <?= $this->Flash->render() ?>
+                        <?= $this->Form->create(null, ['type' => 'get', 'class' => 'table-filter pull-right']); ?>
+                            <div class="dib">
+                                <?php echo $this->Form->input('search', ['placeholder' => __('Search'), 'value' => @$this->request->query['search'], 'div' => false, 'label' => false]); ?>
+                            </div>
+                        <?= $this->Form->end() ?>
+                        <div class="clearfix"></div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-nomargin table-striped table-bordered">
+                                <?php if($tests->count()) { ?>
+                                    <thead>
+                                        <tr>
+                                            <th><?= $this->Paginator->sort('id', __('Id')); ?></th>
+                                            <th><?= $this->Paginator->sort('name', __('Name')); ?></th>
+                                            <th><?= $this->Paginator->sort('slug', __('Slug')); ?></th>
+                                            <th><?= $this->Paginator->sort('locale', __('Locale')); ?></th>
+                                            <th><?= $this->Paginator->sort('date', __('Date')); ?></th>
+                                            <th><?= $this->Paginator->sort('calendar', __('Calendar')); ?></th>
+                                            <th><?= $this->Paginator->sort('hour', __('Hour')); ?></th>
+                                            <th><?= $this->Paginator->sort('currency', __('Currency')); ?></th>
+                                            <th><?= $this->Paginator->sort('numeral', __('Numeric')); ?></th>
+                                            <th><?= $this->Paginator->sort('status', __('Status')); ?></th>
+                                            <th class="actions"><?= __('Actions'); ?></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($tests as $test): ?>
+                                            <tr>
+                                                <td><?= $this->Number->format($test->id) ?></td>
+                                                <td><?= h($test->name) ?></td>
+                                                <td><?= h($test->slug) ?></td>
+                                                <td><?= h($test->locale) ?></td>
+                                                <td><?= h($test->date) ?></td>
+                                                <td><?= h($test->calendar) ?></td>
+                                                <td><?= h($test->hour) ?></td>
+                                                <td><?= $this->Number->format($test->currency) ?></td>
+                                                <td><?= $this->Number->format($test->numeral) ?></td>
+                                                <td><?= $test->status ? __('Yes') : __('No'); ?></td>
+                                                <td class="actions" nowrap="nowrap">
+                                                    <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $test->id], ['title' => __('View'), 'class' => 'btn btn-blue btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
+                                                    <?= $this->Html->link('<i class="fa fa-edit"></i>', ['action' => 'edit', $test->id, '?' => @$this->request->query], ['title' => __('Edit'), 'class' => 'btn btn-dark-blue btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
+                                                    <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', ['action' => 'delete', $test->id, '?' => @$this->request->query], ['confirm' => __('Are you sure you want to delete?'), 'title' => __('Delete'), 'class' => 'btn btn-red btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                <?php } else { ?>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center nopadding">
+                                                <div class="alert alert-warning m-b-0"><?= __('No results found') ?></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                <?php } ?>
+                            </table>
+                        </div>
+                        <?php if($this->Paginator->param('count') > 1) { ?>
+                            <div class="paginator">
+                                <div class="pull-left">
+                                    <ul class="pagination">
+                                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                                        <?= $this->Paginator->numbers(['after' => '', 'before' => '']) ?>
+                                        <?= $this->Paginator->next(__('next') . ' >') ?>
+                                    </ul>
+                                </div>
+                                <div class="pull-right pagination-count">
+                                    <p><?= $this->Paginator->param('current').' '.__('of').' '.$this->Paginator->param('count') ?></p>
+                                </div>
+                                <div class="cleaxrfix"></div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="visible-xs-block visible-sm-block"><br /></div>
-        <div class="clearfix"></div>
-        <div class="entry">
-            <?= $this->Flash->render() ?>
-            <table class="table table-hover table-nomargin table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th><?= $this->Paginator->sort('id', __('Id')); ?></th>
-                        <th><?= $this->Paginator->sort('name', __('Name')); ?></th>
-                        <th><?= $this->Paginator->sort('slug', __('Slug')); ?></th>
-                        <th><?= $this->Paginator->sort('locale', __('Locale')); ?></th>
-                        <th><?= $this->Paginator->sort('date', __('Date')); ?></th>
-                        <th><?= $this->Paginator->sort('calendar', __('Calendar')); ?></th>
-                        <th><?= $this->Paginator->sort('hour', __('Hour')); ?></th>
-                        <th><?= $this->Paginator->sort('currency', __('Currency')); ?></th>
-                        <th><?= $this->Paginator->sort('numeral', __('Numeric')); ?></th>
-                        <th><?= $this->Paginator->sort('status', __('Status')); ?></th>
-                        <th class="actions"><?= __('Actions'); ?></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($tests as $test): ?>
-                        <tr>
-                            <td><?= $this->Number->format($test->id) ?></td>
-                            <td><?= h($test->name) ?></td>
-                            <td><?= h($test->slug) ?></td>
-                            <td><?= h($test->locale) ?></td>
-                            <td><?= h($test->date) ?></td>
-                            <td><?= h($test->calendar) ?></td>
-                            <td><?= h($test->hour) ?></td>
-                            <td><?= $this->Number->format($test->currency) ?></td>
-                            <td><?= $this->Number->format($test->numeral) ?></td>
-                            <td><?= $test->status ? __('Yes') : __('No'); ?></td>
-                            <td class="actions" nowrap="nowrap">
-                                <?= $this->Html->link('<i class="fa fa-eye"></i>', ['action' => 'view', $test->id], ['title' => __('View'), 'class' => 'btn btn-blue btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
-                                <?= $this->Html->link('<i class="fa fa-edit"></i>', ['action' => 'edit', $test->id], ['title' => __('Edit'), 'class' => 'btn btn-dark-blue btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
-                                <?= $this->Form->postLink('<i class="fa fa-trash-o"></i>', ['action' => 'delete', $test->id], ['confirm' => __('Are you sure you want to delete # {0}?', $test->id), 'title' => __('Delete'), 'class' => 'btn btn-red btn-listing btn-small', 'escape' => false, 'data-toggle'=>'tooltip', 'data-placement'=>'top']) ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <div class="paginator">
-                <div class="pagination fl">
-                    <?= $this->Paginator->numbers(['class' => "clearfix", 'prev' => true, 'next' => true]) ?>
-                </div>
-                <div class="fr pagination-count">
-                    <p><?= $this->Paginator->counter(); ?></p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</section>
