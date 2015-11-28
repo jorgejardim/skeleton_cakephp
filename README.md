@@ -10,12 +10,12 @@ A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.0.
 1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
 2. Run `php composer.phar create-project --prefer-dist --stability=dev jorge/cakephp-skeleton [app_name]`.
 
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist --stability=dev jorge/cakephp-skeleton [app_name]
-```
+    If Composer is installed globally, run
+    ```bash
+    composer create-project --prefer-dist --stability=dev jorge/cakephp-skeleton [app_name]
+    ```
 
-You should now be able to visit the path to where you installed the app and see the setup traffic lights.
+    You should now be able to visit the path to where you installed the app and see the setup traffic lights.
 
 3. Change the default TEMPLATE in: config/paths.php
 4. Create database
