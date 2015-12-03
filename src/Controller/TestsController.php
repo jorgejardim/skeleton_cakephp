@@ -31,6 +31,15 @@ class TestsController extends AppController
     }
 
     /**
+     * Facebook
+     */
+    public function facebook()
+    {
+        $this->loadComponent('CakePHP3Utilities.Facebook');
+        $this->Facebook->urlLogin();
+    }
+
+    /**
      * Blank Page
      */
     public function blank() {}

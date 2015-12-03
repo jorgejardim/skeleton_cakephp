@@ -124,6 +124,7 @@ class RolesController extends AppController
             'Component',
             'AppController.php',
             'PagesController.php',
+            'ContactController.php',
             'TestsController.php',
             'ToolsController.php',
         ];

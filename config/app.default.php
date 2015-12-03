@@ -38,6 +38,10 @@ return [
     'App' => [
         'name' => 'JDIG',
         'name_reference' => 'jdig',
+        'email' => [
+            'jorge@jorgejardim.com.br' => 'Name 1',
+            'jorge@conteudodinamico.com.br' => 'Name 2'
+        ],
         'namespace' => 'App',
         'encoding' => 'UTF-8',
         'base' => false,

@@ -65,6 +65,11 @@ Router::scope('/', function ($routes) {
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**
+     * Translate routes
+     */
+    $routes->connect('/contato', ['controller' => 'Contact', 'action' => 'index']);
+
+    /**
      * Connect catchall routes for all controllers.
      *
      * Using the argument `InflectedRoute`, the `fallbacks` method is a shortcut for

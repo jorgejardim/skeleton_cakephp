@@ -82,7 +82,7 @@
                     <div class="col-lg-2">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <img width="100%" src="<?php echo $user->avatar?ASSETS_UPLOAD.'avatar/'.$user->id:$this->Url->build(ASSETS_IMG.'admin/avatar.jpg'); ?>">
+                                <img width="100%" src="<?php echo $user->avatar?ASSETS_UPLOAD.'avatar/'.$user->id.'.jpg?'.$this->request->session()->read('Auth.User.modified')->format("YmdHis"):$this->Url->build(ASSETS_IMG.'admin/avatar.jpg'); ?>">
                             </div>
                         </div>
                     </div>

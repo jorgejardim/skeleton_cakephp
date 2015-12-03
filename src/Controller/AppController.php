@@ -48,11 +48,7 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Common');
-        $this->loadComponent('RequestHandler', [
-            // 'viewClassMap' => [
-            //     'pdf' => 'Tcpdf'
-            // ]
-        ]);
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Cookie');
         $this->loadComponent('Flash');
         $this->loadComponent('Bootstrap.Flash');

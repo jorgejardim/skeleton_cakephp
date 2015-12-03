@@ -57,7 +57,7 @@ class UsersTable extends Table
             ->add('email', 'valid', ['rule' => 'email', 'message' => __('The provided value for the {0} field is invalid', __('Email'))])
             ->requirePresence('email', 'create', __('This field {0} is required', __('Email')))
             ->notEmpty('email', __('This field {0} is required', __('Email')))
-            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table', 'message' => __('The provided value for the {0} field is invalid', __('Email'))]);
+            ->add('email', 'unique', ['rule' => 'validateUnique', 'provider' => 'table', 'message' => __('The provided value for the {0} field is already in use', __('Email'))]);
 
         $validator
             ->requirePresence('password', 'create', __('This field {0} is required', __('Password')))

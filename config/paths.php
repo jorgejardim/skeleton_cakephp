@@ -28,7 +28,7 @@ if (!defined('DS')) {
 /**
  * The default template (default: admin or site)
  */
-define('TEMPLATE', 'admin');
+define('TEMPLATE', 'site');
 
 /**
  * The full path to the directory which holds "src", WITHOUT a trailing DS.

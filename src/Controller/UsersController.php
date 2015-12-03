@@ -22,7 +22,7 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['login', 'logout', 'register', 'reminder', 'activation']);
+        $this->Auth->allow(['login', 'logout', 'register', 'reminder', 'activation', 'facebook']);
     }
 
     public function login()
@@ -37,6 +37,8 @@ class UsersController extends AppController
                 $this->Flash->error(__('Invalid username or password, try again.'), ['key' => 'auth']);
             }
         }
+        $this->loadComponent('CakePHP3Utilities.Facebook');
+        $this->Facebook->urlLogin();
     }
 
     public function logout()
@@ -60,10 +62,12 @@ class UsersController extends AppController
                                 'activation' => $user->activation])
                     ->send();
                 unset($this->request->data);
-                $this->Flash->success(__('We sent an email to you. Open your inbox to activate your account.'));
+                $this->Flash->success(__('Thank you for signing up').'.<br />'.__('We sent an email to you. Open your inbox to activate your account.'), ['clear' => true]);
                 $this->set('check_mail', true);
             }
         }
+        $this->loadComponent('CakePHP3Utilities.Facebook');
+        $this->Facebook->urlLogin();
     }
 
     public function reminder()
@@ -108,6 +112,49 @@ class UsersController extends AppController
     {
         $this->no_redirect = true;
         $this->edit($this->Auth->user('id'));
+    }
+
+    public function facebook()
+    {
+        $this->loadComponent('CakePHP3Utilities.Facebook');
+        if($this->Facebook->getAccess()) {
+            if($fb_user = $this->Facebook->getUser()) {
+                $user = $this->Users->findByEmail($fb_user['email'])->first();
+                if (!$user) {
+
+                    $this->request->env('REQUEST_METHOD', 'POST');
+                    $this->no_redirect = true;
+                    $this->request->data = $fb_user;
+                    $this->request->data['password'] = \CakePHP3Utilities\Utility\Text::PasswordGenerator();
+                    $this->request->data['status'] = true;
+                    $this->request->data['avatar'] = true;
+                    $this->request->data['picture'] = $fb_user['picture'];
+                    if($user = $this->add()) {
+                        $user = $this->Users->findByEmail($fb_user['email'])->first();
+                        $email = new Email('default');
+                        $email->template('register', 'default')
+                            ->to($fb_user['email'])
+                            ->subject(__('Thank you for signing up'))
+                            ->viewVars(['name' => $user->name,
+                                        'email' => $fb_user['email'],
+                                        'password' => $this->request->data['password']])
+                            ->send();
+                        $this->Flash->success(__('Thank you for signing up').'!', ['clear' => true]);
+                    }
+
+                } else {
+                    $user = $this->Users->patchEntity($user, ['oauth_token' => $fb_user['oauth_token']]);
+                    $this->Users->save($user);
+                }
+
+                if ($user) {
+                    $this->Auth->setUser($user->toArray());
+                    $this->_authExtras();
+                    return $this->redirect($this->Auth->redirectUrl());
+                }
+            }
+        }
+        return $this->redirect(['action' => 'login']);
     }
 
     /**
@@ -163,14 +210,15 @@ class UsersController extends AppController
                     $this->request->data['locale'] = \Locale::getDefault();
                 }  if (!isset($this->request->data['status'])) {
                     $this->request->data['status'] = false;
+                }  if (!isset($this->request->data['avatar'])) {
+                    $this->request->data['avatar'] = false;
                 }
-                $this->request->data['avatar'] = false;
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if ($save = $this->Users->save($user)) {
                     $upload = $this->_upload($user->id);
                     if($upload==='ok') {
                         $db->commit();
-                        $this->Flash->success(__('The {0} has been saved.', [__('User')]));
+                        $this->Flash->success(__('Saved successfully'));
                         if(!$this->no_redirect) {
                             return $this->redirect(['action' => 'index']);
                         } else {
@@ -211,8 +259,11 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $upload = $this->_upload($id);
                 if($upload==='ok') {
-                    $this->Flash->success(__('The {0} has been saved.', [__('User')]));
-                    return $this->redirect(['action' => 'index']);
+                    $this->Flash->success(__('Saved successfully'));
+                    $this->request->Session()->write('Auth.User.modified', $user->modified);
+                    if(!$this->no_redirect) {
+                        return $this->redirect(['action' => 'index']);
+                    }
                 } else {
                     $this->Flash->error(__('Upload Error').':<br>'.$upload);
                 }
@@ -255,8 +306,13 @@ class UsersController extends AppController
      */
     private function _upload($user_id)
     {
-        if(empty($this->request->data['image']['name']))
+        if(empty($this->request->data['image']['name']) && empty($this->request->data['picture']))
             return 'ok';
+
+        if(!empty($this->request->data['picture'])) {
+            $this->request->data['image'] = TMP.time().'.jpg';
+            file_put_contents($this->request->data['image'], file_get_contents($this->request->data['picture']));
+        }
 
         if(USE_AWS_S3) {
             define('awsAccessKey', Configure::read('S3.awsAccessKey'));
@@ -270,7 +326,7 @@ class UsersController extends AppController
             $handle->bucket_uri           = 'avatar';
             $handle->file_new_name_body   = $user_id;
             $handle->file_safe_name       = true;
-            $handle->file_overwrite       = false;
+            $handle->file_overwrite       = true;
             $handle->allowed              = array('image/*');
             $handle->image_convert        = 'jpg';
             $handle->jpeg_quality         = 90;
@@ -284,6 +340,7 @@ class UsersController extends AppController
             if ($handle->processed) {
                 $user = $this->Users->get($user_id);
                 $user = $this->Users->patchEntity($user, ['avatar' => 1]);
+                $this->request->Session()->write('Auth.User.avatar', 1);
                 $this->Users->save($user);
                 $handle->clean();
                 return 'ok';

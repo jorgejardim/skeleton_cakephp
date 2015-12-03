@@ -50,7 +50,7 @@
                 <div class="dropdown">
                     <a href="#" class='dropdown-toggle' data-toggle="dropdown">
                         <span class="hidden-xs"><?= $this->request->session()->read('Auth.User.first_name'); ?></span>
-                        <img height="27" width="27" src="<?php echo $this->request->session()->read('Auth.User.avatar')?ASSETS_UPLOAD.'avatar/'.$this->request->session()->read('Auth.User.avatar'):$this->Url->build(ASSETS_IMG.'admin/avatar.jpg'); ?>">
+                        <img height="27" width="27" src="<?php echo $this->request->session()->read('Auth.User.avatar')?ASSETS_UPLOAD.'avatar/'.$this->request->session()->read('Auth.User.avatar').'?'.$this->request->session()->read('Auth.User.modified')->format("YmdHis"):$this->Url->build(ASSETS_IMG.'admin/avatar.jpg'); ?>">
                     </a>
                     <ul class="dropdown-menu pull-right">
                         <li>

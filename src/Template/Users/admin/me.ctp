@@ -39,7 +39,7 @@
                     <div class="form-divider"><?= __('Senha') ?></div>
                     <fieldset class="fieldset-bordered">
                         <?php
-                            echo $this->Form->input('new_password', ['label' => __('New password'), 'help' => __('Para alterar sua senha, digite a nova senha; caso contrário, deixe este espaço em branco.'), 'type' => 'password']);
+                            echo $this->Form->input('new_password', ['label' => __('New password'), 'help' => __('Para alterar sua senha, digite a nova senha; caso contrário, deixe este espaço em branco.'), 'type' => 'password', 'class' => 'password', 'autocomplete' => 'off']);
                             echo $this->Form->input('confirm_new_password', ['label' => __('Repeat new password'), 'help' => __('Digite sua nova senha novamente. '), 'type' => 'password', 'class' => 'compare', 'rel' => 'new-password']);
                         ?>
                     </fieldset>

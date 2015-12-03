@@ -2187,6 +2187,15 @@ msgstr "ID"
 msgid "Birth"
 msgstr "Nascimento"
 
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "Subject"
+msgstr "Assunto"
+
+msgid "Message"
+msgstr "Mensagem"
+
 msgid "Active"
 msgstr "Ativo"
 
@@ -2194,6 +2203,16 @@ msgid "Date"
 msgstr "Data"
 msgid "Dates"
 msgstr "Datas"
+
+msgid "Contact"
+msgstr "Contato"
+msgid "Contacts"
+msgstr "Contatos"
+
+msgid "Content"
+msgstr "Conteúdo"
+msgid "Contents"
+msgstr "Conteúdos"
 
 msgid "Blocked"
 msgstr "Bloqueado"
@@ -2225,8 +2244,56 @@ msgstr "O {0} não pôde ser excluído. Por favor, tente novamente."
 msgid "Are you sure you want to delete # {0}?"
 msgstr "Tem certeza de que deseja excluir # {0}?"
 
+msgid "Thank you for signing up"
+msgstr "Obrigado por inscrever-se"
+
+msgid "Login with {0} Account"
+msgstr "Entrar com seu {0}"
+
+msgid "Register with {0} Account"
+msgstr "Cadastre-se com sua conta do {0}"
+
+msgid "SIGN IN"
+msgstr "LOGIN"
+
+msgid "Remember me"
+msgstr "Lembre-me"
+
+msgid "Forgot password?"
+msgstr "Esqueceu a senha?"
+
+msgid "Sign me in"
+msgstr "Entrar"
+
+msgid "Reminder"
+msgstr "Lembrete"
+
+msgid "Remind Password"
+msgstr "Lembrar Senha"
+
+msgid "Back to login"
+msgstr "Voltar para o Login"
+
+msgid "Create Account"
+msgstr "Criar Conta"
+
+msgid "Register"
+msgstr "Registrar"
+
+msgid "To sign up"
+msgstr "Cadastrar-me"
+
+msgid "I\'ve read them!"
+msgstr "Eu li!"
+
 msgid "of"
 msgstr "de"
+
+msgid "By signing up, you confirm that you accept our"
+msgstr "Ao inscrever-se, você confirma que aceita os nossos"
+
+msgid "Terms of Service and Privacy Policy."
+msgstr "Termos de Serviço e Política de Privacidade."
 
 msgid "Error: It can not be deleted, as there are registered users with this profile."
 msgstr "Erro: Não pode ser excluído, pois existem usuários registrados com este perfil."
@@ -2249,6 +2316,12 @@ msgstr "Resultado do Captcha tarde demais"
 msgid "Captcha result too fast"
 msgstr "Resultado do Captcha muito rápido"
 
+msgid "Resolve: :question ="
+msgstr "Resolva: :question ="
+
+msgid "This question is for testing whether you are a human visitor and to prevent automated spam submissions."
+msgstr "Esta questão é para testar se você é um visitante humano e para prevenir envio automático de spam."
+
 msgid "You are not allowed. This action can only be performed by the creator of the record {0} or your system administrator."
 msgstr "Você não está autorizado. Esta ação somente pode ser realizada pelo criador do registro {0} ou o administrador do sistema."
 
@@ -2270,8 +2343,17 @@ msgstr "Erro: Não pode ser salvo. Por favor, tente novamente."
 msgid "Saved successfully"
 msgstr "Salvo com sucesso"
 
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Profile"
+msgstr "Perfil"
+
 msgid "Deleted successfully"
 msgstr "Excluído com sucesso"
+
+msgid "Message sent successfully!"
+msgstr "Mensagem enviada com sucesso!"
 
 ##################################################################################################################################
 ##################################################################################################################################

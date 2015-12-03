@@ -186,10 +186,8 @@ Request::addDetector('tablet', function ($request) {
 
 Plugin::load('Migrations');
 Plugin::load('BootstrapUI');
-Plugin::load("JCustomCakephp3");
 Plugin::load('TemplateAdmin');
 Plugin::load('TemplateSite');
-//Plugin::load('JorgeFacebook');
 Plugin::load('Siezi/SimpleCaptcha');
 
 // Only try to load DebugKit in development mode

@@ -5,5 +5,6 @@
     <ul class="dropdown-menu pull-right">
         <li><?= $this->Html->link(__('Users'), '/users') ?></li>
         <li><?= $this->Html->link(__('Roles'), '/roles') ?></li>
+        <li><?= $this->Html->link(__('Contact'), '/contact') ?></li>
     </ul>
 </div>

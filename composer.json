@@ -11,9 +11,7 @@
         "cakephp/plugin-installer": "*",
         "friendsofcake/bootstrap-ui": "~0.3",
         "itbz/fpdf": "1.7.*",
-        "jorge/cakephp-facebook": "1.*",
         "jorge/upload": "1.*",
-        "jorge/custom-cakephp3": "1.*",
         "jorge/cakephp3utilities": "dev-master",
         "siezi/cakephp-simple-captcha": "dev-master",
         "tecnickcom/tcpdf": "6.2.*"

@@ -1,7 +1,7 @@
 <nav class="main-navigation fr">
     <ul class="clearfix">
         <li class="parent-item current_page_item">
-            <a href="<?= $this->Url->build('/') ?>" class="ln-tr">Home</a>
+            <a href="<?= $this->Url->build('/') ?>" class="ln-tr"><?= __('Home') ?></a>
         </li>
         <li class="parent-item haschild">
             <a href="#" class="ln-tr">Menu</a>
@@ -21,7 +21,7 @@
             <a href="#" class="ln-tr">Blog</a>
         </li>
         <li class="parent-item">
-            <a href="<?= $this->Url->build('/tests') ?>" class="ln-tr">Testes</a>
+            <a href="<?= $this->Url->build('/contato') ?>" class="ln-tr"><?= __('Contact') ?></a>
         </li>
         <li class="parent-item login">
             <?php if($this->request->session()->check('Auth.User.id')) { ?>

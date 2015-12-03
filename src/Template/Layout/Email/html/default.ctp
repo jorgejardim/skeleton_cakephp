@@ -21,7 +21,7 @@
     <body>
         <div style="margin:30px;font-family:Helvetica, Arial, sans-serif;font-size:14px">
             <div style="border-bottom:1px solid #ccc;margin-bottom:25px;padding-bottom:17px">
-                <img border="0" src="<?= ASSETS_IMG ?>modern/logo@2x.png">
+                <img border="0" src="<?= ASSETS_IMG.TEMPLATE ?>/logo.png">
             </div>
             <?= $this->fetch('content') ?>
         </div>

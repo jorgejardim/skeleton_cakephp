@@ -38,6 +38,10 @@ return [
     'App' => [
         'name' => 'JDIG',
         'name_reference' => 'jdig',
+        'email' => [
+            'jorge@jorgejardim.com.br' => 'Name 1',
+            'jorge@conteudodinamico.com.br' => 'Name 2'
+        ],
         'namespace' => 'App',
         'encoding' => 'UTF-8',
         'base' => false,
@@ -60,8 +64,10 @@ return [
      * Facebook
      */
     'Facebook' => [
-        'app_id' => '',
-        'app_secret' => '',
+        'app_id' => '1644005105886915',
+        'app_secret' => 'a1642a153f59afe5013b0bf826c4bc1f',
+        'scope' => ['email'],
+        'callback_login' => '/users/facebook'
     ],
 
     /**
@@ -239,8 +245,8 @@ return [
             'host' => 'smtp.mandrillapp.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => '',
-            'password' => '',
+            'username' => 'jorge@conteudodinamico.com.br',
+            'password' => 'Fq0fCsXEFE_YJmafonBFPA',
             'client' => null,
             'tls' => null,
         ],
@@ -249,7 +255,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => ['email@email.com.br' => 'Jorge Jardim'],
+            'from' => ['no-reply@jdig.com.br' => 'JDIG'],
             'emailFormat' => 'both',
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',

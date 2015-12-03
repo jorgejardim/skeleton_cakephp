@@ -453,12 +453,12 @@ label, input, button, select, textarea {
   border: 0;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1199px) {
   #main .page-header .minitiles {
     display: none;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .stats-overview > li {
     padding: 5px 10px !important;
   }
@@ -475,7 +475,7 @@ label, input, button, select, textarea {
     border-top: 0 !important;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1199px) {
   .stats-overview > li {
     padding: 5px 10px !important;
     border-right: 1px dotted #ddd !important;
@@ -487,12 +487,12 @@ label, input, button, select, textarea {
     font-size: 13px !important;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .icon-nav {
     display: none !important;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   #main .page-header .stats {
     display: none;
   }
@@ -513,7 +513,7 @@ label, input, button, select, textarea {
     margin-left: 0 !important;
   }
 }
-@media (max-width: 976px) {
+@media (max-width: 991px) {
   #navigation .user .dropdown > a {
     padding: 7px 6px 6px 6px !important;
   }
@@ -522,7 +522,7 @@ label, input, button, select, textarea {
     padding: 10px 8px !important;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 991px) {
   .mobile-sidebar-toggle {
     display: block !important;
   }
@@ -568,7 +568,7 @@ label, input, button, select, textarea {
     padding-left: 180px !important;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .table-mail .table-fixed-medium {
     width: 120px !important;
   }
@@ -641,38 +641,12 @@ label, input, button, select, textarea {
     font-size: 14px !important;
   }
 
-  body.login .wrapper {
-    width: 300px;
-    margin: 20px -150px !important;
-    top: 0;
-  }
-
   .user-list {
     display: none !important;
   }
 
   .messages.withlist {
     margin-right: 0 !important;
-  }
-}
-@media (max-width: 350px) {
-  .hidden-350 {
-    display: none !important;
-  }
-
-  .calendar .fc-header-right {
-    display: none !important;
-  }
-
-  #main .box .box-title h3 {
-    font-size: 16px !important;
-  }
-  #main .box .box-title .actions .btn i {
-    font-size: 12px !important;
-  }
-
-  .table .table-fixed-medium {
-    width: 100px !important;
   }
 }
 #content {
@@ -1227,6 +1201,9 @@ label, input, button, select, textarea {
 #navigation .toggle-mobile i {
   font-size: 18px;
 }
+#navigation .navbar-form {
+    margin: 0;
+}
 #navigation .mobile-nav {
   display: none;
 }
@@ -1262,7 +1239,6 @@ label, input, button, select, textarea {
   text-decoration: none;
 }
 #navigation .mobile-nav.open > li > a i {
-  float: right;
   margin-top: 3px;
 }
 #navigation .mobile-nav.open > li > ul {
@@ -1282,6 +1258,15 @@ label, input, button, select, textarea {
 }
 #navigation .mobile-nav.open > li > ul > li ul {
   list-style-type: none;
+}
+#navigation .mobile-nav .navbar-form {
+    border: 0 none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+#navigation .mobile-nav .navbar-form input {
+    width: 100% !important;
 }
 #navigation .user .icon-nav {
   float: left;
@@ -1473,7 +1458,20 @@ label, input, button, select, textarea {
 #navigation .user > a {
   color: #fff;
 }
-
+#navigation .main-nav > li.search-form a {
+    padding: 8px 0 0;
+    cursor: default;
+}
+#navigation .main-nav > li.search-form a:hover {
+    background-color: transparent;
+}
+#navigation .main-nav > li.search-form a i {
+    color: #e4e4e4;
+    cursor: pointer;
+}
+#navigation .main-nav > li.search-form a i:hover {
+    color: #cccccc;
+}
 .panel-group.panel-widget .panel-heading {
   background: #eee;
 }
@@ -3803,23 +3801,11 @@ body.error .wrapper .buttons {
 .login {
   background: #368ee0;
 }
-.login .wrapper {
-  width: 400px;
-  height: 520px;
-  margin: -200px -200px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-.login.login .wrapper {
-  margin-top: -260px;
-}
-.login.reminder .wrapper {
-  margin-top: -260px;
-}
-.login.register .wrapper {
-  height: 650px;
-  margin-top: -330px;
+.login.register .wrapper .register-terms {
+  color: #bdbdbd;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 11px;
 }
 .login .wrapper h1 > a {
   color: #fff;
@@ -3836,6 +3822,8 @@ body.error .wrapper .buttons {
 }
 .login .wrapper .login-body {
   margin-top: 20px;
+}
+.login .wrapper .login-body-content {
   background: #fff;
 }
 .login .wrapper .login-body form {
@@ -3860,7 +3848,7 @@ body.error .wrapper .buttons {
   display: table;
   clear: both;
 }
-.login .wrapper .login-body .submit input {
+.login .wrapper .login-body .submit input[type=submit] {
   float: right;
 }
 .login .wrapper .login-body .submit .remember {
@@ -3868,14 +3856,8 @@ body.error .wrapper .buttons {
   margin-top: 5px;
   margin-left: 1px;
 }
-.login .wrapper .login-body .submit .remember [class*=icheckbox], .login .wrapper .login-body .submit .remember label {
-  float: left;
-}
-.login .wrapper .login-body .submit .remember label {
-  margin-left: 10px;
-  font-weight: normal;
-  margin-bottom: 0;
-  line-height: 21px;
+.login .wrapper .login-body .submit .remember input {
+  vertical-align: sub;
 }
 .login .wrapper .login-body .forget {
   margin-top: 30px;
@@ -3920,7 +3902,46 @@ body.error .wrapper .buttons {
     height: 30px;
     width: 155px;
 }
-
+.login-options a {
+    background-color: #425F9C;
+    border-radius: 0;
+    color: #fff;
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+}
+.login-options a:hover {
+    text-decoration: none;
+    color: #d1d1d1;
+}
+.login-options a.facebook {
+  background-color: #425f9c;
+}
+.login-options a.twitter {
+  background-color: #26C4F1;
+}
+.login-options a.google {
+  background-color: #E93F2E;
+}
+.login-options a.pinterest {
+  background-color: #B81621;
+}
+.login-options a.github {
+  background-color: #444444;
+}
+.login-options a.linkedin {
+  background-color: #007BB6;
+}
+.login-options a.youtube {
+  background-color: #D3322A;
+}
+.login-options a.dropbox {
+  background-color: #5095CC;
+}
+.login-options a.instragram {
+  background-color: #356897;
+}
 .pagination.pagination-custom {
   height: 28px;
   margin-top: -1px;
@@ -5696,7 +5717,7 @@ nav.navbar.navbar-default.navbar-page-actions .navbar-nav > li > a:hover {
 .dropdown.config-menu a {
     font-size: 18px;
 }
-@media (max-width: 840px) {
+@media (max-width: 991px) {
     .dropdown.config-menu {
         padding-right: 5px;
     }
@@ -5730,7 +5751,10 @@ input[type="file"] {
 #navigation .nav-brand {
     float: left;
     margin-left: -20px;
-    width: 200px;
+    max-width: 250px;
+}
+#brand-mobile {
+    background-color: #173f4c;
 }
 body.roles .resources-line {
     border: 1px solid #e2e2e2;
