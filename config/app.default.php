@@ -64,8 +64,19 @@ return [
      * Facebook
      */
     'Facebook' => [
-        'app_id' => '',
-        'app_secret' => '',
+        'app_id' => 'xxxxxxxxxxxxxxx',
+        'app_secret' => 'xxxxxxxxxxxxxxx',
+        'scope' => ['email'],
+        'callback_login' => '/users/facebook'
+    ],
+
+    /**
+     * AWS S3
+     */
+    'S3' => [
+        'awsAccessKey' => '',
+        'awsSecretKey' => '',
+        'bucket' => '',
     ],
 
     /**
