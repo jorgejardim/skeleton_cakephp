@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="input">
-                                    <?= $this->Form->input('username', array('div' => false, 'label' => false, 'placeholder' => __('Email'), 'class' => 'username-input required email', 'data-rule-required' => 'true', 'data-rule-email' => 'true', 'type' => 'email')) ?>
+                                    <?= $this->Form->input('email', array('div' => false, 'label' => false, 'placeholder' => __('Email'), 'class' => 'username-input required email', 'data-rule-required' => 'true', 'data-rule-email' => 'true', 'type' => 'email')) ?>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
