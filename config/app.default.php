@@ -80,6 +80,21 @@ return [
     ],
 
     /**
+     * Pagseguro
+     */
+    'Pagseguro' => [
+        'email' => 'email@email',
+        'token' => 'xxxxxxxxxxxxxxx',
+    ],
+
+    /**
+     * Gerencianet
+     */
+    'Gerencianet' => [
+        'token' => 'xxxxxxxxxxxxxxx',
+    ],
+
+    /**
      * Security and encryption configuration
      *
      * - salt - A random string used in security hashing methods.

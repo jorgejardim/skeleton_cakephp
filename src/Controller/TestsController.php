@@ -52,6 +52,50 @@ class TestsController extends AppController
     public function pdf() {}
 
     /**
+     * PagSeguro
+     */
+    public function pagseguro()
+    {
+        $this->loadComponent('CakePHP3Utilities.Pagseguro');
+        $payment = $this->Pagseguro;
+
+        $payment->setItem('Nome do Produto', null, '12,50');
+
+        $payment->setReferencia(uniqid());
+        $payment->setRetorno('/p/obrigado');
+        $payment->setNotificacao('/');
+
+        $return = $payment->enviar();
+        if($payment->sucesso) {
+            return $this->redirect($payment->link);
+        } else {
+            $this->Flash->error('Erro no link de pagamento.<br />'.$payment->msg);
+        }
+    }
+
+    /**
+     * GerenciaNet
+     */
+    public function gerencianet()
+    {
+        $this->loadComponent('CakePHP3Utilities.Gerencianet');
+        $payment = $this->Gerencianet;
+
+        $payment->setItem('Nome do Produto', null, '12,50');
+
+        $payment->setReferencia(uniqid());
+        $payment->setRetorno('/p/obrigado');
+        $payment->setNotificacao('/');
+
+        $return = $payment->enviar();
+        if($payment->sucesso) {
+            return $this->redirect($payment->link);
+        } else {
+            $this->Flash->error('Erro no link de pagamento.<br />'.$payment->msg);
+        }
+    }
+
+    /**
      * Test Captcha
      */
     public function captcha($id = 1)
